@@ -19,22 +19,14 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        {{-- @include('layouts.landing.navigation') --}}
-
-        <!-- Page Heading -->
-        @isset($header)
-            <header class="bg-white shadow">
-                <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endisset
-
+    <div class="min-h-screen bg-white">
+        @include('layouts.landing.navigation')
         <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
+        @include('layouts.landing.footer')
+
     </div>
 
     @stack('before-scripts')
