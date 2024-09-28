@@ -8,14 +8,15 @@
                     class="my-4 text-5xl font-bold leading-tight text-darken text-white">
                     Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">Uabanga</span>
                 </h1>
-                <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">
+                <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+                    class="leading-normal text-2xl mb-8 text-white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque doloremque non iure nemo esse,
                     repellat illo fugit cumque corrupti nesciunt ipsam, praesentium, sequi reprehenderit tenetur.
                     Voluptatibus vitae asperiores repellendus!</p>
                 <div data-aos="fade-up" data-aos-once="true" data-aos-delay="700"
                     class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
                     <p
-                        class="lg:mx-0 bg-secondary text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+                        class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
                         Visi Misi
                     </p>
 
@@ -51,14 +52,15 @@
 
     <!-- Visi Misi. -->
     <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
-        <h1 class="font-bold text-darken my-3 text-2xl">Visi Misi Desa <span class="text-secondary">Uabanga</span>
+        <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Visi Misi Desa <span
+                class="text-secondary">Uabanga</span>
         </h1>
         <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
             assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
             impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
     </div>
     <!-- card -->
-    <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20 lg:px-52">
+    <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20 lg:px-52 bg-gray-100 lg:py-10">
         <div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
             <div style="background: #5B72EE;"
                 class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
@@ -138,7 +140,7 @@
 
     <!-- Program Unggulan. -->
     <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24 ">
-        <h1 class="font-bold text-darken my-3 text-2xl">Program Unggulan Desa <span
+        <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Program Unggulan Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
         <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
@@ -159,7 +161,7 @@
                 alt="">
         </div>
     </div>
-    <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:px-56  flex-row-reverse">
+    <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:px-56  flex-row-reverse bg-gray-100 lg:py-10">
 
         <div data-aos="fade-right" class="sm:w-1/2 relative">
             <div class="bg-primary rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
@@ -189,81 +191,9 @@
         </div>
     </div>
 
-    {{-- artikel --}}
-    {{-- <div data-aos="zoom-in" class="mt-16 text-center">
-        <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
-    </div>
-    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20 px-56">
-        <div class="lg:w-6/12">
-            <img class="w-full mb-6" src="{{ asset('landing/images/laptop-news.png') }}" loading="lazy">
-            <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-            <h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a
-                Zoom-friendly edtech solution</h1>
-            <p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael Chasen,
-                integrates exclusively...</p>
-            <a href="" class="underline">Read more</a>
-        </div>
-        <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/children-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS
-                            RELEASE</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30
-                        Million Series A Financing to Meet High Demand</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company that
-                        created Class,...</p>
-                </div>
-            </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/girl-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting
-                        millions on a better Zoom for schools</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer
-                        product. Nonetheless, the...</p>
-                </div>
-            </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/cat-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to
-                        Bring LMS Features to Zoom Classrooms</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big
-                        financial returns from betting on Zoom...</p>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     {{-- data --}}
     <div data-aos="zoom-in" class="mt-16 text-center">
-        <h1 class="text-darken text-2xl font-semibold">Data Desa <span class="text-primary">Uabanga</span></h1>
+        <h1 class="text-darken text-2xl font-semibold ">Data Desa <span class="text-primary">Uabanga</span></h1>
         <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
             deserunt
             sunt
@@ -311,6 +241,111 @@
             </div>
         </div>
     </div>
+
+    <div
+        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-52 mt-10">
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
+                <p class="my-4">If you care for your time, I hands down would go with this."</p>
+            </blockquote>
+        </figure>
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
+                <p class="my-4">If you care for your time, I hands down would go with this."</p>
+            </blockquote>
+        </figure>
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
+                <p class="my-4">If you care for your time, I hands down would go with this."</p>
+            </blockquote>
+        </figure>
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
+                <p class="my-4">If you care for your time, I hands down would go with this."</p>
+            </blockquote>
+        </figure>
+    </div>
+
+    {{-- artikel --}}
+    <div data-aos="zoom-in" class="mt-16 text-center">
+        <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
+        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+            deserunt
+            sunt
+            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
+            sapiente quis reprehenderit voluptates?</p>
+    </div>
+    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20 px-56">
+        <div class="lg:w-6/12">
+            <img class="w-full mb-6" src="{{ asset('landing/images/laptop-news.png') }}" loading="lazy">
+            <span class="bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
+            <h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a
+                Zoom-friendly edtech solution</h1>
+            <p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael Chasen,
+                integrates exclusively...</p>
+            <a href="" class="underline">Read more</a>
+        </div>
+        <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+            <div class="flex space-x-5">
+                <div class="w-4/12">
+                    <div class="relative">
+                        <img class="rounded-xl w-full" src="{{ asset('landing/images/children-laptop.png') }}"
+                            loading="lazy">
+                        <span
+                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS
+                            RELEASE</span>
+                    </div>
+                </div>
+                <div class="w-8/12">
+                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30
+                        Million Series A Financing to Meet High Demand</h1>
+                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company that
+                        created Class,...</p>
+                </div>
+            </div>
+            <div class="flex space-x-5">
+                <div class="w-4/12">
+                    <div class="relative">
+                        <img class="rounded-xl w-full" src="{{ asset('landing/images/girl-laptop.png') }}"
+                            loading="lazy">
+                        <span
+                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
+                    </div>
+                </div>
+                <div class="w-8/12">
+                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting
+                        millions on a better Zoom for schools</h1>
+                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer
+                        product. Nonetheless, the...</p>
+                </div>
+            </div>
+            <div class="flex space-x-5">
+                <div class="w-4/12">
+                    <div class="relative">
+                        <img class="rounded-xl w-full" src="{{ asset('landing/images/cat-laptop.png') }}"
+                            loading="lazy">
+                        <span
+                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
+                    </div>
+                </div>
+                <div class="w-8/12">
+                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to
+                        Bring LMS Features to Zoom Classrooms</h1>
+                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big
+                        financial returns from betting on Zoom...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {{-- lokasi --}}
     <div data-aos="zoom-in" class="mt-16 text-center">

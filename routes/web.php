@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/profiles', [LandingController::class, 'profile'])->name('landing.profile');
+Route::get('/articles', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/articles/{id}', [ArticleController::class, 'getById'])->name('article.detail');
 
 
 Route::get('/dashboard', function () {

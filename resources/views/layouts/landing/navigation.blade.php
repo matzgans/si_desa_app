@@ -3,14 +3,9 @@
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
                 <a href="#"
-                    class="text-lg relative z-50 font-bold tracking-widest text-black rounded-lg focus:outline-none focus:shadow-outline">Desa
+                    class="text-lg relative z-50 font-extrabold tracking-widest text-yellow-500 rounded-lg focus:outline-none focus:shadow-outline">Desa
                     Uabanga</a>
-                <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z"
-                        fill="#65DAFF" />
-                </svg>
+
             </div>
             <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
