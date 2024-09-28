@@ -201,7 +201,7 @@
 
                             <!-- Preview Image -->
                             <div class="relative h-64 w-full rounded-lg border-2 border-gray-300">
-                                <img class="h-full w-full rounded-lg object-cover" id="preview" src="#"
+                                <img class="h-60 w-full rounded-lg object-contain" id="preview" src="#"
                                     alt="Image preview" style="display: none;" />
                             </div>
                         </div>

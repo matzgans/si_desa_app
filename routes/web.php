@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Verified;
@@ -16,6 +17,7 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('resident', ResidentController::class);
     Route::get('export/resident', [ResidentController::class, 'export'])->name('export.resident');
+    Route::resource('article', ArticleController::class);
 });
 
 Route::middleware('auth')->group(function () {
