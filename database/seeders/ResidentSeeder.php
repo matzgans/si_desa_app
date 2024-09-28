@@ -14,8 +14,9 @@ class ResidentSeeder extends Seeder
     public function run(): void
     {
 
-        $genders = ['male', 'female'];
-        $education_levels = ['SD', 'SMP', 'SMA', 'STRATA 1', 'STRATA 2'];
+        $genders = ['Perempuan', 'Laki - Laki'];
+        $statuses = ['Menikah', 'Belum Menikah', 'Pelajar', "Duda", "Janda"];
+        $education_levels = ['SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', "Pasca Sarjana"];
         $occupations = ['Farmer', 'Teacher', 'Fisherman', 'Engineer', 'Doctor', 'Entrepreneur'];
 
         for ($i = 0; $i < 6; $i++) {
@@ -44,10 +45,12 @@ class ResidentSeeder extends Seeder
             Resident::create([
                 'nik' => $nik,
                 'name' => fake()->name(),
+                'uuid' => fake()->uuid(),
                 'gender' => fake()->randomElement($genders),
-                'age' => fake()->numberBetween(18, 60),  // Generate random age between 18 and 60
+                'birth_date' => fake()->date(),  // Generate random age between 18 and 60
                 'occupation' => fake()->randomElement($occupations),
                 'education_level' => fake()->randomElement($education_levels),
+                'status_resident' => fake()->randomElement($statuses),
                 'photo_profile' => $imageName,  // Save the generated image name
             ]);
         }

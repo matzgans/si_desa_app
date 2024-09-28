@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Resident extends Model
 {
     use HasFactory;
+    protected $tables = 'residents';
+
+    protected $guarded = [];
 }

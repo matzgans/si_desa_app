@@ -1,11 +1,11 @@
 <x-landing-layout>
     <div class="bg-primary">
-        <div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start pb-20 pt-10">
+        <div class="mx-auto flex max-w-screen-xl flex-col items-start px-8 pb-20 pt-10 lg:flex-row">
             <!--Left Col-->
             <div
-                class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
-                <h1 data-aos="fade-right" data-aos-once="true"
-                    class="my-4 text-5xl font-bold leading-tight text-darken text-white">
+                class="mb-5 flex w-full flex-col items-start justify-center text-center md:mb-0 lg:w-6/12 lg:pt-24 lg:text-left">
+                <h1 class="text-darken my-4 text-5xl font-bold leading-tight text-white" data-aos="fade-right"
+                    data-aos-once="true">
                     Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">Uabanga</span>
                 </h1>
                 <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
@@ -13,8 +13,8 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque doloremque non iure nemo esse,
                     repellat illo fugit cumque corrupti nesciunt ipsam, praesentium, sequi reprehenderit tenetur.
                     Voluptatibus vitae asperiores repellendus!</p>
-                <div data-aos="fade-up" data-aos-once="true" data-aos-delay="700"
-                    class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
+                <div class="w-full items-center justify-center md:flex md:space-x-5 lg:justify-start" data-aos="fade-up"
+                    data-aos-once="true" data-aos-delay="700">
                     <p
                         class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
                         Visi Misi
@@ -23,26 +23,26 @@
                 </div>
             </div>
             <!--Right Col-->
-            <div class="w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
-                <img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20"
+            <div class="relative w-full lg:-mt-10 lg:w-6/12" id="girl">
+                <img class="mx-auto w-10/12 2xl:-mb-20" data-aos="fade-up" data-aos-once="true"
                     src="{{ asset('landing/images/kepala-desa.png') }}" />
             </div>
         </div>
-        <div class="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
+        <div class="relative z-40 -mt-14 text-white sm:-mt-24 lg:-mt-36">
             <svg class="xl:h-40 xl:w-full" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
                 <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
                     fill="currentColor"></path>
             </svg>
-            <div class="bg-white w-full h-20 -mt-px"></div>
+            <div class="-mt-px h-20 w-full bg-white"></div>
         </div>
     </div>
 
-    <div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
+    <div class="container mx-auto max-w-screen-xl overflow-x-hidden px-4 text-gray-700 lg:px-8">
         <!-- trusted by -->
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-center mb-3 text-gray-400 font-medium">Bekerja Sama Dengan</h1>
-            <div class="flex gap-20 justify-center pt-10 overflow-auto">
+        <div class="mx-auto max-w-4xl">
+            <h1 class="mb-3 text-center font-medium text-gray-400">Bekerja Sama Dengan</h1>
+            <div class="flex justify-center gap-20 overflow-auto pt-10">
                 <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
                 <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
                 <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
@@ -70,15 +70,15 @@
                         fill="white" />
                 </svg>
             </div>
-            <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Makan Siang Gratis</h1>
+            <h1 class="text-darken mb-3 text-xl font-medium lg:px-14">Makan Siang Gratis</h1>
             <p class="px-4 text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum blanditiis
                 cupiditate ipsum tempora beatae accusamus velit debitis quis eos, non aliquid vero placeat distinctio
                 quia ea at repellendus, qui expedita.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
-            <div style="background: #F48C06;"
-                class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-                <svg class="w-6 h-6 text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="rounded-xl bg-white p-6 text-center shadow-xl" data-aos="fade-up" data-aos-delay="150">
+            <div class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg"
+                style="background: #F48C06;">
+                <svg class="h-6 w-6 text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M12 0C11.0532 0 10.2857 0.767511 10.2857 1.71432V5.14285H13.7142V1.71432C13.7142 0.767511 12.9467 0 12 0Z"
                         fill="#F5F5FC" />
@@ -117,21 +117,21 @@
                         fill="#F5F5FC" />
                 </svg>
             </div>
-            <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Susu Gratis</h1>
+            <h1 class="text-darken mb-3 text-xl font-medium lg:px-14">Susu Gratis</h1>
             <p class="px-4 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, est mollitia
                 dolorum voluptatibus blanditiis ducimus tempore earum! Expedita omnis, vero sequi dolorem nostrum illo
                 est molestias veritatis nobis, eius accusamus?</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
-            <div style="background: #29B9E7;"
-                class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-                <svg class="w-6 h-6 text-white" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="rounded-xl bg-white p-6 text-center shadow-xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg"
+                style="background: #29B9E7;">
+                <svg class="h-6 w-6 text-white" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M8.25 19.25C11.2836 19.25 13.75 16.7836 13.75 13.75C13.75 10.7164 11.2836 8.25 8.25 8.25C5.21641 8.25 2.75 10.7164 2.75 13.75C2.75 16.7836 5.21641 19.25 8.25 19.25ZM46.75 19.25C49.7836 19.25 52.25 16.7836 52.25 13.75C52.25 10.7164 49.7836 8.25 46.75 8.25C43.7164 8.25 41.25 10.7164 41.25 13.75C41.25 16.7836 43.7164 19.25 46.75 19.25ZM49.5 22H44C42.4875 22 41.1211 22.6102 40.1242 23.5984C43.5875 25.4977 46.0453 28.9266 46.5781 33H52.25C53.7711 33 55 31.7711 55 30.25V27.5C55 24.4664 52.5336 22 49.5 22ZM27.5 22C32.8195 22 37.125 17.6945 37.125 12.375C37.125 7.05547 32.8195 2.75 27.5 2.75C22.1805 2.75 17.875 7.05547 17.875 12.375C17.875 17.6945 22.1805 22 27.5 22ZM34.1 24.75H33.3867C31.5992 25.6094 29.6141 26.125 27.5 26.125C25.3859 26.125 23.4094 25.6094 21.6133 24.75H20.9C15.4344 24.75 11 29.1844 11 34.65V37.125C11 39.4023 12.8477 41.25 15.125 41.25H39.875C42.1523 41.25 44 39.4023 44 37.125V34.65C44 29.1844 39.5656 24.75 34.1 24.75ZM14.8758 23.5984C13.8789 22.6102 12.5125 22 11 22H5.5C2.46641 22 0 24.4664 0 27.5V30.25C0 31.7711 1.22891 33 2.75 33H8.41328C8.95469 28.9266 11.4125 25.4977 14.8758 23.5984Z"
                         fill="white" />
                 </svg>
             </div>
-            <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken lg:h-14 pt-3">Melanjutkan Ibu Kota Nusantara</h1>
+            <h1 class="text-darken mb-3 pt-3 text-xl font-medium lg:h-14 lg:px-14">Melanjutkan Ibu Kota Nusantara</h1>
             <p class="px-4 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, sed autem
                 repudiandae praesentium iure unde, accusamus tempora labore quos earum molestias, aliquam sapiente
                 delectus tempore porro fugiat est ipsum deleniti. </p>
@@ -147,46 +147,46 @@
             assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
             impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
     </div>
-    <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:ml-56">
-        <div data-aos="fade-right" class="sm:w-1/2 relative">
-            <div class="bg-primary rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
-            <h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Makan Siang <span
+    <div class="mt-10 items-center px-10 sm:flex sm:space-x-8 lg:ml-56">
+        <div class="relative sm:w-1/2" data-aos="fade-right">
+            <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
+            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Makan Siang <span
                     class="text-secondary">Gratis</span></h1>
             <p class="py-5 lg:pr-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsa non odit amet
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0 ">
-            <img class="rounded-xl z-40 relative lg:size-6/12" src="{{ asset('landing/images/logo-bonebol.png') }}"
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+            <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
     </div>
     <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:px-56  flex-row-reverse bg-gray-100 lg:py-10">
 
-        <div data-aos="fade-right" class="sm:w-1/2 relative">
-            <div class="bg-primary rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
-            <h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Tidur Siang <span
+        <div class="relative sm:w-1/2" data-aos="fade-right">
+            <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
+            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Tidur Siang <span
                     class="text-secondary">Gratis</span></h1>
             <p class="py-5 lg:pr-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsa non odit amet
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0 ">
-            <img class="rounded-xl z-40 relative lg:size-6/12" src="{{ asset('landing/images/logo-bonebol.png') }}"
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+            <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
     </div>
-    <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:ml-56">
-        <div data-aos="fade-right" class="sm:w-1/2 relative">
-            <div class="bg-primary rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
-            <h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Semua <span
+    <div class="mt-10 items-center px-10 sm:flex sm:space-x-8 lg:ml-56">
+        <div class="relative sm:w-1/2" data-aos="fade-right">
+            <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
+            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Semua <span
                     class="text-secondary">Gratis</span></h1>
             <p class="py-5 lg:pr-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsa non odit amet
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0 ">
-            <img class="rounded-xl z-40 relative lg:size-6/12" src="{{ asset('landing/images/logo-bonebol.png') }}"
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+            <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
     </div>
@@ -348,19 +348,19 @@
 
 
     {{-- lokasi --}}
-    <div data-aos="zoom-in" class="mt-16 text-center">
+    <div class="mt-16 text-center" data-aos="zoom-in">
         <h1 class="text-darken text-2xl font-semibold">Lokasi Desa <span class="text-primary">Uabanga</span></h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+        <p class="my-5 text-gray-500 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
             deserunt
             sunt
             maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
             sapiente quis reprehenderit voluptates?</p>
     </div>
 
-    <div class=" flex justify-center">
+    <div class="flex justify-center">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9371.740248108725!2d123.22794951495842!3d0.3518814485727207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327f305ce7385549%3A0xe8803f8102fa990b!2sUabanga%2C%20Kec.%20Bonepantai%2C%20Kabupaten%20Bone%20Bolango%2C%20Gorontalo!5e1!3m2!1sid!2sid!4v1727452556426!5m2!1sid!2sid"
-            width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            style="border:0;" width="1000" height="450" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 

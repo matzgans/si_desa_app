@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('residents', function (Blueprint $table) {
             $table->id();
+            $table->uuid();
             $table->string('nik')->unique();
             $table->string('name');
-            $table->enum('gender', ['male', 'female']);
-            $table->integer('age');
+            $table->enum('gender', ['Perempuan', 'Laki - Laki']);
+            $table->date('birth_date');
             $table->string('occupation');
+            $table->string('status_resident');
             $table->string('education_level');
             $table->string('photo_profile');
             $table->timestamps();
