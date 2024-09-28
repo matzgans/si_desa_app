@@ -15,11 +15,10 @@
                     Voluptatibus vitae asperiores repellendus!</p>
                 <div class="w-full items-center justify-center md:flex md:space-x-5 lg:justify-start" data-aos="fade-up"
                     data-aos-once="true" data-aos-delay="700">
-                    <p
-                        class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+                    <a href="#visi-misi"
+                        class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out z-50">
                         Visi Misi
-                    </p>
-
+                    </a>
                 </div>
             </div>
             <!--Right Col-->
@@ -51,7 +50,7 @@
     </div>
 
     <!-- Visi Misi. -->
-    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
+    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24" id="visi-misi">
         <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Visi Misi Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
@@ -139,11 +138,12 @@
     </div>
 
     <!-- Program Unggulan. -->
-    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24 ">
+    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24 " id="program-unggulan">
         <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Program Unggulan Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
-        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
+        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
+            hic
             assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
             impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
     </div>
@@ -156,7 +156,7 @@
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
@@ -171,7 +171,7 @@
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
@@ -179,13 +179,13 @@
     <div class="mt-10 items-center px-10 sm:flex sm:space-x-8 lg:ml-56">
         <div class="relative sm:w-1/2" data-aos="fade-right">
             <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
-            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Semua <span
+            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Makan Siang <span
                     class="text-secondary">Gratis</span></h1>
             <p class="py-5 lg:pr-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsa non odit amet
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
@@ -243,7 +243,7 @@
     </div>
 
     <div
-        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-52 mt-10">
+        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10">
         <figure
             class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
             <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
@@ -283,7 +283,7 @@
             maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
             sapiente quis reprehenderit voluptates?</p>
     </div>
-    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20 px-56">
+    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20  px-10 lg:px-56">
         <div class="lg:w-6/12">
             <img class="w-full mb-6" src="{{ asset('landing/images/laptop-news.png') }}" loading="lazy">
             <span class="bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
