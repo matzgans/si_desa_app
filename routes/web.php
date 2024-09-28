@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,6 +12,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('pages.admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('resident', ResidentController::class);
+    Route::get('export/resident', [ResidentController::class, 'export'])->name('export.resident');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

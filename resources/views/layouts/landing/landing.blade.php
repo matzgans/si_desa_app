@@ -25,9 +25,9 @@
         <main>
             {{ $slot }}
         </main>
-        @include('layouts.landing.footer')
 
     </div>
+    @include('layouts.landing.footer')
 
     @stack('before-scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
