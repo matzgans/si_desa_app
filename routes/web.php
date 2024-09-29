@@ -12,6 +12,8 @@ Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/profiles', [LandingController::class, 'profile'])->name('landing.profile');
 Route::get('/articles', [LandingArticleController::class, 'index'])->name('landing.article');
 Route::get('/articles/{slug}', [LandingArticleController::class, 'getBySlug'])->name('article.detail');
+Route::get('/articles/{slug}', [LandingArticleController::class, 'getBySlug'])->name('article.detail');
+Route::get('/refresh-view', [LandingController::class, 'refreshMView'])->name('refresh.view');
 
 
 Route::get('/dashboard', function () {

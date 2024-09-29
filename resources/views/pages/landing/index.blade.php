@@ -284,66 +284,18 @@
             sapiente quis reprehenderit voluptates?</p>
     </div>
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20  px-10 lg:px-56">
-        <div class="lg:w-6/12">
-            <img class="w-full mb-6" src="{{ asset('landing/images/laptop-news.png') }}" loading="lazy">
-            <span class="bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-            <h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a
-                Zoom-friendly edtech solution</h1>
-            <p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael Chasen,
-                integrates exclusively...</p>
-            <a href="" class="underline">Read more</a>
-        </div>
-        <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/children-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS
-                            RELEASE</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30
-                        Million Series A Financing to Meet High Demand</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company that
-                        created Class,...</p>
-                </div>
+        @foreach ($articles as $article)
+            <div class="lg:w-6/12">
+                <img class="w-full mb-6 rounded-xl" src="{{ asset('article/thumb/' . $article->thumbnail) }}"
+                    alt="{{ $article->title }}" loading="lazy">
+                <span
+                    class="bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full">{{ $article->created_at }}</span>
+                <h1 class="text-gray-800 font-semibold my-3 text-xl">{{ $article->title }}</h1>
+                <p class="text-gray-500 mb-3">{{ Str::limit($article->content, 30) }}</p>
+                <a href="{{ route('article.detail', ['slug' => $article->slug]) }}" class="underline">Baca
+                    Selengkapnya</a>
             </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/girl-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting
-                        millions on a better Zoom for schools</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer
-                        product. Nonetheless, the...</p>
-                </div>
-            </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/cat-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to
-                        Bring LMS Features to Zoom Classrooms</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big
-                        financial returns from betting on Zoom...</p>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 
 

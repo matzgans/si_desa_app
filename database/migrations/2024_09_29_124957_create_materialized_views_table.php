@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('materialized_views', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('author_id')->constrained('users')->default('unknown');
-            $table->text('slug');
-            $table->string('title');
-            $table->text('content');
-            $table->string('thumbnail');
-            $table->boolean('show_in_landing')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('materialized_views');
     }
 };
