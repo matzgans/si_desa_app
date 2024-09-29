@@ -203,75 +203,78 @@
 
     <div class="flex flex-wrap gap-4 text-center justify-center">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div id="chart">
+            <div id="data-penduduk">
             </div>
             <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
+                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-transportasi">
+            </div>
+            <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
                     acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div id="chart-2">
+            <div id="data-peternakan">
             </div>
             <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
                     acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div id="chart-3">
-            </div>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-            </div>
-        </div>
+
     </div>
 
-    <div
-        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10">
-        <figure
-            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
-                <p class="my-4">If you care for your time, I hands down would go with this."</p>
-            </blockquote>
-        </figure>
-        <figure
-            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
-                <p class="my-4">If you care for your time, I hands down would go with this."</p>
-            </blockquote>
-        </figure>
-        <figure
-            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
-                <p class="my-4">If you care for your time, I hands down would go with this."</p>
-            </blockquote>
-        </figure>
-        <figure
-            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                <h1 class="text-7xl font-semibold text-gray-900 dark:text-white">10 Orang</h1>
-                <p class="my-4">If you care for your time, I hands down would go with this."</p>
-            </blockquote>
-        </figure>
+    <div class="flex flex-wrap gap-4 text-center justify-center mt-10">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-sarana">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
+                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-transportasi">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
+                    acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-peternakan">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
+                    acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-pencaharian">
+    </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-pendidikan">
+    </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-usaha">
     </div>
 
     {{-- artikel --}}
@@ -321,201 +324,418 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-        Highcharts.chart('chart', {
+        Highcharts.chart('data-penduduk', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Jumlah Penduduk per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: [{
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            }, {
+                title: {
+                    text: 'Jumlah KK'
+                },
+                opposite: true
+            }],
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Laki-laki',
+                data: [104, 171, 89, 142]
+            }, {
+                name: 'Perempuan',
+                data: [87, 164, 88, 131]
+            }, {
+                name: 'Jumlah KK',
+                yAxis: 1,
+                type: 'spline',
+                data: [56, 99, 52, 74],
+                tooltip: {
+                    valueSuffix: ' KK'
+                }
             }]
         });
 
-        Highcharts.chart('chart-2', {
+        Highcharts.chart('data-transportasi', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Alat Transportasi per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Kendaraan'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Mobil',
+                data: [0, 1, 5, 2]
+            }, {
+                name: 'Motor',
+                data: [25, 16, 20, 37]
+            }, {
+                name: 'Bentor',
+                data: [0, 0, 0, 1]
             }]
         });
 
-        Highcharts.chart('chart-3', {
+        Highcharts.chart('data-peternakan', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Peternakan per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Hewan'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Sapi',
+                data: [0, 0, 3, 1]
+            }, {
+                name: 'Kambing',
+                data: [48, 1, 4, 19]
+            }, {
+                name: 'Anjing',
+                data: [0, 0, 0, 1]
+            }, {
+                name: 'Kucing',
+                data: [0, 0, 0, 9]
+            }, {
+                name: 'Ayam',
+                data: [72, 47, 48, 57]
+            }, {
+                name: 'Itik',
+                data: [0, 0, 0, 0]
+            }]
+        });
+
+        Highcharts.chart('data-pencaharian', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Mata Pencaharian per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} orang</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'NELAYAN',
+                data: [29, 50, 6, 5]
+            }, {
+                name: 'PETANI',
+                data: [15, 20, 21, 42]
+            }, {
+                name: 'SWASTA',
+                data: [5, 11, 6, 9]
+            }, {
+                name: 'HONORER',
+                data: [6, 6, 3, 3]
+            }, {
+                name: 'PNS',
+                data: [1, 2, 1, 2]
+            }, {
+                name: 'BURUH HARIAN',
+                data: [1, 7, 5, 10]
+            }, {
+                name: 'TUKANG BANGUNAN',
+                data: [4, 8, 0, 0]
+            }, {
+                name: 'ASISTEN RT',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'LAINNYA',
+                data: [11, 0, 14, 26]
+            }]
+        });
+
+        Highcharts.chart('data-pendidikan', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Tingkat Pendidikan per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} orang</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'TIDAK/BELUM SEKOLAH',
+                data: [55, 135, 72, 62]
+            }, {
+                name: 'TAMAT SD/SEDERAJAT',
+                data: [54, 102, 47, 117]
+            }, {
+                name: 'TAMAT SMP/SEDERAJAT',
+                data: [28, 41, 20, 30]
+            }, {
+                name: 'TAMAT SMA/SEDERAJAT',
+                data: [47, 45, 21, 37]
+            }, {
+                name: 'TAMAT PT',
+                data: [12, 9, 12, 11]
+            }]
+        });
+
+        Highcharts.chart('data-usaha', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Usaha Ekonomi Masyarakat per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Usaha'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} usaha</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'PERTOKOAN',
+                data: [7, 3, 5, 2]
+            }, {
+                name: 'PERKIOSAN',
+                data: [1, 0, 0, 2]
+            }, {
+                name: 'WARUNG MAKAN',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'PERBENGKELAN',
+                data: [1, 0, 0, 1]
+            }, {
+                name: 'MEBEL KAYU',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'PANGKALAN LPG',
+                data: [0, 0, 1, 2]
+            }, {
+                name: 'TAYLOR',
+                data: [0, 0, 0, 2]
+            }, {
+                name: 'LAINNYA',
+                data: [1, 3, 2, 5]
+            }]
+        });
+
+        Highcharts.chart('data-sarana', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Sarana & Prasarana Perikanan per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Tambatan Perahu',
+                data: [13, 7, 0, 3]
+            }, {
+                name: 'Pasar Ikan',
+                data: [0, 1, 0, 0]
+            }, {
+                name: 'Pajeko',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Kapal Ikan',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Perahu Bodi',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Mesin Tempel',
+                data: [7, 8, 0, 3]
+            }, {
+                name: 'Katintin',
+                data: [12, 0, 0, 1]
             }]
         });
     </script>
