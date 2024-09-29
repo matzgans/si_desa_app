@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
     public  function index()
     {
-        return view("pages.landing.article");
+        $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
+        return view("pages.landing.article", compact("articles"));
     }
 
-    public  function getById()
+    public  function getBySlug(Request $request)
     {
-        return view("pages.landing.article-detail");
+        $article = Article::where("slug", "=", $request->slug)->first();
+        return view("pages.landing.article-detail", compact("article"));
     }
 }

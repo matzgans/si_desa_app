@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/profiles', [LandingController::class, 'profile'])->name('landing.profile');
 Route::get('/articles', [LandingArticleController::class, 'index'])->name('landing.article');
-Route::get('/articles/{id}', [LandingArticleController::class, 'getById'])->name('article.detail');
+Route::get('/articles/{slug}', [LandingArticleController::class, 'getBySlug'])->name('article.detail');
 
 
 Route::get('/dashboard', function () {
