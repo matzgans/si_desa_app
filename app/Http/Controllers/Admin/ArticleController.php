@@ -99,17 +99,55 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        $article =  Article::where('slug', $slug)->first();
+        return view('pages.admin.article.edit', compact('article'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug)
     {
-        //
+        $article = Article::where('slug', $slug)->firstOrFail();
+        // Validasi input lainnya
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string|max:255|min:5',
+            'content' => 'required|string|min:10',
+            'thumbnail' => 'nullable|image|mimes:png|max:2048',
+        ]);
+
+        // Jika validasi gagal, kembali dengan pesan kesalahan
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', "Perhatikan Inputan anda")->withErrors($validator)->withInput();
+        }
+        // Periksa apakah file thumbnail ada
+        if ($request->hasFile('thumbnail')) {
+            // Mendapatkan nama asli dari file
+            $imageName = $request->file('thumbnail')->getClientOriginalName();
+
+            // Lanjutkan proses penyimpanan file jika valid
+            $imagePath = public_path('article/thumb/' . $imageName);
+
+            // Hapus gambar yang ada jika sudah ada
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            // Pindahkan file thumbnail ke direktori yang diinginkan
+            $request->file('thumbnail')->move(public_path('article/thumb'), $imageName);
+            $article->thumbnail = $imageName;
+        }
+
+        $article->update([
+            'title' => $request->title,
+            'author_id' => Auth::user()->id,
+            'content' => $request->content,
+        ]);
+
+        // Kembali ke halaman sebelumnya dengan pesan sukses
+        return redirect()->back()->with('success', 'Data penduduk berhasil diperbarui!');
     }
 
     /**
@@ -134,5 +172,21 @@ class ArticleController extends Controller
 
         // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Data berhasil dihapus!');
+    }
+
+    public function update_status(Request $request, String $slug)
+    {
+        // Validasi request
+        $request->validate([
+            'is_show' => 'required|boolean',
+        ]);
+
+        // Cari data berdasarkan id dan update is_show
+        $data = Article::where('slug', $slug)->first();
+        $data->is_show = $request->is_show;
+        $data->save();
+
+        // Redirect kembali ke halaman sebelumnya dengan pesan sukses
+        return back()->with('success', 'Status successfully updated!');
     }
 }

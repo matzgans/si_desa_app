@@ -3,7 +3,7 @@
         <div class="max-w-full px-3 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
-                <h2>Data Penduduk</h2>
+                <h2>Data Aparat Desa</h2>
                 <a class="flex items-center hover:underline" href="{{ route('dashboard') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
                     </div>
                 @endif
                 <div class="mb-2 flex flex-col items-center sm:flex-row">
-                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.resident.index') }}"
+                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.structure.index') }}"
                         method="GET">
                         <label class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             for="default-search">Search</label>
@@ -87,7 +87,7 @@
                     </form>
 
                     <a class="mb-2 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 sm:mb-0 sm:me-2 sm:w-auto"
-                        href="{{ route('admin.resident.create') }}">
+                        href="{{ route('admin.structure.create') }}">
                         <svg class="mx-auto h-6 w-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                             viewBox="0 0 24 24">
@@ -96,17 +96,16 @@
                         </svg>
                     </a>
 
-                    <a class="mb-2 w-full rounded-lg bg-red-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-300 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-300 dark:hover:bg-red-500 dark:focus:ring-red-300 sm:mb-0 sm:me-2 sm:w-auto"
+                    {{-- <a class="mb-2 w-full rounded-lg bg-red-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-300 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-300 dark:hover:bg-red-500 dark:focus:ring-red-300 sm:mb-0 sm:me-2 sm:w-auto"
                         href="{{ route('admin.export.resident') }}">
                         <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                             viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m2.665 9H6.647A1.647 1.647 0 0 1 5 15.353v-1.706A1.647 1.647 0 0 1 6.647 12h1.018M16 12l1.443 4.773L19 12m-6.057-.152-.943-.02a1.34 1.34 0 0 0-1.359 1.22 1.32 1.32 0 0 0 1.172 1.421l.536.059a1.273 1.273 0 0 1 1.226 1.718c-.2.571-.636.754-1.337.754h-1.13" />
                         </svg>
 
-                    </a>
+                    </a> --}}
                 </div>
 
 
@@ -118,41 +117,30 @@
                                 <th class="border border-gray-300 px-6 py-3" scope="col">No</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Foto</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Nama</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Jenis Kelamin</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Tanggal Lahir</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Pekerjaan</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Pekerjaan</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Pendidikan</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col">Jabatan</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($residents as $resident)
+                            @foreach ($structures as $structure)
                                 <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <th class="whitespace-nowrap border border-gray-300 px-6 py-4 font-medium text-gray-900 dark:text-white"
                                         scope="row">
-                                        {{ ($residents->currentPage() - 1) * $residents->perPage() + $loop->iteration }}
+                                        {{ ($structures->currentPage() - 1) * $structures->perPage() + $loop->iteration }}
                                     </th>
                                     <td class="border border-gray-300 px-6 py-4">
                                         <img class="h-20 w-20 object-cover"
-                                            src="{{ asset('residents/images/' . $resident->photo_profile) }}"
+                                            src="{{ asset('structure/staff_profile/' . $structure->staff_photo) }}"
                                             alt="">
                                     </td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->name }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->gender }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ \Carbon\Carbon::parse($resident->birth_date)->translatedFormat('d F Y') }}
+                                    <td class="border border-gray-300 px-6 py-4">{{ $structure->staff_name }}</td>
+                                    <td class="border border-gray-300 px-6 py-4">{{ $structure->position }}</td>
 
-
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->status_resident }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->occupation }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->education_level }}</td>
                                     <td class="border border-gray-300 px-6 py-4">
                                         <div class="flex items-center">
 
                                             <a
-                                                href="{{ route('admin.resident.edit', ['resident' => $resident->uuid]) }}">
+                                                href="{{ route('admin.structure.edit', ['structure' => $structure->uuid]) }}">
                                                 <svg class="size-6 text-yellow-500 dark:text-white" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     fill="none" viewBox="0 0 24 24">
@@ -164,7 +152,7 @@
 
                                             </a>
                                             <a href="javascript:void(0);"
-                                                onclick="confirmDelete('{{ $resident->uuid }}', '{{ addslashes($resident->name) }}')">
+                                                onclick="confirmDelete('{{ $structure->uuid }}', '{{ addslashes($structure->staff_name) }}')">
                                                 <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="red">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -172,8 +160,8 @@
                                                 </svg>
                                             </a>
 
-                                            <form id="delete-form-{{ $resident->uuid }}" style="display: none;"
-                                                action="{{ route('admin.resident.destroy', ['resident' => $resident->uuid]) }}"
+                                            <form id="delete-form-{{ $structure->uuid }}" style="display: none;"
+                                                action="{{ route('admin.structure.destroy', ['structure' => $structure->uuid]) }}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -185,7 +173,7 @@
                         </tbody>
                     </table>
 
-                    {{ $residents->links('vendor.pagination.tailwind') }}
+                    {{ $structures->links('vendor.pagination.tailwind') }}
                 </div>
             </div>
         </div>

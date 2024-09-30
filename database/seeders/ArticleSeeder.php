@@ -48,6 +48,7 @@ class ArticleSeeder extends Seeder
                     'slug' => Str::slug('Sample Article by ' . $user->name . '-' . Str::random(10)),
                     'content' => 'This is a sample content for an article written by ' . $user->name,
                     'thumbnail' => $imageName, // Path thumbnail
+                    'is_show' => false
                 ]);
             }
         }

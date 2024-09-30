@@ -4,7 +4,7 @@
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
                 <h2>Tambah Article</h2>
-                <a class="flex items-center hover:underline" href="{{ route('admin.resident.index') }}">
+                <a class="flex items-center hover:underline" href="{{ route('admin.article.index') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,8 +64,10 @@
                     </div>
                 @endif
 
-                <form class="mx-auto max-w-full" action="{{ route('admin.article.store') }}" method="POST"
+                <form class="mx-auto max-w-full"
+                    action="{{ route('admin.article.update', ['article' => $article->slug]) }}" method="POST"
                     enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
                     <div class="grid w-full grid-cols-1 gap-2">
                         <div class="col-span-2">
@@ -73,7 +75,7 @@
                                 for="title">Judul</label>
                             <input
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                id="title" name="title" type="text" value="{{ old('title') }}"
+                                id="title" name="title" type="text" value="{{ old('title', $article->title) }}"
                                 placeholder="John Anderson...." required />
                             @error('title')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -84,8 +86,8 @@
                                 for="message">Content</label>
                             <textarea
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="message" name="content" value="{{ old('content') }}" rows="4"
-                                placeholder="Tuliskan Kontent Yang Ingin Anda Tulis"></textarea>
+                                id="message" name="content" value="{{ old('content', $article->content) }}" rows="4"
+                                placeholder="Tuliskan Kontent Yang Ingin Anda Tulis">{{ $article->content }}</textarea>
 
                             @error('content')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -123,8 +125,8 @@
 
                             <!-- Preview Image -->
                             <div class="relative h-64 w-full rounded-lg border-2 border-gray-300">
-                                <img class="h-60 w-full rounded-lg object-contain" id="preview" src="#"
-                                    alt="Image preview" style="display: none;" />
+                                <img class="h-60 w-full rounded-lg object-contain" id="preview"
+                                    src="{{ asset('article/thumb/' . $article->thumbnail) }}" alt="Image preview" />
                             </div>
                         </div>
                     </div>
