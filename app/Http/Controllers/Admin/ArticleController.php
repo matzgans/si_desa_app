@@ -176,15 +176,24 @@ class ArticleController extends Controller
 
     public function update_status(Request $request, String $slug)
     {
-        // Validasi request
-        $request->validate([
-            'is_show' => 'required|boolean',
-        ]);
 
-        // Cari data berdasarkan id dan update is_show
-        $data = Article::where('slug', $slug)->first();
-        $data->is_show = $request->is_show;
-        $data->save();
+        // Validasi request
+        // $request->validate([
+        //     'is_show' => 'required|boolean',
+        // ]);
+
+        if ($request->is_show == null) {
+
+            $data = Article::where('slug', $slug)->first();
+            $data->is_show = 0;
+            $data->save();
+        } else {
+
+            $data = Article::where('slug', $slug)->first();
+            $data->is_show = $request->is_show;
+            $data->save();
+        }
+
 
         // Redirect kembali ke halaman sebelumnya dengan pesan sukses
         return back()->with('success', 'Status successfully updated!');

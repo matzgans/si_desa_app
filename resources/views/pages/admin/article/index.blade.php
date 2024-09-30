@@ -155,7 +155,7 @@
                                             @csrf
                                             <label class="inline-flex cursor-pointer items-center">
                                                 <input class="peer sr-only" name="is_show" type="checkbox"
-                                                    value="1" {{ $article->is_show == 1 ? 'checked' : '' }}
+                                                    value="" {{ $article->is_show == 1 ? 'checked' : '' }}
                                                     onchange="this.checked ? this.value = 1 : this.value = 0; this.form.submit()">
                                                 <!-- Toggle value antara 1 dan 0 -->
                                                 <div

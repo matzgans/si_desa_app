@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('author_id')->constrained('users')->default('unknown');
+            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
             $table->text('slug');
             $table->string('title');
             $table->text('content');
-            $table->boolean("is_show")->default(false);
+            $table->boolean("is_show")->default(0);
             $table->string('thumbnail');
             $table->timestamps();
         });

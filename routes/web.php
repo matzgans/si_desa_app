@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\StaffCategory;
 use App\Http\Controllers\Admin\StaffCategoryController;
 use App\Http\Controllers\Admin\StructureController;
+use App\Http\Controllers\Admin\VillageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     // route data master
     Route::resource('resident', ResidentController::class);
     Route::resource('staffcategory', StaffCategoryController::class);
+    Route::resource('village', VillageController::class);
 
     // end data master
     Route::get('export/resident', [ResidentController::class, 'export'])->name('export.resident');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('education_levels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('village_id')->constrained('villages')->default('unknown');
+            $table->foreignId('village_id')->nullable()->constrained('villages')->onDelete('set null');
             $table->string('education_level');
             $table->integer('male_count')->default(0);
             $table->integer('female_count')->default(0);

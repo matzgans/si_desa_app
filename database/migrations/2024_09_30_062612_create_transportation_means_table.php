@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transportation_means', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('village_id')->constrained('villages')->default('unknown');
+            $table->foreignId('village_id')->nullable()->constrained('villages')->onDelete('set null');
             $table->string('vehicle_type');
             $table->integer('total_count')->default(0);
             $table->integer('owner_count')->default(0);
