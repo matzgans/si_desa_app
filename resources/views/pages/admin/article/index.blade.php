@@ -120,7 +120,7 @@
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Content</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Tanggal Di Buat</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Tanggal Di ubah</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Status</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col">Tampilkan</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                             </tr>
                         </thead>

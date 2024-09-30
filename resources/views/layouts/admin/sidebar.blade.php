@@ -38,6 +38,38 @@
 
             </li>
             <li>
+                <button
+                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                    data-collapse-toggle="dropdown-example" type="button" aria-controls="dropdown-example">
+                    <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                    </svg>
+
+                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Data Master Penduduk</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul class="{{ request()->routeIs('admin.resident.*') || request()->routeIs('admin.staffcategory.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                    id="dropdown-example">
+                    <li>
+                        <x-drop-nav-link :href="route('admin.resident.index')" :active="request()->routeIs('admin.resident.*')">
+                            <span class="ms-3">Penduduk</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.staffcategory.index')" :active="request()->routeIs('admin.staffcategory.*')">
+                            <span class="ms-3">Kategori Staff</span>
+                        </x-drop-nav-link>
+                    </li>
+                </ul>
+            </li>
+            {{-- <li>
                 <x-nav-link :href="route('admin.resident.index')" :active="request()->routeIs('admin.resident.*')">
                     <svg class="{{ request()->routeIs('admin.resident.*') ? 'h-5 w-5 text-secondary' : 'h-5 w-5 text-white' }} transition duration-75 group-hover:text-secondary dark:text-white dark:group-hover:text-secondary"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -49,7 +81,7 @@
 
                     <span class="ms-3">Penduduk</span>
                 </x-nav-link>
-            </li>
+            </li> --}}
             <li>
                 <x-nav-link :href="route('admin.article.index')" :active="request()->routeIs('admin.article.*')">
 
@@ -92,37 +124,7 @@
                     </x-nav-link>
                 </form>
             </li>
-            {{-- <li>
-                <button
-                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    data-collapse-toggle="dropdown-example" type="button" aria-controls="dropdown-example">
-                    <svg class="h-5 w-5 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
-                        <path
-                            d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                    </svg>
-                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">E-commerce</span>
-                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 4 4 4-4" />
-                    </svg>
-                </button>
-                <ul class="hidden space-y-2 py-2" id="dropdown-example">
-                    <li>
-                        <a class="group flex w-full items-center rounded-lg p-2 pl-11 text-white transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            href="#">Products</a>
-                    </li>
-                    <li>
-                        <a class="group flex w-full items-center rounded-lg p-2 pl-11 text-white transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            href="#">Billing</a>
-                    </li>
-                    <li>
-                        <a class="group flex w-full items-center rounded-lg p-2 pl-11 text-white transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            href="#">Invoice</a>
-                    </li>
-                </ul>
-            </li> --}}
+
 
         </ul>
     </div>
