@@ -12,8 +12,8 @@
     <div data-aos="zoom-in" class="mt-16 text-center">
         <h1 class="text-darken text-2xl font-semibold mb-5">Struktur Desa <span class="text-primary">Uabanga</span></h1>
         <div class=" flex  justify-center">
-            <img src="{{ asset('landing/images/struktur-desa.png') }}" alt="struktur-desa" loading="lazy" class="px-20"
-                width="1000">
+            <img src="{{ asset('landing/images/struktur-desa.webp') }}" alt="struktur-desa" loading="lazy"
+                class="px-20" width="1000">
         </div>
     </div>
 
