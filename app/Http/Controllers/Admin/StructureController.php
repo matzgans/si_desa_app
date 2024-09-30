@@ -47,24 +47,25 @@ class StructureController extends Controller
         // Validasi input
         $validator = Validator::make($request->all(), [
             'staff_name' => 'required|string|max:255|min:6',
+            'staff_description' => 'required|string|max:255|min:1',
             'position' => [
                 'required',
                 'string',
                 'max:255',
-                function ($attribute, $value, $fail) {
-                    // Daftar posisi yang hanya boleh ada satu
-                    $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
+                // function ($attribute, $value, $fail) {
+                //     // Daftar posisi yang hanya boleh ada satu
+                //     $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
 
-                    // Jika posisi adalah salah satu dari posisi yang dibatasi
-                    if (in_array($value, $restrictedPositions)) {
-                        // Periksa apakah posisi ini sudah ada di database
-                        if (Structure::where('position', $value)->exists()) {
-                            $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
-                        }
-                    }
-                },
+                //     // Jika posisi adalah salah satu dari posisi yang dibatasi
+                //     if (in_array($value, $restrictedPositions)) {
+                //         // Periksa apakah posisi ini sudah ada di database
+                //         if (Structure::where('position', $value)->exists()) {
+                //             $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
+                //         }
+                //     }
+                // },
             ],
-            'staff_photo' => 'required|image|mimes:png|max:2048', // Mendukung file PNG dengan maksimal ukuran 2MB
+            'staff_photo' => 'required|image|mimes:jpg,jpeg,png|max:2048', // Mendukung file PNG dengan maksimal ukuran 2MB
         ]);
 
         // Jika validasi gagal, kembali dengan pesan kesalahan
@@ -94,6 +95,7 @@ class StructureController extends Controller
         $structure = new Structure();
         $structure->uuid = $uuid; // Menyimpan UUID
         $structure->staff_name = $request->staff_name;
+        $structure->staff_description = $request->staff_description;
         $structure->position = $request->position;
         $structure->staff_photo = $fileName;
 
@@ -101,7 +103,7 @@ class StructureController extends Controller
         $structure->save();
 
         // Kembali ke halaman sebelumnya dengan pesan sukses
-        return redirect()->back()->with('success', 'Data penduduk berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Data Pegawai berhasil ditambahkan!');
     }
 
     /**
@@ -133,27 +135,28 @@ class StructureController extends Controller
         // Validasi input
         $validator = Validator::make($request->all(), [
             'staff_name' => 'required|string|max:255|min:6',
+            'staff_description' => 'required|string|max:255|min:6',
             'position' => [
                 'required',
                 'string',
                 'max:255',
-                function ($attribute, $value, $fail) use ($structure) {
-                    // Daftar posisi yang hanya boleh ada satu
-                    $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
+                // function ($attribute, $value, $fail) use ($structure) {
+                //     // Daftar posisi yang hanya boleh ada satu
+                //     $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
 
-                    // Jika posisi adalah salah satu dari posisi yang dibatasi
-                    if (in_array($value, $restrictedPositions)) {
-                        // Periksa apakah posisi ini sudah ada di database selain data yang sedang diupdate
-                        $exists = Structure::where('position', $value)
-                            ->where('uuid', '!=', $structure->uuid) // Pastikan tidak mengecek dirinya sendiri
-                            ->exists();
-                        if ($exists) {
-                            $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
-                        }
-                    }
-                },
+                //     // Jika posisi adalah salah satu dari posisi yang dibatasi
+                //     if (in_array($value, $restrictedPositions)) {
+                //         // Periksa apakah posisi ini sudah ada di database selain data yang sedang diupdate
+                //         $exists = Structure::where('position', $value)
+                //             ->where('uuid', '!=', $structure->uuid) // Pastikan tidak mengecek dirinya sendiri
+                //             ->exists();
+                //         if ($exists) {
+                //             $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
+                //         }
+                //     }
+                // },
             ],
-            'staff_photo' => 'nullable|image|mimes:png|max:2048', // Foto bersifat opsional saat update
+            'staff_photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // Foto bersifat opsional saat update
         ]);
 
         // Jika validasi gagal, kembali dengan pesan kesalahan
@@ -180,13 +183,14 @@ class StructureController extends Controller
 
         // Update field lainnya
         $structure->staff_name = $request->staff_name;
+        $structure->staff_description = $request->staff_description;
         $structure->position = $request->position;
 
         // Simpan perubahan ke database
         $structure->save();
 
         // Kembali ke halaman sebelumnya dengan pesan sukses
-        return redirect()->back()->with('success', 'Data penduduk berhasil diupdate!');
+        return redirect()->back()->with('success', 'Data Pegawai berhasil diupdate!');
     }
 
 

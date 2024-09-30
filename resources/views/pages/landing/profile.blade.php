@@ -27,119 +27,46 @@
             sapiente quis reprehenderit voluptates?</p>
 
         <div class="flex flex-wrap justify-center gap-4">
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
+            @foreach ($currentVillageHead as $currentVillageHead)
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
+                        <img class="w-full h-96 object-cover rounded-t-lg"
+                            src="{{ asset('structure/staff_profile/' . $currentVillageHead->staff_photo) }}"
+                            alt="" />
                     </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
+                    <div class="p-5">
+                        <div href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $currentVillageHead->staff_name }}
+                            </h5>
+                        </div>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            Kepala Desa</p>
+            @endforeach
+        </div>
+    </div>
 
-                </div>
+    @foreach ($employees as $employee)
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div href="#">
+                <img class="w-full h-96 object-cover rounded-t-lg"
+                    src="{{ asset('structure/staff_profile/' . $employee->staff_photo) }}" alt="" />
             </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-5">
                 <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{ $employee->staff_name }}
+                    </h5>
                 </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{ $employee->position }}
+                </p>
 
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rahmat Lahay
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kordes</p>
-
-                </div>
             </div>
         </div>
+    @endforeach
+
+    </div>
 
     </div>
 
@@ -153,118 +80,29 @@
             sapiente quis reprehenderit voluptates?</p>
 
         <div class="flex flex-wrap justify-center gap-4">
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Fazrul Sahi
-                        </h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Presiden 2054</p>
 
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
+            @foreach ($formerVillageHeads as $formerVillageHead)
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
+                        <img class="w-full h-96 object-cover rounded-t-lg"
+                            src="{{ asset('structure/staff_profile/' . $formerVillageHead->staff_photo) }}"
+                            alt="" />
                     </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
+                    <div class="p-5">
+                        <div href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $formerVillageHead->staff_name }}
+                            </h5>
+                        </div>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            {{ $formerVillageHead->staff_description }}
+                        </p>
 
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
                     </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
+                </div>
+            @endforeach
 
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
-
-                </div>
-            </div>
-            <div
-                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div href="#">
-                    <img class="rounded-t-lg" src="{{ asset('landing/images/kepala-desa.png') }}" alt="" />
-                </div>
-                <div class="p-5">
-                    <div href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wisnu Afandi
-                            Dewantoro</h5>
-                    </div>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2024-2029</p>
-
-                </div>
-            </div>
         </div>
 
     </div>

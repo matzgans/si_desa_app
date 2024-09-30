@@ -278,14 +278,16 @@
     </div>
 
     {{-- artikel --}}
-    <div data-aos="zoom-in" class="mt-16 text-center">
-        <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
-    </div>
+    @if ($articles->count() > 0)
+        <div data-aos="zoom-in" class="mt-16 text-center">
+            <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
+            <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+                deserunt
+                sunt
+                maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
+                sapiente quis reprehenderit voluptates?</p>
+        </div>
+    @endif
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20  px-10 lg:px-56">
         @foreach ($articles as $article)
             <div class="lg:w-6/12">

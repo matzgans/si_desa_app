@@ -4,19 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\MaterializedView;
+use App\Models\Structure;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
     public function index()
     {
-        $articles = Article::where("show_in_landing", "=", 1)->limit(4)->get();
+        $articles = Article::where("is_show", "=", 1)->limit(4)->get();
         return view("pages.landing.index", compact("articles"));
     }
 
     public function profile()
     {
-        return view("pages.landing.profile");
+        $currentVillageHead = Structure::where("position", "=", "Kepala Desa Menjabat")->limit(1)->get();
+        $employees = Structure::whereNotIn('position', ['Kepala Desa Menjabat', 'Kepala Desa Lama'])->get();
+        $formerVillageHeads = Structure::where("position", "=", "Kepala Desa Lama")->get();
+
+        return view("pages.landing.profile", [
+            'currentVillageHead' => $currentVillageHead,
+            'employees' => $employees,
+            'formerVillageHeads' => $formerVillageHeads
+        ]);
     }
 
     public function refreshMView(Request $request)

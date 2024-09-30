@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('position');
             $table->uuid();
             $table->string('staff_photo');
+            $table->string('staff_description')->nullable();
             $table->timestamps();
         });
     }

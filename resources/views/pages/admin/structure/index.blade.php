@@ -118,6 +118,7 @@
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Foto</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Nama</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Jabatan</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col">Deskripsi</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -135,6 +136,8 @@
                                     </td>
                                     <td class="border border-gray-300 px-6 py-4">{{ $structure->staff_name }}</td>
                                     <td class="border border-gray-300 px-6 py-4">{{ $structure->position }}</td>
+                                    <td class="border border-gray-300 px-6 py-4">{{ $structure->staff_description }}
+                                    </td>
 
                                     <td class="border border-gray-300 px-6 py-4">
                                         <div class="flex items-center">

@@ -17,9 +17,8 @@ return new class extends Migration
             $table->text('slug');
             $table->string('title');
             $table->text('content');
-            $table->boolean("is_show");
+            $table->boolean("is_show")->default(false);
             $table->string('thumbnail');
-            $table->boolean('show_in_landing')->default(false);
             $table->timestamps();
         });
     }
