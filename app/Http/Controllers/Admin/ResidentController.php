@@ -138,7 +138,7 @@ class ResidentController extends Controller
 
         // Jika validasi gagal, kembali dengan pesan kesalahan
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->back()->with('error', 'Perhatikan Inputan Anda')->withErrors($validator)->withInput();
         }
 
         // Cek jika ada gambar baru yang diunggah
