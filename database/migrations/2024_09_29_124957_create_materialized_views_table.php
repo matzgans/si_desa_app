@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('structures', function (Blueprint $table) {
+        Schema::create('materialized_views', function (Blueprint $table) {
             $table->id();
-            $table->string('staff_name');
-            $table->string('position');
-            $table->uuid();
-            $table->string('staff_photo');
-            $table->string('staff_description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('structures');
+        Schema::dropIfExists('materialized_views');
     }
 };

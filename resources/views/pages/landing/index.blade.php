@@ -8,17 +8,17 @@
                     data-aos-once="true">
                     Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">Uabanga</span>
                 </h1>
-                <p class="mb-8 text-2xl leading-normal" data-aos="fade-down" data-aos-once="true" data-aos-delay="300">
+                <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+                    class="leading-normal text-2xl mb-8 text-white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque doloremque non iure nemo esse,
                     repellat illo fugit cumque corrupti nesciunt ipsam, praesentium, sequi reprehenderit tenetur.
                     Voluptatibus vitae asperiores repellendus!</p>
                 <div class="w-full items-center justify-center md:flex md:space-x-5 lg:justify-start" data-aos="fade-up"
                     data-aos-once="true" data-aos-delay="700">
-                    <p
-                        class="transform rounded-full bg-secondary px-9 py-4 text-xl font-bold text-white transition duration-300 ease-in-out hover:scale-110 focus:outline-none lg:mx-0">
+                    <a href="#visi-misi"
+                        class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out z-50">
                         Visi Misi
-                    </p>
-
+                    </a>
                 </div>
             </div>
             <!--Right Col-->
@@ -50,19 +50,20 @@
     </div>
 
     <!-- Visi Misi. -->
-    <div class="mx-auto mt-24 max-w-xl text-center" data-aos="flip-up">
-        <h1 class="text-darken my-3 text-2xl font-bold">Visi Misi Desa <span class="text-secondary">Uabanga</span>
+    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24" id="visi-misi">
+        <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Visi Misi Desa <span
+                class="text-secondary">Uabanga</span>
         </h1>
         <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
             assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
             impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
     </div>
     <!-- card -->
-    <div class="mt-20 grid gap-14 md:grid-cols-3 md:gap-5 lg:px-52">
-        <div class="rounded-xl bg-white p-6 text-center shadow-xl" data-aos="fade-up">
-            <div class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg"
-                style="background: #5B72EE;">
-                <svg class="h-6 w-6 text-white" viewBox="0 0 33 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20 lg:px-52 bg-gray-100 lg:py-10">
+        <div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
+            <div style="background: #5B72EE;"
+                class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 33 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M24.75 23H8.25V28.75H24.75V23ZM32.3984 9.43359L23.9852 0.628906C23.5984 0.224609 23.0742 0 22.5242 0H22V11.5H33V10.952C33 10.3859 32.7852 9.83789 32.3984 9.43359ZM19.25 12.2188V0H2.0625C0.919531 0 0 0.961328 0 2.15625V43.8438C0 45.0387 0.919531 46 2.0625 46H30.9375C32.0805 46 33 45.0387 33 43.8438V14.375H21.3125C20.1781 14.375 19.25 13.4047 19.25 12.2188ZM5.5 6.46875C5.5 6.07164 5.80766 5.75 6.1875 5.75H13.0625C13.4423 5.75 13.75 6.07164 13.75 6.46875V7.90625C13.75 8.30336 13.4423 8.625 13.0625 8.625H6.1875C5.80766 8.625 5.5 8.30336 5.5 7.90625V6.46875ZM5.5 12.2188C5.5 11.8216 5.80766 11.5 6.1875 11.5H13.0625C13.4423 11.5 13.75 11.8216 13.75 12.2188V13.6562C13.75 14.0534 13.4423 14.375 13.0625 14.375H6.1875C5.80766 14.375 5.5 14.0534 5.5 13.6562V12.2188ZM27.5 39.5312C27.5 39.9284 27.1923 40.25 26.8125 40.25H19.9375C19.5577 40.25 19.25 39.9284 19.25 39.5312V38.0938C19.25 37.6966 19.5577 37.375 19.9375 37.375H26.8125C27.1923 37.375 27.5 37.6966 27.5 38.0938V39.5312ZM27.5 21.5625V30.1875C27.5 30.9817 26.8847 31.625 26.125 31.625H6.875C6.11531 31.625 5.5 30.9817 5.5 30.1875V21.5625C5.5 20.7683 6.11531 20.125 6.875 20.125H26.125C26.8847 20.125 27.5 20.7683 27.5 21.5625Z"
                         fill="white" />
@@ -137,11 +138,12 @@
     </div>
 
     <!-- Program Unggulan. -->
-    <div class="mx-auto mt-24 max-w-xl text-center" data-aos="flip-up">
-        <h1 class="text-darken my-3 text-2xl font-bold">Program Unggulan Desa <span
+    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24 " id="program-unggulan">
+        <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Program Unggulan Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
-        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
+        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
+            hic
             assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
             impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
     </div>
@@ -154,12 +156,12 @@
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
     </div>
-    <div class="mt-10 flex-row-reverse items-center px-10 sm:flex sm:space-x-8 lg:px-56">
+    <div class="sm:flex items-center sm:space-x-8 mt-10 px-10 lg:px-56  flex-row-reverse bg-gray-100 lg:py-10">
 
         <div class="relative sm:w-1/2" data-aos="fade-right">
             <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
@@ -169,7 +171,7 @@
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
@@ -177,140 +179,130 @@
     <div class="mt-10 items-center px-10 sm:flex sm:space-x-8 lg:ml-56">
         <div class="relative sm:w-1/2" data-aos="fade-right">
             <div class="absolute -left-4 -top-3 z-0 h-12 w-12 animate-pulse rounded-full bg-primary"></div>
-            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Semua <span
+            <h1 class="text-darken relative z-50 text-2xl font-semibold lg:pr-10">Makan Siang <span
                     class="text-secondary">Gratis</span></h1>
             <p class="py-5 lg:pr-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsa non odit amet
                 quia, impedit mollitia minima sint ducimus iste vitae, dolor doloribus, fuga repellat labore. Soluta ea
                 quasi placeat!.</p>
         </div>
-        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-left">
+        <div class="relative mt-10 sm:mt-0 sm:w-1/2" data-aos="fade-right">
             <img class="lg:size-6/12 relative z-40 rounded-xl" src="{{ asset('landing/images/logo-bonebol.png') }}"
                 alt="">
         </div>
     </div>
 
-    {{-- artikel --}}
-    {{-- <div data-aos="zoom-in" class="mt-16 text-center">
-        <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
+    {{-- data --}}
+    <div data-aos="zoom-in" class="mt-16 text-center">
+        <h1 class="text-darken text-2xl font-semibold ">Data Desa <span class="text-primary">Uabanga</span></h1>
         <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
             deserunt
             sunt
             maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
             sapiente quis reprehenderit voluptates?</p>
     </div>
-    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20 px-56">
-        <div class="lg:w-6/12">
-            <img class="w-full mb-6" src="{{ asset('landing/images/laptop-news.png') }}" loading="lazy">
-            <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-            <h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a
-                Zoom-friendly edtech solution</h1>
-            <p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael Chasen,
-                integrates exclusively...</p>
-            <a href="" class="underline">Read more</a>
-        </div>
-        <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/children-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS
-                            RELEASE</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30
-                        Million Series A Financing to Meet High Demand</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company that
-                        created Class,...</p>
-                </div>
-            </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/girl-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting
-                        millions on a better Zoom for schools</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer
-                        product. Nonetheless, the...</p>
-                </div>
-            </div>
-            <div class="flex space-x-5">
-                <div class="w-4/12">
-                    <div class="relative">
-                        <img class="rounded-xl w-full" src="{{ asset('landing/images/cat-laptop.png') }}"
-                            loading="lazy">
-                        <span
-                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                    </div>
-                </div>
-                <div class="w-8/12">
-                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to
-                        Bring LMS Features to Zoom Classrooms</h1>
-                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big
-                        financial returns from betting on Zoom...</p>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
-    {{-- data --}}
-    <div class="mt-16 text-center" data-aos="zoom-in">
-        <h1 class="text-darken text-2xl font-semibold">Data Desa <span class="text-primary">Uabanga</span></h1>
-        <p class="my-5 text-gray-500 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+    <div class="flex flex-wrap gap-4 text-center justify-center">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-penduduk">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
+                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-transportasi">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
+                    acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-peternakan">
+            </div>
+            <div class="p-5">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
+                    acquisitions of 2021 so far, in reverse chronological order.</p>
+            </div>
+        </div>
+
+
     </div>
 
-    <div class="flex flex-wrap justify-center gap-4 text-center">
-        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-            <div id="chart">
+    <div class="flex flex-wrap gap-4 text-center justify-center mt-10">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-sarana">
             </div>
             <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
+                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+            </div>
+        </div>
+
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-transportasi">
+            </div>
+            <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
                     acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
 
-        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-            <div id="chart-2">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="data-peternakan">
             </div>
             <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
                     acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
 
-        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-            <div id="chart-3">
-            </div>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Makan Siang
-                        Gratis</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-            </div>
-        </div>
+
     </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-pencaharian">
+    </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-pendidikan">
+    </div>
+
+    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+        id="data-usaha">
+    </div>
+
+    {{-- artikel --}}
+    @if ($articles->count() > 0)
+        <div data-aos="zoom-in" class="mt-16 text-center">
+            <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
+            <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+                deserunt
+                sunt
+                maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
+                sapiente quis reprehenderit voluptates?</p>
+        </div>
+    @endif
+    <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20  px-10 lg:px-56">
+        @foreach ($articles as $article)
+            <div class="lg:w-6/12">
+                <img class="w-full mb-6 rounded-xl" src="{{ asset('article/thumb/' . $article->thumbnail) }}"
+                    alt="{{ $article->title }}" loading="lazy">
+                <span
+                    class="bg-yellow-500 text-darken font-semibold px-4 py-px text-sm rounded-full">{{ $article->created_at }}</span>
+                <h1 class="text-gray-800 font-semibold my-3 text-xl">{{ $article->title }}</h1>
+                <p class="text-gray-500 mb-3">{{ Str::limit($article->content, 30) }}</p>
+                <a href="{{ route('article.detail', ['slug' => $article->slug]) }}" class="underline">Baca
+                    Selengkapnya</a>
+            </div>
+        @endforeach
+    </div>
+
 
     {{-- lokasi --}}
     <div class="mt-16 text-center" data-aos="zoom-in">
@@ -334,201 +326,418 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-        Highcharts.chart('chart', {
+        Highcharts.chart('data-penduduk', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Jumlah Penduduk per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: [{
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            }, {
+                title: {
+                    text: 'Jumlah KK'
+                },
+                opposite: true
+            }],
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Laki-laki',
+                data: [104, 171, 89, 142]
+            }, {
+                name: 'Perempuan',
+                data: [87, 164, 88, 131]
+            }, {
+                name: 'Jumlah KK',
+                yAxis: 1,
+                type: 'spline',
+                data: [56, 99, 52, 74],
+                tooltip: {
+                    valueSuffix: ' KK'
+                }
             }]
         });
 
-        Highcharts.chart('chart-2', {
+        Highcharts.chart('data-transportasi', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Alat Transportasi per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Kendaraan'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Mobil',
+                data: [0, 1, 5, 2]
+            }, {
+                name: 'Motor',
+                data: [25, 16, 20, 37]
+            }, {
+                name: 'Bentor',
+                data: [0, 0, 0, 1]
             }]
         });
 
-        Highcharts.chart('chart-3', {
+        Highcharts.chart('data-peternakan', {
             chart: {
-                type: 'pie'
+                type: 'column'
             },
             title: {
-                text: 'Egg Yolk Composition'
-            },
-            tooltip: {
-                valueSuffix: '%'
+                text: 'Data Peternakan per Dusun',
+                align: 'left'
             },
             subtitle: {
-                text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Hewan'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
             plotOptions: {
-                series: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: [{
-                        enabled: true,
-                        distance: 20
-                    }, {
-                        enabled: true,
-                        distance: -40,
-                        format: '{point.percentage:.1f}%',
-                        style: {
-                            fontSize: '1.2em',
-                            textOutline: 'none',
-                            opacity: 0.7
-                        },
-                        filter: {
-                            operator: '>',
-                            property: 'percentage',
-                            value: 10
-                        }
-                    }]
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
             series: [{
-                name: 'Percentage',
-                colorByPoint: true,
-                data: [{
-                        name: 'Water',
-                        y: 55.02
-                    },
-                    {
-                        name: 'Fat',
-                        sliced: true,
-                        selected: true,
-                        y: 26.71
-                    },
-                    {
-                        name: 'Carbohydrates',
-                        y: 1.09
-                    },
-                    {
-                        name: 'Protein',
-                        y: 15.5
-                    },
-                    {
-                        name: 'Ash',
-                        y: 1.68
-                    }
-                ]
+                name: 'Sapi',
+                data: [0, 0, 3, 1]
+            }, {
+                name: 'Kambing',
+                data: [48, 1, 4, 19]
+            }, {
+                name: 'Anjing',
+                data: [0, 0, 0, 1]
+            }, {
+                name: 'Kucing',
+                data: [0, 0, 0, 9]
+            }, {
+                name: 'Ayam',
+                data: [72, 47, 48, 57]
+            }, {
+                name: 'Itik',
+                data: [0, 0, 0, 0]
+            }]
+        });
+
+        Highcharts.chart('data-pencaharian', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Mata Pencaharian per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} orang</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'NELAYAN',
+                data: [29, 50, 6, 5]
+            }, {
+                name: 'PETANI',
+                data: [15, 20, 21, 42]
+            }, {
+                name: 'SWASTA',
+                data: [5, 11, 6, 9]
+            }, {
+                name: 'HONORER',
+                data: [6, 6, 3, 3]
+            }, {
+                name: 'PNS',
+                data: [1, 2, 1, 2]
+            }, {
+                name: 'BURUH HARIAN',
+                data: [1, 7, 5, 10]
+            }, {
+                name: 'TUKANG BANGUNAN',
+                data: [4, 8, 0, 0]
+            }, {
+                name: 'ASISTEN RT',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'LAINNYA',
+                data: [11, 0, 14, 26]
+            }]
+        });
+
+        Highcharts.chart('data-pendidikan', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Tingkat Pendidikan per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Penduduk'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} orang</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'TIDAK/BELUM SEKOLAH',
+                data: [55, 135, 72, 62]
+            }, {
+                name: 'TAMAT SD/SEDERAJAT',
+                data: [54, 102, 47, 117]
+            }, {
+                name: 'TAMAT SMP/SEDERAJAT',
+                data: [28, 41, 20, 30]
+            }, {
+                name: 'TAMAT SMA/SEDERAJAT',
+                data: [47, 45, 21, 37]
+            }, {
+                name: 'TAMAT PT',
+                data: [12, 9, 12, 11]
+            }]
+        });
+
+        Highcharts.chart('data-usaha', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Usaha Ekonomi Masyarakat per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true,
+                accessibility: {
+                    description: 'Dusun'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Usaha'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} usaha</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'PERTOKOAN',
+                data: [7, 3, 5, 2]
+            }, {
+                name: 'PERKIOSAN',
+                data: [1, 0, 0, 2]
+            }, {
+                name: 'WARUNG MAKAN',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'PERBENGKELAN',
+                data: [1, 0, 0, 1]
+            }, {
+                name: 'MEBEL KAYU',
+                data: [1, 0, 0, 0]
+            }, {
+                name: 'PANGKALAN LPG',
+                data: [0, 0, 1, 2]
+            }, {
+                name: 'TAYLOR',
+                data: [0, 0, 0, 2]
+            }, {
+                name: 'LAINNYA',
+                data: [1, 3, 2, 5]
+            }]
+        });
+
+        Highcharts.chart('data-sarana', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Sarana & Prasarana Perikanan per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Tambatan Perahu',
+                data: [13, 7, 0, 3]
+            }, {
+                name: 'Pasar Ikan',
+                data: [0, 1, 0, 0]
+            }, {
+                name: 'Pajeko',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Kapal Ikan',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Perahu Bodi',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Mesin Tempel',
+                data: [7, 8, 0, 3]
+            }, {
+                name: 'Katintin',
+                data: [12, 0, 0, 1]
             }]
         });
     </script>
