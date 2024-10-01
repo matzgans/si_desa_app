@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController as LandingArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\StaffCategory;
 use App\Http\Controllers\Admin\StaffCategoryController;
@@ -29,6 +30,17 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('resident', ResidentController::class);
     Route::resource('staffcategory', StaffCategoryController::class);
     Route::resource('village', VillageController::class);
+
+    // kependudukan
+    Route::resource('education/level', EducationLevelController::class)->names([
+        'index'   => 'education.level.index',
+        'create'  => 'education.level.create',
+        'store'   => 'education.level.store',
+        'show'    => 'education.level.show',
+        'edit'    => 'education.level.edit',
+        'update'  => 'education.level.update',
+        'destroy' => 'education.level.destroy',
+    ]);
 
     // end data master
     Route::get('export/resident', [ResidentController::class, 'export'])->name('export.resident');

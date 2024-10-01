@@ -19,10 +19,16 @@ class EducationLevelSeeder extends Seeder
         foreach ($datas as $data) {
             EducationLevel::create([
                 'village_id' => $data->id,
-                'education_level' => fake()->randomElement($type),
-                'male_count' => fake()->randomNumber(),
-                'female_count' => fake()->randomNumber(),
-                'total_count' => fake()->randomNumber(),
+                'belum_l' => fake()->numerify('###'),
+                'belum_p' => fake()->numerify('###'),
+                'sd_l' => fake()->numerify('###'),
+                'sd_p' => fake()->numerify('###'),
+                'smp_l' => fake()->numerify('###'),
+                'smp_p' => fake()->numerify('###'),
+                'sma_l' => fake()->numerify('###'),
+                'sma_p' => fake()->numerify('###'),
+                'pt_l' => fake()->numerify('###'),
+                'pt_p' => fake()->numerify('###'),
             ]);
         }
     }

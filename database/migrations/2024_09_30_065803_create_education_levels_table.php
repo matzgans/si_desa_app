@@ -14,10 +14,16 @@ return new class extends Migration
         Schema::create('education_levels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('village_id')->nullable()->constrained('villages')->onDelete('set null');
-            $table->string('education_level');
-            $table->integer('male_count')->default(0);
-            $table->integer('female_count')->default(0);
-            $table->integer('total_count')->default(0);
+            $table->integer('belum_l');
+            $table->integer('belum_p');
+            $table->integer('sd_l');
+            $table->integer('sd_p');
+            $table->integer('smp_l');
+            $table->integer('smp_p');
+            $table->integer('sma_l');
+            $table->integer('sma_p');
+            $table->integer('pt_l');
+            $table->integer('pt_p');
             $table->timestamps();
         });
     }

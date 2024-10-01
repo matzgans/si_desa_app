@@ -40,7 +40,7 @@
             <li>
                 <button
                     class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
-                    data-collapse-toggle="dropdown-example" type="button" aria-controls="dropdown-example">
+                    data-collapse-toggle="master_penduduk" type="button" aria-controls="master_penduduk">
                     <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                         viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
                     </svg>
                 </button>
                 <ul class="{{ request()->routeIs('admin.resident.*') || request()->routeIs('admin.staffcategory.*') || request()->routeIs('admin.village.*') ? 'block' : 'hidden' }} space-y-2 py-2"
-                    id="dropdown-example">
+                    id="master_penduduk">
                     <li>
                         <x-drop-nav-link :href="route('admin.village.index')" :active="request()->routeIs('admin.village.*')">
                             <span class="ms-3">Dusun</span>
@@ -72,6 +72,34 @@
                             <span class="ms-3">Kategori Staff</span>
                         </x-drop-nav-link>
                     </li>
+                </ul>
+            </li>
+            <li>
+                <button
+                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                    data-collapse-toggle="kependudukan" type="button" aria-controls="kependudukan">
+                    <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                    </svg>
+
+                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Kependudukan</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul class="{{ request()->routeIs('admin.education.level.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                    id="kependudukan">
+                    <li>
+                        <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
+                            <span class="ms-3">Tingkat Pendidikan</span>
+                        </x-drop-nav-link>
+                    </li>
+
                 </ul>
             </li>
             {{-- <li>
@@ -122,7 +150,8 @@
                         <svg class="{{ request()->routeIs('logout') ? 'h-5 w-5 text-secondary' : 'h-5 w-5 text-white' }} transition duration-75 group-hover:text-secondary dark:text-white dark:group-hover:text-secondary"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
                                 d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2" />
                         </svg>
 
