@@ -66,7 +66,7 @@ class EducationLevelController extends Controller
         }
 
         EducationLevel::create($request->all());
-        return redirect()->back()->with('success', 'Data penduduk berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Data Level Pendidikan berhasil ditambahkan!');
     }
 
     /**
@@ -115,7 +115,7 @@ class EducationLevelController extends Controller
         }
 
         $education_levels->update($request->all());
-        return redirect()->back()->with('success', 'Data penduduk berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Data Level Pendidikan berhasil ditambahkan!');
     }
 
     /**

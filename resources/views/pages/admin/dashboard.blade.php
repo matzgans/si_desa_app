@@ -35,7 +35,9 @@
             <div class="mt-12 grid grid-cols-2 gap-6">
                 <!-- Bar Chart -->
                 <div class="rounded-lg bg-white p-6 shadow-lg">
-                    <h2 class="mb-4 text-xl font-semibold">Statistik Penduduk</h2>
+                    <h2 class="mb-4 text-xl font-semibold">Statistik Tingkat Pendidikan Penduduk Menurut Tingkatan
+                        Pendidikan
+                    </h2>
                     <canvas id="barChart"></canvas>
                 </div>
 
@@ -52,14 +54,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Bar Chart
+        var labels = {!! json_encode(array_keys($totals)) !!}; // Mengambil key dari array sebagai label
+        var dataValues = {!! json_encode(array_values($totals)) !!}; // Mengambil value dari array sebagai data
         const barCtx = document.getElementById('barChart').getContext('2d');
         const barChart = new Chart(barCtx, {
             type: 'bar',
             data: {
-                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei'],
+                labels: labels,
                 datasets: [{
-                    label: 'Jumlah Penduduk Menurut Jenis',
-                    data: [50, 60, 70, 80, 90],
+                    label: 'Penduduk',
+                    data: dataValues,
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1

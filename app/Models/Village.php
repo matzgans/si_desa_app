@@ -18,4 +18,8 @@ class Village extends Model
     {
         return $this->hasOne(EducationLevel::class);
     }
+    public function transportationMean()
+    {
+        return $this->hasOne(TransportationMean::class);
+    }
 }

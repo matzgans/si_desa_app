@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('transportation_means', function (Blueprint $table) {
             $table->id();
             $table->foreignId('village_id')->nullable()->constrained('villages')->onDelete('set null');
-            $table->string('vehicle_type');
-            $table->integer('total_count')->default(0);
-            $table->integer('owner_count')->default(0);
+            $table->integer('car_count')->default(0);
+            $table->integer('car_owner')->default(0);
+            $table->integer('motorcycle_count')->default(0);
+            $table->integer('motorcycle_owner')->default(0);
+            $table->integer('bentor_count')->default(0);
+            $table->integer('bentor_owner')->default(0);
             $table->timestamps();
         });
     }

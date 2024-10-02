@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TransportationMean extends Model
 {
     use HasFactory;
+    protected $table = 'transportation_means';
+    protected $guarded = [];
+
+    public function village()
+    {
+        return $this->belongsTo(Village::class);
+    }
 }

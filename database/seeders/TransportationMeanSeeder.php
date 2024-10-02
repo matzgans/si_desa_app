@@ -19,9 +19,12 @@ class TransportationMeanSeeder extends Seeder
         foreach ($datas as $data) {
             TransportationMean::create([
                 'village_id' => $data->id,
-                'vehicle_type' => fake()->randomElement($type),
-                'total_count' => fake()->randomNumber(),
-                'owner_count' => fake()->randomNumber(),
+                'car_count' => fake()->numerify('##'),
+                'car_owner' => fake()->numerify("##"),
+                'motorcycle_count' => fake()->numerify('##'),
+                'motorcycle_owner' => fake()->numerify('##'),
+                'bentor_count' => fake()->numerify('##'),
+                'bentor_owner' => fake()->numerify('##'),
             ]);
         }
     }

@@ -3,7 +3,7 @@
         <div class="max-w-full px-3 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
-                <h2>Data Penduduk</h2>
+                <h2>Data Transportasi</h2>
                 <a class="flex items-center hover:underline" href="{{ route('dashboard') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
                     </div>
                 @endif
                 <div class="mb-2 flex flex-col items-center sm:flex-row">
-                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.education.level.index') }}"
+                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.transportation.index') }}"
                         method="GET">
                         <label class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             for="default-search">Search</label>
@@ -87,7 +87,7 @@
                     </form>
 
                     <a class="mb-2 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 sm:mb-0 sm:me-2 sm:w-auto"
-                        href="{{ route('admin.education.level.create') }}">
+                        href="{{ route('admin.transportation.create') }}">
                         <svg class="mx-auto h-6 w-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                             viewBox="0 0 24 24">
@@ -97,7 +97,7 @@
                     </a>
 
                     {{-- <a class="mb-2 w-full rounded-lg bg-red-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-300 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-300 dark:hover:bg-red-500 dark:focus:ring-red-300 sm:mb-0 sm:me-2 sm:w-auto"
-                        href="{{ route('admin.export.education_level') }}">
+                        href="{{ route('admin.export.transportation') }}">
                         <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                             viewBox="0 0 24 24">
@@ -113,97 +113,62 @@
                         class="w-full border-collapse border border-gray-300 text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
                         <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">NO</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">NAMA DUSUN
+                                <th class="border border-gray-300 px-6 py-3" scope="col" scope="row"
+                                    rowspan="3">NO</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col" rowspan="3">NAMA DUSUN
                                 </th>
-                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">TIDAK/BELUM
-                                    SEKOLAH</th>
-                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">TAMAT
-                                    SD/SEDERAJAT</th>
-                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">TAMAT
-                                    SMP/SEDERAJAT</th>
-                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">TAMAT
-                                    SMA/SEDERAJAT</th>
-                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">TAMAT PT</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">Aksi</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="9">Alat
+                                    Transportasi</th>
+
+                                <th class="border border-gray-300 px-6 py-3" scope="col" rowspan="3">Aksi</th>
                             </tr>
                             <tr>
-                                <th class="border border-gray-300 px-6 py-3">L</th>
-                                <th class="border border-gray-300 px-6 py-3">P</th>
-                                <th class="border border-gray-300 px-6 py-3">L+P</th>
-                                <th class="border border-gray-300 px-6 py-3">L</th>
-                                <th class="border border-gray-300 px-6 py-3">P</th>
-                                <th class="border border-gray-300 px-6 py-3">L+P</th>
-                                <th class="border border-gray-300 px-6 py-3">L</th>
-                                <th class="border border-gray-300 px-6 py-3">P</th>
-                                <th class="border border-gray-300 px-6 py-3">L+P</th>
-                                <th class="border border-gray-300 px-6 py-3">L</th>
-                                <th class="border border-gray-300 px-6 py-3">P</th>
-                                <th class="border border-gray-300 px-6 py-3">L+P</th>
-                                <th class="border border-gray-300 px-6 py-3">L</th>
-                                <th class="border border-gray-300 px-6 py-3">P</th>
-                                <th class="border border-gray-300 px-6 py-3">L+P</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">Mobil</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">Motor</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="3">Bentor</th>
+                            </tr>
+                            <tr>
+                                <th class="border border-gray-300 px-6 py-3" colspan="2">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
+                                <th class="border border-gray-300 px-6 py-3" colspan="2">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
+                                <th class="border border-gray-300 px-6 py-3" colspan="2">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($education_levels as $education_level)
+                            @foreach ($transportations as $transportation)
                                 <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <th class="whitespace-nowrap border border-gray-300 px-6 py-4 font-medium text-gray-900 dark:text-white"
                                         scope="row">
-                                        {{ ($education_levels->currentPage() - 1) * $education_levels->perPage() + $loop->iteration }}
+                                        {{ ($transportations->currentPage() - 1) * $transportations->perPage() + $loop->iteration }}
                                     </th>
                                     <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->village_name }}
+                                        {{ $transportation->village_name }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4" colspan="2">
+                                        {{ $transportation->car_count }}
                                     </td>
                                     <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->belum_l }}
+                                        {{ $transportation->car_owner }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4" colspan="2">
+                                        {{ $transportation->motorcycle_count }}
                                     </td>
                                     <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->belum_p }}
+                                        {{ $transportation->motorcycle_owner }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4" colspan="2">
+                                        {{ $transportation->bentor_count }}
                                     </td>
                                     <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->belum_p + $education_level->belum_l }}
+                                        {{ $transportation->bentor_owner }}
                                     </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sd_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sd_p }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sd_p + $education_level->sd_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->smp_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->smp_p }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->smp_p + $education_level->smp_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sma_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sma_p }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->sma_p + $education_level->sma_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->pt_l }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->pt_p }}
-                                    </td>
-                                    <td class="border border-gray-300 px-6 py-4">
-                                        {{ $education_level->pt_p + $education_level->pt_l }}
-                                    </td>
+
                                     <td class="border border-gray-300 px-6 py-4">
                                         <div class="flex items-center">
                                             <a
-                                                href="{{ route('admin.education.level.edit', ['level' => $education_level->id]) }}">
+                                                href="{{ route('admin.transportation.edit', ['transportation' => $transportation->id]) }}">
                                                 <svg class="size-6 text-yellow-500 dark:text-white" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     fill="none" viewBox="0 0 24 24">
@@ -213,15 +178,15 @@
                                                 </svg>
                                             </a>
                                             <a href="javascript:void(0);"
-                                                onclick="confirmDelete('{{ $education_level->id }}', '{{ addslashes($education_level->village_name) }}')">
+                                                onclick="confirmDelete('{{ $transportation->id }}', '{{ addslashes($transportation->village_name) }}')">
                                                 <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="red">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                                                 </svg>
                                             </a>
-                                            <form id="delete-form-{{ $education_level->id }}" style="display: none;"
-                                                action="{{ route('admin.education.level.destroy', ['level' => $education_level->id]) }}"
+                                            <form id="delete-form-{{ $transportation->id }}" style="display: none;"
+                                                action="{{ route('admin.transportation.destroy', ['transportation' => $transportation->id]) }}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -234,7 +199,7 @@
                     </table>
 
 
-                    {{ $education_levels->links('vendor.pagination.tailwind') }}
+                    {{ $transportations->links('vendor.pagination.tailwind') }}
                 </div>
             </div>
         </div>
