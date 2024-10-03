@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('materialized_views', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->json("data");
             $table->timestamps();
         });
     }

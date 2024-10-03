@@ -245,7 +245,7 @@
         </div>
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div id="data-transportasi">
+            <div id="kondisi-rumah">
             </div>
             <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
@@ -254,7 +254,7 @@
         </div>
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div id="data-peternakan">
+            <div id="alat-komunikasi">
             </div>
             <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
@@ -397,15 +397,20 @@
                 align: 'left'
             },
             xAxis: {
-                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                categories: @json($villages),
                 crosshair: true
             },
-            yAxis: {
+            yAxis: [{
                 min: 0,
                 title: {
                     text: 'Jumlah Kendaraan'
                 }
-            },
+            }, {
+                title: {
+                    text: 'Jumlah Pemilik'
+                },
+                opposite: true
+            }],
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -422,15 +427,40 @@
             },
             series: [{
                 name: 'Mobil',
-                data: [0, 1, 5, 2]
+                data: @json($transportationStats['carCounts'])
             }, {
                 name: 'Motor',
-                data: [25, 16, 20, 37]
+                data: @json($transportationStats['motorcycleCounts'])
             }, {
                 name: 'Bentor',
-                data: [0, 0, 0, 1]
+                data: @json($transportationStats['bentorCounts'])
+            }, {
+                name: 'Pemilik Mobil',
+                type: 'spline',
+                yAxis: 1,
+                data: @json($transportationStats['carOwners']),
+                tooltip: {
+                    valueSuffix: ' orang'
+                }
+            }, {
+                name: 'Pemilik Motor',
+                type: 'spline',
+                yAxis: 1,
+                data: @json($transportationStats['motorcycleOwners']),
+                tooltip: {
+                    valueSuffix: ' orang'
+                }
+            }, {
+                name: 'Pemilik Bentor',
+                type: 'spline',
+                yAxis: 1,
+                data: @json($transportationStats['bentorOwners']),
+                tooltip: {
+                    valueSuffix: ' orang'
+                }
             }]
         });
+
 
         Highcharts.chart('data-peternakan', {
             chart: {
@@ -571,7 +601,7 @@
                 align: 'left'
             },
             xAxis: {
-                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                categories: @json($villages),
                 crosshair: true,
                 accessibility: {
                     description: 'Dusun'
@@ -593,25 +623,71 @@
             },
             plotOptions: {
                 column: {
-                    pointPadding: 0.2,
+                    grouping: false,
+                    shadow: false,
                     borderWidth: 0
                 }
             },
             series: [{
-                name: 'TIDAK/BELUM SEKOLAH',
-                data: [55, 135, 72, 62]
+                name: 'TIDAK/BELUM SEKOLAH (L)',
+                color: 'rgba(158, 159, 163, 0.9)',
+                data: @json($educationStats['belumSekolahL']),
+                pointPadding: 0.3,
+                pointPlacement: -0.2
             }, {
-                name: 'TAMAT SD/SEDERAJAT',
-                data: [54, 102, 47, 117]
+                name: 'TIDAK/BELUM SEKOLAH (P)',
+                color: 'rgba(158, 159, 163, 0.5)',
+                data: @json($educationStats['belumSekolahP']),
+                pointPadding: 0.4,
+                pointPlacement: -0.2
             }, {
-                name: 'TAMAT SMP/SEDERAJAT',
-                data: [28, 41, 20, 30]
+                name: 'TAMAT SD/SEDERAJAT (L)',
+                color: 'rgba(54, 162, 235, 0.9)',
+                data: @json($educationStats['tamatSDL']),
+                pointPadding: 0.3,
+                pointPlacement: -0.1
             }, {
-                name: 'TAMAT SMA/SEDERAJAT',
-                data: [47, 45, 21, 37]
+                name: 'TAMAT SD/SEDERAJAT (P)',
+                color: 'rgba(54, 162, 235, 0.5)',
+                data: @json($educationStats['tamatSDP']),
+                pointPadding: 0.4,
+                pointPlacement: -0.1
             }, {
-                name: 'TAMAT PT',
-                data: [12, 9, 12, 11]
+                name: 'TAMAT SMP/SEDERAJAT (L)',
+                color: 'rgba(255, 206, 86, 0.9)',
+                data: @json($educationStats['tamatSMPL']),
+                pointPadding: 0.3,
+                pointPlacement: 0
+            }, {
+                name: 'TAMAT SMP/SEDERAJAT (P)',
+                color: 'rgba(255, 206, 86, 0.5)',
+                data: @json($educationStats['tamatSMPP']),
+                pointPadding: 0.4,
+                pointPlacement: 0
+            }, {
+                name: 'TAMAT SMA/SEDERAJAT (L)',
+                color: 'rgba(75, 192, 192, 0.9)',
+                data: @json($educationStats['tamatSMAL']),
+                pointPadding: 0.3,
+                pointPlacement: 0.1
+            }, {
+                name: 'TAMAT SMA/SEDERAJAT (P)',
+                color: 'rgba(75, 192, 192, 0.5)',
+                data: @json($educationStats['tamatSMAP']),
+                pointPadding: 0.4,
+                pointPlacement: 0.1
+            }, {
+                name: 'TAMAT PT (L)',
+                color: 'rgba(153, 102, 255, 0.9)',
+                data: @json($educationStats['tamatPTL']),
+                pointPadding: 0.3,
+                pointPlacement: 0.2
+            }, {
+                name: 'TAMAT PT (P)',
+                color: 'rgba(153, 102, 255, 0.5)',
+                data: @json($educationStats['tamatPTP']),
+                pointPadding: 0.4,
+                pointPlacement: 0.2
             }]
         });
 
@@ -628,7 +704,7 @@
                 align: 'left'
             },
             xAxis: {
-                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                categories: @json($economyStats['villages']), // Nama dusun dari village_name
                 crosshair: true,
                 accessibility: {
                     description: 'Dusun'
@@ -656,30 +732,31 @@
             },
             series: [{
                 name: 'PERTOKOAN',
-                data: [7, 3, 5, 2]
+                data: @json($economyStats['pertokoan'])
             }, {
                 name: 'PERKIOSAN',
-                data: [1, 0, 0, 2]
+                data: @json($economyStats['perkiosan'])
             }, {
-                name: 'WARUNG MAKAN',
-                data: [1, 0, 0, 0]
+                name: 'RM OWNER',
+                data: @json($economyStats['rm_owner'])
             }, {
                 name: 'PERBENGKELAN',
-                data: [1, 0, 0, 1]
+                data: @json($economyStats['perbengkelan'])
             }, {
                 name: 'MEBEL KAYU',
-                data: [1, 0, 0, 0]
+                data: @json($economyStats['mebel'])
             }, {
                 name: 'PANGKALAN LPG',
-                data: [0, 0, 1, 2]
+                data: @json($economyStats['pangkalanLPG'])
             }, {
                 name: 'TAYLOR',
-                data: [0, 0, 0, 2]
+                data: @json($economyStats['taylor'])
             }, {
                 name: 'LAINNYA',
-                data: [1, 3, 2, 5]
+                data: @json($economyStats['lainnya'])
             }]
         });
+
 
         Highcharts.chart('data-sarana', {
             chart: {
@@ -738,6 +815,117 @@
             }, {
                 name: 'Katintin',
                 data: [12, 0, 0, 1]
+            }]
+        });
+
+        Highcharts.chart('alat-komunikasi', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Kepemilikan Alat Komunikasi per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Pemilik'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Televisi',
+                data: [15, 17, 13, 28]
+            }, {
+                name: 'Parabola',
+                data: [13, 14, 6, 15]
+            }, {
+                name: 'Handphone',
+                data: [79, 68, 69, 72]
+            }, {
+                name: 'Radio',
+                data: [1, 0, 0, 0]
+            }]
+        });
+
+        Highcharts.chart('kondisi-rumah', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data Kondisi Tempat Tinggal per Dusun',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Sumber: Data Survei Desa',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah Rumah'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Atap - Genteng',
+                data: [33, 31, 21, 33]
+            }, {
+                name: 'Atap - Seng',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Atap - Rumbia',
+                data: [32, 31, 21, 31]
+            }, {
+                name: 'Dinding - Semen',
+                data: [1, 0, 0, 2]
+            }, {
+                name: 'Dinding - Kayu',
+                data: [0, 0, 0, 0]
+            }, {
+                name: 'Lantai - Semen',
+                data: [19, 11, 9, 17]
+            }, {
+                name: 'Lantai - Keramik',
+                data: [14, 20, 12, 16]
             }]
         });
     </script>
