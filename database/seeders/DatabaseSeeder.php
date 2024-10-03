@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             StructureSeeder::class,
             ResidentSeeder::class,
             ArticleSeeder::class,
+            ComunityEconomySeeder::class,
         ]);
     }
 }

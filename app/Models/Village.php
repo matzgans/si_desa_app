@@ -22,4 +22,8 @@ class Village extends Model
     {
         return $this->hasOne(TransportationMean::class);
     }
+    public function comunityEconomy()
+    {
+        return $this->hasOne(ComunityEconomy::class);
+    }
 }

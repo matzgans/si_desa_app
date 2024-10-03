@@ -95,7 +95,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -105,6 +105,11 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.transportation.index')" :active="request()->routeIs('admin.transportation.*')">
                             <span class="ms-3">Alat Transportasi</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.comunity.economy.index')" :active="request()->routeIs('admin.comunity.economy.*')">
+                            <span class="ms-3">Usaha Ekonomi Masyarakat</span>
                         </x-drop-nav-link>
                     </li>
 

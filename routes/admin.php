@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController as LandingArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\ResidentController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TransportationMeanController;
 use App\Http\Controllers\Admin\VillageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\ComunityEconomy;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('transportation', TransportationMeanController::class);
 
     // kependudukan
+
     Route::resource('education/level', EducationLevelController::class)->names([
         'index'   => 'education.level.index',
         'create'  => 'education.level.create',
@@ -42,6 +45,15 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'edit'    => 'education.level.edit',
         'update'  => 'education.level.update',
         'destroy' => 'education.level.destroy',
+    ]);
+    Route::resource('comunity/economy', ComunityEconomyController::class)->names([
+        'index'   => 'comunity.economy.index',
+        'create'  => 'comunity.economy.create',
+        'store'   => 'comunity.economy.store',
+        'show'    => 'comunity.economy.show',
+        'edit'    => 'comunity.economy.edit',
+        'update'  => 'comunity.economy.update',
+        'destroy' => 'comunity.economy.destroy',
     ]);
 
     // end data master
