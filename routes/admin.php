@@ -6,14 +6,17 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EducationLevelController;
+use App\Http\Controllers\Admin\LivingConditionalController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\StaffCategory;
 use App\Http\Controllers\Admin\StaffCategoryController;
 use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TransportationMeanController;
 use App\Http\Controllers\Admin\VillageController;
+use App\Http\Controllers\Admin\VisionMisionController;
 use App\Http\Controllers\ProfileController;
 use App\Models\ComunityEconomy;
+use App\Models\LivingCondition;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +58,18 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'update'  => 'comunity.economy.update',
         'destroy' => 'comunity.economy.destroy',
     ]);
+    Route::resource('living/conditional', LivingConditionalController::class)->names([
+        'index'   => 'living.conditional.index',
+        'create'  => 'living.conditional.create',
+        'store'   => 'living.conditional.store',
+        'show'    => 'living.conditional.show',
+        'edit'    => 'living.conditional.edit',
+        'update'  => 'living.conditional.update',
+        'destroy' => 'living.conditional.destroy',
+    ]);
+
+    // Desa
+    Route::resource('visionmision', VisionMisionController::class);
 
     // end data master
     Route::get('export/resident', [ResidentController::class, 'export'])->name('export.resident');

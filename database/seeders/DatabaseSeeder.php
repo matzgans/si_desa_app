@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\LivingCondition;
 use App\Models\TransportationMean;
 use App\Models\User;
+use App\Models\VisionMision;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             VillageSeeder::class,
+            VisionMisionSeeder::class,
             TransportationMeanSeeder::class,
             EducationLevelSeeder::class,
             CategoryStaffSeeder::class,
@@ -26,6 +29,7 @@ class DatabaseSeeder extends Seeder
             ResidentSeeder::class,
             ArticleSeeder::class,
             ComunityEconomySeeder::class,
+            LivingConditionSeeder::class,
         ]);
     }
 }
