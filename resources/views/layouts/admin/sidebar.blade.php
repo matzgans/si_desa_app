@@ -40,6 +40,43 @@
             <li>
                 <button
                     class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                    data-collapse-toggle="data_desa" type="button" aria-controls="data_desa">
+                    <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                    </svg>
+
+                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Data Desa</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul class="{{ request()->routeIs('admin.visionmision.*') || request()->routeIs('admin.structure.*') || request()->routeIs('admin.villageprogram.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                    id="data_desa">
+                    <li>
+                        <x-drop-nav-link :href="route('admin.visionmision.index')" :active="request()->routeIs('admin.visionmision.*')">
+                            <span class="ms-3">Visi Misi Desa</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.structure.index')" :active="request()->routeIs('admin.structure.*')">
+                            <span class="ms-3">Struktur Aparat Desa</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.villageprogram.index')" :active="request()->routeIs('admin.villageprogram.*')">
+                            <span class="ms-3">Program Desa</span>
+                        </x-drop-nav-link>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button
+                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
                     data-collapse-toggle="master_penduduk" type="button" aria-controls="master_penduduk">
                     <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -95,7 +132,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -110,6 +147,16 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.comunity.economy.index')" :active="request()->routeIs('admin.comunity.economy.*')">
                             <span class="ms-3">Usaha Ekonomi Masyarakat</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.living.conditional.index')" :active="request()->routeIs('admin.living.conditional.*')">
+                            <span class="ms-3">Kondisi Tempat Tinggal</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.farm.index')" :active="request()->routeIs('admin.farm.*')">
+                            <span class="ms-3">Peternakan</span>
                         </x-drop-nav-link>
                     </li>
 
@@ -140,19 +187,7 @@
                     <span class="ms-3">Article</span>
                 </x-nav-link>
             </li>
-            <li>
-                <x-nav-link :href="route('admin.structure.index')" :active="request()->routeIs('admin.structure.*')">
 
-
-                    <svg class="{{ request()->routeIs('admin.structure.*') ? 'h-5 w-5 text-secondary' : 'h-5 w-5 text-white' }} transition duration-75 group-hover:text-secondary dark:text-white dark:group-hover:text-secondary"
-                        class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
-                    </svg>
-
-                    <span class="ms-3">Struktur</span>
-                </x-nav-link>
-            </li>
             <li class="md:hidden">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
