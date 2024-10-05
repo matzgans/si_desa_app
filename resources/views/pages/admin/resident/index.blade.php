@@ -116,6 +116,7 @@
                         <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">No</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col">Dusun</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Foto</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Nama</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Jenis Kelamin</th>
@@ -133,6 +134,7 @@
                                         scope="row">
                                         {{ ($residents->currentPage() - 1) * $residents->perPage() + $loop->iteration }}
                                     </th>
+                                    <td class="border border-gray-300 px-6 py-4">{{ $resident->village_name }}</td>
                                     <td class="border border-gray-300 px-6 py-4">
                                         <img class="h-20 w-20 object-cover"
                                             src="{{ asset('residents/images/' . $resident->photo_profile) }}"

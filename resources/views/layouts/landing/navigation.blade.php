@@ -1,14 +1,14 @@
-<div x-data="{ open: false }" class="w-full text-gray-700 bg-primary">
-    <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
+<div class="w-full bg-primary text-gray-700" x-data="{ open: false }">
+    <div class="mx-auto flex max-w-screen-xl flex-col px-8 md:flex-row md:items-center md:justify-between">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
-                <a href="{{ route('landing.index') }}"
-                    class="text-lg relative z-50 font-extrabold tracking-widest text-yellow-500 rounded-lg focus:outline-none focus:shadow-outline">Desa
+                <a class="focus:shadow-outline relative z-50 rounded-lg text-lg font-extrabold tracking-widest text-yellow-500 focus:outline-none"
+                    href="{{ route('landing.index') }}">Desa
                     Uabanga</a>
 
             </div>
-            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <button class="focus:shadow-outline rounded-lg focus:outline-none md:hidden" @click="open = !open">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
                     <path x-show="!open" fill-rule="evenodd"
                         d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
                         clip-rule="evenodd"></path>
@@ -18,17 +18,17 @@
                 </svg>
             </button>
         </div>
-        <nav :class="{ 'transform md:transform-none': !open, 'h-full': open }"
-            class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
-            <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 text-white hover:text-black focus:outline-none focus:shadow-outline"
+        <nav class="flex h-0 flex-grow origin-top scale-y-0 flex-col pb-4 duration-300 md:flex md:h-auto md:flex-row md:items-center md:justify-end md:pb-0"
+            :class="{ 'transform md:transform-none': !open, 'h-full': open }">
+            <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.index') }}#visi-misi">Visi Misi</a>
-            <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 text-white hover:text-black focus:outline-none focus:shadow-outline"
+            <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.index') }}#program-unggulan">Program Unggulan</a>
-            <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 text-white hover:text-black focus:outline-none focus:shadow-outline"
+            <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.profile') }}">Profil Desa</a>
-            <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 text-white hover:text-black focus:outline-none focus:shadow-outline"
+            <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.article') }}">Artikel</a>
-            <a class="px-10 py-3 mt-2 text-sm text-center bg-secondary text-white rounded-full md:mt-8 md:ml-4"
+            <a class="mt-2 rounded-full bg-secondary px-10 py-3 text-center text-sm text-white md:ml-4 md:mt-8"
                 href="{{ route('login') }}">Login</a>
         </nav>
     </div>

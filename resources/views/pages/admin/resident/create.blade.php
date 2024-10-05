@@ -193,13 +193,31 @@
                                 <span class="text-sm text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="gender">Nama Dusun</label>
+                            <select
+                                class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
+                                id="village_name" name="village_id" required>
+                                <option value="">Pilih Dusun</option>
+                                @foreach ($villages as $village)
+                                    <option value="{{ $village->id }}" {{ old('village_id') }}>
+                                        {{ $village->village_name }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+                            @error('village_id')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <div class="col-span-2 mb-6 grid grid-cols-2 gap-4">
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                     for="photo_profile">Foto Profil</label>
                                 <label
-                                    class="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500  dark:hover:bg-gray-800"
+                                    class="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-800"
                                     for="dropzone-file">
                                     <div class="flex flex-col items-center justify-center pb-6 pt-5">
                                         <svg class="mb-4 h-8 w-8 text-gray-500 dark:text-gray-400" aria-hidden="true"

@@ -120,6 +120,7 @@
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Content</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Tanggal Di Buat</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Tanggal Di ubah</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="col">Link</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Tampilkan</th>
                                 <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                             </tr>
@@ -136,12 +137,17 @@
                                             src="{{ asset('article/thumb/' . $article->thumbnail) }}" alt="">
                                     </td>
                                     <td class="border border-gray-300 px-6 py-4">{{ $article->title }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $article->content }}</td>
+                                    <td class="border border-gray-300 px-6 py-4"><a
+                                            class="text-nowrap mb-2 me-2 rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                            type="button" href="javascript:void(0);"
+                                            onclick="copyClipboard('{{ $article->slug }}', '{{ config('app.url') . '/articles/' }}')">Salin
+                                            Link</a></td>
                                     <td class="border border-gray-300 px-6 py-4">
                                         {{ \Carbon\Carbon::parse($article->created_at)->translatedFormat('d F Y') }}
 
 
                                     </td>
+                                    <td class="border border-gray-300 px-6 py-4">{{ $article->content }}</td>
                                     <td class="border border-gray-300 px-6 py-4">
                                         {{ \Carbon\Carbon::parse($article->updated_at)->translatedFormat('d F Y') }}
 
@@ -212,6 +218,20 @@
     </div>
     @push('after-scripts')
         <script>
+            function copyClipboard(slug, url) {
+                let copySlug = url + slug
+                navigator.clipboard.writeText(copySlug)
+
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Link Berhasil disalin",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+
             function confirmDelete(itemId, itemName) {
                 Swal.fire({
                     title: 'Are you sure?',

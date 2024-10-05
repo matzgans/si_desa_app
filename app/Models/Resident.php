@@ -11,4 +11,9 @@ class Resident extends Model
     protected $tables = 'residents';
 
     protected $guarded = [];
+
+    public function village()
+    {
+        return $this->belongsTo(Village::class);
+    }
 }
