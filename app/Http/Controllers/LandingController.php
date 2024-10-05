@@ -8,6 +8,8 @@ use App\Models\EducationLevel;
 use App\Models\MaterializedView;
 use App\Models\Structure;
 use App\Models\TransportationMean;
+use App\Models\VillageProgram;
+use App\Models\VisionMision;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +19,6 @@ class LandingController extends Controller
     {
         $articles = Article::where("is_show", "=", 1)->limit(4)->get();
 
-        // Ambil data transportasi
         $transportationData = DB::table('materialized_views')
             ->where('name', 'transportation_means')
             ->get()
@@ -25,7 +26,6 @@ class LandingController extends Controller
                 return json_decode($item->data, true);
             });
 
-        // Ambil data pendidikan
         $educationData = DB::table('materialized_views')
             ->where('name', 'education_levels')
             ->get()
@@ -34,7 +34,6 @@ class LandingController extends Controller
             });
 
 
-        // Ambil data pendidikan
         $economyData = DB::table('materialized_views')
             ->where('name', 'comunity_economies')
             ->get()
@@ -44,7 +43,6 @@ class LandingController extends Controller
 
         $villages = $transportationData->pluck('village_name')->toArray();
 
-        // Process transportation data
         $transportationStats = [
             'carCounts' => $transportationData->pluck('car_count')->toArray(),
             'motorcycleCounts' => $transportationData->pluck('motorcycle_count')->toArray(),
@@ -54,8 +52,6 @@ class LandingController extends Controller
             'bentorOwners' => $transportationData->pluck('bentor_owner')->toArray(),
         ];
 
-        // Process education data
-        // Process education data by gender
         $educationStats = [
             'belumSekolahL' => $educationData->pluck('belum_l')->toArray(),
             'belumSekolahP' => $educationData->pluck('belum_p')->toArray(),
@@ -69,7 +65,6 @@ class LandingController extends Controller
             'tamatPTP' => $educationData->pluck('pt_p')->toArray(),
         ];
 
-        // Mengambil data untuk chart
         $economyStats = [
             'pertokoan' => $economyData->pluck('pertokoan_owner')->toArray(),
             'perkiosan' => $economyData->pluck('perkiosan_owner')->toArray(),
@@ -82,12 +77,17 @@ class LandingController extends Controller
             'villages' => $economyData->pluck('village_name')->toArray(),
         ];
 
+        $visionsMissions = VisionMision::all("visi", "misi");
+        $priorityPrograms = VillageProgram::where("program_category", "prioritas")->get();
+
         return view("pages.landing.index", compact(
             "articles",
             "villages",
             "transportationStats",
             "educationStats",
-            "economyStats"
+            "economyStats",
+            "visionsMissions",
+            "priorityPrograms"
         ));
     }
 
@@ -110,15 +110,12 @@ class LandingController extends Controller
         $token = $request->query('token');
         $secret = env('TOKEN_MV', 'fzrsahi');
 
-        // Token validation
         if (!$token || $token !== $secret) {
             return redirect("/");
         }
 
-        // Truncate existing materialized view
         MaterializedView::truncate();
 
-        // Insert data from education_levels with village_name
         MaterializedView::insertUsing(
             ['name', 'data'],
             EducationLevel::join('villages', 'education_levels.village_id', '=', 'villages.id')
@@ -140,7 +137,6 @@ class LandingController extends Controller
                 )
         );
 
-        // Insert data from comunity_economies with village_name
         MaterializedView::insertUsing(
             ['name', 'data'],
             ComunityEconomy::join('villages', 'comunity_economies.village_id', '=', 'villages.id')
@@ -168,7 +164,6 @@ class LandingController extends Controller
                 )
         );
 
-        // Insert data from transportation_means with village_name
         MaterializedView::insertUsing(
             ['name', 'data'],
             TransportationMean::join('villages', 'transportation_means.village_id', '=', 'villages.id')
