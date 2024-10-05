@@ -30,4 +30,8 @@ class Village extends Model
     {
         return $this->hasOne(LivingCondition::class);
     }
+    public function farm()
+    {
+        return $this->hasOne(Farm::class);
+    }
 }

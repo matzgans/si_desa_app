@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\LivingCondition;
 use App\Models\TransportationMean;
 use App\Models\User;
+use App\Models\VillageProgram;
 use App\Models\VisionMision;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -30,6 +31,8 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             ComunityEconomySeeder::class,
             LivingConditionSeeder::class,
+            FarmSeeder::class,
+            VillageProgramSeeder::class,
         ]);
     }
 }

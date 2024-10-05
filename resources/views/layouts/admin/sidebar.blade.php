@@ -55,7 +55,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.visionmision.*') || request()->routeIs('admin.structure.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.visionmision.*') || request()->routeIs('admin.structure.*') || request()->routeIs('admin.villageprogram.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="data_desa">
                     <li>
                         <x-drop-nav-link :href="route('admin.visionmision.index')" :active="request()->routeIs('admin.visionmision.*')">
@@ -65,6 +65,11 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.structure.index')" :active="request()->routeIs('admin.structure.*')">
                             <span class="ms-3">Struktur Aparat Desa</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.villageprogram.index')" :active="request()->routeIs('admin.villageprogram.*')">
+                            <span class="ms-3">Program Desa</span>
                         </x-drop-nav-link>
                     </li>
                 </ul>
@@ -127,7 +132,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -147,6 +152,11 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.living.conditional.index')" :active="request()->routeIs('admin.living.conditional.*')">
                             <span class="ms-3">Kondisi Tempat Tinggal</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.farm.index')" :active="request()->routeIs('admin.farm.*')">
+                            <span class="ms-3">Peternakan</span>
                         </x-drop-nav-link>
                     </li>
 
