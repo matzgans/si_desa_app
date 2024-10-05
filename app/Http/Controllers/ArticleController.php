@@ -16,6 +16,10 @@ class ArticleController extends Controller
     public  function getBySlug(Request $request)
     {
         $article = Article::where("slug", "=", $request->slug)->first();
-        return view("pages.landing.article-detail", compact("article"));
+        $recomendationArticles = Article::where("id", "!=", $article->id)
+            ->inRandomOrder()
+            ->take(4)
+            ->get();
+        return view("pages.landing.article-detail", compact("article", "recomendationArticles"));
     }
 }
