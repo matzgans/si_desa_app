@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController as LandingArticleController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Verified;
@@ -11,8 +12,10 @@ Route::get('/profiles', [LandingController::class, 'profile'])->name('landing.pr
 Route::get('/articles', [LandingArticleController::class, 'index'])->name('landing.article');
 Route::get('/articles/{slug}', [LandingArticleController::class, 'getBySlug'])->name('article.detail');
 Route::get('/articles/{slug}', [LandingArticleController::class, 'getBySlug'])->name('article.detail');
+Route::get('/documents', [DocumentController::class, 'index'])->name('documents.index');
 Route::get('/refresh-view', [LandingController::class, 'refreshMView'])->name('refresh.view');
 
+Route::post('/documents', [DocumentController::class, 'store'])->name('document.store');
 
 
 Route::middleware('auth')->group(function () {

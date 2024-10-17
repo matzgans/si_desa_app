@@ -28,6 +28,8 @@
                 href="{{ route('landing.profile') }}">Profil Desa</a>
             <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.article') }}">Artikel</a>
+            <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
+                href="{{ route('documents.index') }}">Penyuratan</a>
             <a class="mt-2 rounded-full bg-secondary px-10 py-3 text-center text-sm text-white md:ml-4 md:mt-8"
                 href="{{ route('login') }}">Login</a>
         </nav>
