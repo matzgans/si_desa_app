@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\ComunityEconomy;
 use App\Models\EducationLevel;
+use App\Models\Farm;
+use App\Models\LivingCondition;
 use App\Models\MaterializedView;
 use App\Models\Structure;
 use App\Models\TransportationMean;
@@ -77,6 +79,49 @@ class LandingController extends Controller
             'villages' => $economyData->pluck('village_name')->toArray(),
         ];
 
+        $livingConditionsData = DB::table('materialized_views')
+            ->where('name', 'living_conditions')
+            ->get()
+            ->map(function ($item) {
+                return json_decode($item->data, true);
+            });
+
+
+        $livingConditionsStats = [
+            'atapGenteng' => $livingConditionsData->pluck('atap_genteng')->toArray(),
+            'atapSeng' => $livingConditionsData->pluck('atap_seng')->toArray(),
+            'atapRumbia' => $livingConditionsData->pluck('atap_rumbia')->toArray(),
+            'dindingSemen' => $livingConditionsData->pluck('dinding_semen')->toArray(),
+            'dindingKayu' => $livingConditionsData->pluck('dinding_kayu')->toArray(),
+            'lantaiSemen' => $livingConditionsData->pluck('lantai_semen')->toArray(),
+            'lantaiKeramik' => $livingConditionsData->pluck('lantai_keramik')->toArray(),
+            'lantaiLainnya' => $livingConditionsData->pluck('lantai_lainnya')->toArray(),
+        ];
+
+        $farmData = DB::table('materialized_views')
+            ->where('name', 'farms')
+            ->get()
+            ->map(function ($item) {
+                return json_decode($item->data, true);
+            });
+
+        $farmStats = [
+            'cowCounts' => $farmData->pluck('cow_count')->toArray(),
+            'goatCounts' => $farmData->pluck('goat_count')->toArray(),
+            'dogCounts' => $farmData->pluck('dog_count')->toArray(),
+            'catCounts' => $farmData->pluck('cat_count')->toArray(),
+            'chickenCounts' => $farmData->pluck('chicken_count')->toArray(),
+            'duckCounts' => $farmData->pluck('duck_count')->toArray(),
+            'cowOwners' => $farmData->pluck('cow_owner')->toArray(),
+            'goatOwners' => $farmData->pluck('goat_owner')->toArray(),
+            'dogOwners' => $farmData->pluck('dog_owner')->toArray(),
+            'catOwners' => $farmData->pluck('cat_owner')->toArray(),
+            'chickenOwners' => $farmData->pluck('chicken_owner')->toArray(),
+            'duckOwners' => $farmData->pluck('duck_owner')->toArray(),
+            'villages' => $farmData->pluck('village_name')->toArray(),
+        ];
+
+
         $visionsMissions = VisionMision::all("visi", "misi");
         $priorityPrograms = VillageProgram::where("program_category", "prioritas")->get();
 
@@ -87,7 +132,9 @@ class LandingController extends Controller
             "educationStats",
             "economyStats",
             "visionsMissions",
-            "priorityPrograms"
+            "priorityPrograms",
+            "livingConditionsStats",
+            "farmStats"
         ));
     }
 
@@ -177,6 +224,49 @@ class LandingController extends Controller
                     "motorcycle_owner", motorcycle_owner,
                     "bentor_count", bentor_count,
                     "bentor_owner", bentor_owner
+                ) as data')
+                )
+        );
+
+        MaterializedView::insertUsing(
+            ['name', 'data'],
+            LivingCondition::join('villages', 'living_conditions.village_id', '=', 'villages.id')
+                ->select(
+                    DB::raw("'living_conditions' as name"),
+                    DB::raw('JSON_OBJECT(
+                    "village_name", villages.village_name,
+                    "atap_genteng", atap_genteng,
+                    "atap_seng", atap_seng,
+                    "atap_rumbia", atap_rumbia,
+                    "dinding_semen", dinding_semen,
+                    "dinding_kayu", dinding_kayu,
+                    "dinding_lainnya", dinding_lainnya,
+                    "lantai_semen", lantai_semen,
+                    "lantai_keramik", lantai_keramik,
+                    "lantai_lainnya", lantai_lainnya
+                ) as data')
+                )
+        );
+
+        MaterializedView::insertUsing(
+            ['name', 'data'],
+            Farm::join('villages', 'farms.village_id', '=', 'villages.id')
+                ->select(
+                    DB::raw("'farms' as name"),
+                    DB::raw('JSON_OBJECT(
+                    "village_name", villages.village_name,
+                    "cow_count", cow_count,
+                    "cow_owner", cow_owner,
+                    "goat_count", goat_count,
+                    "goat_owner", goat_owner,
+                    "dog_count", dog_count,
+                    "dog_owner", dog_owner,
+                    "cat_count", cat_count,
+                    "cat_owner", cat_owner,
+                    "chicken_count", chicken_count,
+                    "chicken_owner", chicken_owner,
+                    "duck_count", duck_count,
+                    "duck_owner", duck_owner
                 ) as data')
                 )
         );

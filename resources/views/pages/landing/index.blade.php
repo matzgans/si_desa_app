@@ -393,7 +393,6 @@
             }]
         });
 
-
         Highcharts.chart('data-peternakan', {
             chart: {
                 type: 'column'
@@ -407,7 +406,7 @@
                 align: 'left'
             },
             xAxis: {
-                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                categories: @json($farmStats['villages']), // Dynamic village names
                 crosshair: true
             },
             yAxis: {
@@ -432,24 +431,80 @@
             },
             series: [{
                 name: 'Sapi',
-                data: [0, 0, 3, 1]
+                data: @json($farmStats['cowCounts']) // Dynamic cow count
             }, {
                 name: 'Kambing',
-                data: [48, 1, 4, 19]
+                data: @json($farmStats['goatCounts']) // Dynamic goat count
             }, {
                 name: 'Anjing',
-                data: [0, 0, 0, 1]
+                data: @json($farmStats['dogCounts']) // Dynamic dog count
             }, {
                 name: 'Kucing',
-                data: [0, 0, 0, 9]
+                data: @json($farmStats['catCounts']) // Dynamic cat count
             }, {
                 name: 'Ayam',
-                data: [72, 47, 48, 57]
+                data: @json($farmStats['chickenCounts']) // Dynamic chicken count
             }, {
                 name: 'Itik',
-                data: [0, 0, 0, 0]
+                data: @json($farmStats['duckCounts']) // Dynamic duck count
             }]
         });
+        // Highcharts.chart('data-peternakan', {
+        //     chart: {
+        //         type: 'column'
+        //     },
+        //     title: {
+        //         text: 'Data Peternakan per Dusun',
+        //         align: 'left'
+        //     },
+        //     subtitle: {
+        //         text: 'Sumber: Data Survei Desa',
+        //         align: 'left'
+        //     },
+        //     xAxis: {
+        //         categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+        //         crosshair: true
+        //     },
+        //     yAxis: {
+        //         min: 0,
+        //         title: {
+        //             text: 'Jumlah Hewan'
+        //         }
+        //     },
+        //     tooltip: {
+        //         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        //         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        //             '<td style="padding:0"><b>{point.y}</b></td></tr>',
+        //         footerFormat: '</table>',
+        //         shared: true,
+        //         useHTML: true
+        //     },
+        //     plotOptions: {
+        //         column: {
+        //             pointPadding: 0.2,
+        //             borderWidth: 0
+        //         }
+        //     },
+        //     series: [{
+        //         name: 'Sapi',
+        //         data: [0, 0, 3, 1]
+        //     }, {
+        //         name: 'Kambing',
+        //         data: [48, 1, 4, 19]
+        //     }, {
+        //         name: 'Anjing',
+        //         data: [0, 0, 0, 1]
+        //     }, {
+        //         name: 'Kucing',
+        //         data: [0, 0, 0, 9]
+        //     }, {
+        //         name: 'Ayam',
+        //         data: [72, 47, 48, 57]
+        //     }, {
+        //         name: 'Itik',
+        //         data: [0, 0, 0, 0]
+        //     }]
+        // });
 
         Highcharts.chart('data-pencaharian', {
             chart: {
@@ -814,7 +869,7 @@
                 align: 'left'
             },
             xAxis: {
-                categories: ['ILOHELUMA', 'PKT', 'UAB. KIKI', 'ILOPONU'],
+                categories: {!! json_encode($villages) !!}, // Gunakan data dinamis untuk desa
                 crosshair: true
             },
             yAxis: {
@@ -839,25 +894,25 @@
             },
             series: [{
                 name: 'Atap - Genteng',
-                data: [33, 31, 21, 33]
+                data: {!! json_encode($livingConditionsStats['atapGenteng']) !!}
             }, {
                 name: 'Atap - Seng',
-                data: [0, 0, 0, 0]
+                data: {!! json_encode($livingConditionsStats['atapSeng']) !!}
             }, {
                 name: 'Atap - Rumbia',
-                data: [32, 31, 21, 31]
+                data: {!! json_encode($livingConditionsStats['atapRumbia']) !!}
             }, {
                 name: 'Dinding - Semen',
-                data: [1, 0, 0, 2]
+                data: {!! json_encode($livingConditionsStats['dindingSemen']) !!}
             }, {
                 name: 'Dinding - Kayu',
-                data: [0, 0, 0, 0]
+                data: {!! json_encode($livingConditionsStats['dindingKayu']) !!}
             }, {
                 name: 'Lantai - Semen',
-                data: [19, 11, 9, 17]
+                data: {!! json_encode($livingConditionsStats['lantaiSemen']) !!}
             }, {
                 name: 'Lantai - Keramik',
-                data: [14, 20, 12, 16]
+                data: {!! json_encode($livingConditionsStats['lantaiKeramik']) !!}
             }]
         });
     </script>
