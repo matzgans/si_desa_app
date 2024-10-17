@@ -2,7 +2,7 @@
     <div class="mx-auto flex max-w-screen-xl flex-col px-8 md:flex-row md:items-center md:justify-between">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
-                <a class="focus:shadow-outline relative z-50 rounded-lg text-lg font-extrabold tracking-widest text-yellow-500 focus:outline-none"
+                <a class="focus:shadow-outline relative z-50 rounded-lg text-lg font-extrabold tracking-widest text-white focus:outline-none"
                     href="{{ route('landing.index') }}">
                     Desa Uabanga
                 </a>

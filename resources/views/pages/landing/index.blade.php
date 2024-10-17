@@ -6,7 +6,7 @@
                 class="mb-5 flex w-full flex-col items-start justify-center text-center md:mb-0 lg:w-6/12 lg:pt-24 lg:text-left">
                 <h1 class="text-darken my-4 text-5xl font-bold leading-tight text-white" data-aos="fade-right"
                     data-aos-once="true">
-                    Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">Uabanga</span>
+                    Selamat Datang Di Website Resmi Desa <span class="text-white-500">Uabanga</span>
                 </h1>
                 <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
                     class="leading-normal text-2xl mb-8 text-white text-justify">
@@ -20,7 +20,7 @@
                 <div class="w-full items-center justify-center md:flex md:space-x-5 lg:justify-start" data-aos="fade-up"
                     data-aos-once="true" data-aos-delay="700">
                     <a href="#visi-misi"
-                        class="lg:mx-0 bg-secondary text-yellow-500 text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out z-50">
+                        class="lg:mx-0 bg-secondary text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out z-50">
                         Visi Misi
                     </a>
                 </div>

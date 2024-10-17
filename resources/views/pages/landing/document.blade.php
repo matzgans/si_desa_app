@@ -67,10 +67,11 @@
     <div id="default-tab-content" class="mx-20">
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-hewan" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
                     @csrf
@@ -149,10 +150,11 @@
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-kelakukan-baik" role="tabpanel"
             aria-labelledby="dashboard-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -336,10 +338,11 @@
         </div> --}}
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-tidak-mampu" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -396,10 +399,11 @@
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-bpjs" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -473,10 +477,11 @@
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-kematian" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <div class="hidden">
@@ -603,10 +608,11 @@
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-hilang" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -710,10 +716,11 @@
         </div>
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-usaha" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
