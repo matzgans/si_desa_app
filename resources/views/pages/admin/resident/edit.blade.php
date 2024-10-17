@@ -220,6 +220,25 @@
                                 <span class="text-sm text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="gender">Nama Dusun</label>
+                            <select
+                                class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
+                                id="village_name" name="village_id" required>
+                                <option value="">Pilih Dusun</option>
+                                @foreach ($villages as $village)
+                                    <option value="{{ $village->id }}"
+                                        {{ old('village_id', $resident->village_id) == $village->id ? 'selected' : '' }}>
+                                        {{ $village->village_name }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+                            @error('village_id')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <div class="col-span-2 mb-6 grid grid-cols-2 gap-4">
                             <div>

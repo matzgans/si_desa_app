@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('residents', function (Blueprint $table) {
             $table->id();
             $table->uuid();
+            $table->foreignId('village_id')->nullable()->constrained('villages')->onDelete('set null');
             $table->string('nik')->unique();
             $table->string('name');
             $table->enum('gender', ['Perempuan', 'Laki - Laki']);

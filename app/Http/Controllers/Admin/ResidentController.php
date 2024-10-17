@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Exports\ResidentExport;
 use App\Http\Controllers\Controller;
 use App\Models\Resident;
+use App\Models\Village;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -22,13 +23,19 @@ class ResidentController extends Controller
      */
     public function index(Request $request)
     {
+
+
         $search = $request->input('search');
         if ($search) {
-            # code...
-            $residents = Resident::where('name', 'like', '%' . $search . '%')->orderBy('name', 'DESC')->paginate(4)->appends(['search' => $search]);
+            $residents = Resident::join('villages', 'residents.village_id', '=', 'villages.id')
+                ->where('villages.village_name', 'like', '%' . $search . '%') // Filter berdasarkan nama desa
+                ->select('residents.*', 'villages.village_name as village_name')
+                ->paginate(4);
         } else {
-
-            $residents = Resident::orderBy('name', 'DESC')->paginate(4); // Ganti 10 dengan jumlah item per halaman yang diinginkan
+            $residents = Resident::join('villages', 'residents.village_id', '=', 'villages.id')
+                ->where('villages.village_name', 'like', '%' . $search . '%') // Filter berdasarkan nama desa
+                ->select('residents.*', 'villages.village_name as village_name')
+                ->paginate(4);
         }
         return view('pages.admin.resident.index', compact('residents'));
     }
@@ -38,7 +45,8 @@ class ResidentController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.resident.create');
+        $villages = Village::all();
+        return view('pages.admin.resident.create', compact('villages'));
     }
 
     /**
@@ -49,6 +57,7 @@ class ResidentController extends Controller
         // Validasi input
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255|min:6',
+            'village_id' => 'required|string|max:255',
             'nik' => 'required|numeric|digits:16|unique:residents',
             'gender' => 'required|in:Perempuan,Laki - Laki',
             'birth_date' => 'required|date',
@@ -84,6 +93,7 @@ class ResidentController extends Controller
         $resident = new Resident();
         $resident->uuid = $uuid; // Menyimpan UUID
         $resident->name = $request->name;
+        $resident->village_id = $request->village_id;
         $resident->nik = $request->nik;
         $resident->gender = $request->gender;
         $resident->birth_date = $request->birth_date;
@@ -113,7 +123,8 @@ class ResidentController extends Controller
     public function edit(string $uuid)
     {
         $resident = Resident::where('uuid', $uuid)->first();
-        return view('pages.admin.resident.edit', compact('resident'));
+        $villages = Village::all();
+        return view('pages.admin.resident.edit', compact('resident', 'villages'));
     }
 
     /**
@@ -128,6 +139,7 @@ class ResidentController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255|min:6',
             'nik' => 'required|numeric|digits:16|unique:residents,nik,' . $resident->id, // Perbaiki untuk keunikan pada update
+            'village_id' => 'required|string|max:255',
             'gender' => 'required|in:Perempuan,Laki - Laki',
             'birth_date' => 'required|date',
             'occupation' => 'required|string|max:255',
@@ -138,6 +150,7 @@ class ResidentController extends Controller
 
         // Jika validasi gagal, kembali dengan pesan kesalahan
         if ($validator->fails()) {
+            dd($validator);
             return redirect()->back()->with('error', 'Perhatikan Inputan Anda')->withErrors($validator)->withInput();
         }
 

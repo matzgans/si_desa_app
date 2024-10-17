@@ -34,4 +34,8 @@ class Village extends Model
     {
         return $this->hasOne(Farm::class);
     }
+    public function residents()
+    {
+        return $this->hasMany(Resident::class);
+    }
 }

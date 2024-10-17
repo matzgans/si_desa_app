@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Resident;
+use App\Models\Village;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -44,6 +45,7 @@ class ResidentSeeder extends Seeder
 
             Resident::create([
                 'nik' => $nik,
+                'village_id' => fake()->randomElement(Village::pluck('id')->toArray()),
                 'name' => fake()->name(),
                 'uuid' => fake()->uuid(),
                 'gender' => fake()->randomElement($genders),
