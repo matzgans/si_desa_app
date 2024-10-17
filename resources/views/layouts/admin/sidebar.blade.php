@@ -174,20 +174,35 @@
                     <span class="ms-3">Article</span>
                 </x-nav-link>
             </li>
-            <li>
-                <x-nav-link :href="route('admin.surat.index')" :active="request()->routeIs('admin.surat.*')">
+            <button
+                class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                data-collapse-toggle="penyuratan" type="button" aria-controls="penyuratan">
+
+                <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                        d="M17 10v1.126c.367.095.714.24 1.032.428l.796-.797 1.415 1.415-.797.796c.188.318.333.665.428 1.032H21v2h-1.126c-.095.367-.24.714-.428 1.032l.797.796-1.415 1.415-.796-.797a3.979 3.979 0 0 1-1.032.428V20h-2v-1.126a3.977 3.977 0 0 1-1.032-.428l-.796.797-1.415-1.415.797-.796A3.975 3.975 0 0 1 12.126 16H11v-2h1.126c.095-.367.24-.714.428-1.032l-.797-.796 1.415-1.415.796.797A3.977 3.977 0 0 1 15 11.126V10h2Zm.406 3.578.016.016c.354.358.574.85.578 1.392v.028a2 2 0 0 1-3.409 1.406l-.01-.012a2 2 0 0 1 2.826-2.83ZM5 8a4 4 0 1 1 7.938.703 7.029 7.029 0 0 0-3.235 3.235A4 4 0 0 1 5 8Zm4.29 5H7a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h6.101A6.979 6.979 0 0 1 9 15c0-.695.101-1.366.29-2Z"
+                        clip-rule="evenodd" />
+                </svg>
 
 
-                    <svg class="{{ request()->routeIs('admin.surat.*') ? 'h-5 w-5 text-secondary' : 'h-5 w-5 text-white' }} transition duration-75 group-hover:text-secondary dark:text-white dark:group-hover:text-secondary"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M20 14h-2.722L11 20.278a5.511 5.511 0 0 1-.9.722H20a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM9 3H4a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V4a1 1 0 0 0-1-1ZM6.5 18.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM19.132 7.9 15.6 4.368a1 1 0 0 0-1.414 0L12 6.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z" />
-                    </svg>
+                <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Penyuratan</span>
+                <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 4 4 4-4" />
+                </svg>
+            </button>
+            <ul class="{{ request()->routeIs('admin.document.animal.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                id="penyuratan">
+                <li>
+                    <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
+                        <span class="ms-3">Ket Hewan Keluar</span>
+                    </x-drop-nav-link>
+                </li>
 
-                    <span class="ms-3">Surat</span>
-                </x-nav-link>
-            </li>
+            </ul>
 
             <li class="md:hidden">
                 <form method="POST" action="{{ route('logout') }}">
