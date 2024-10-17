@@ -9,10 +9,14 @@
                     Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">Uabanga</span>
                 </h1>
                 <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
-                    class="leading-normal text-2xl mb-8 text-white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque doloremque non iure nemo esse,
-                    repellat illo fugit cumque corrupti nesciunt ipsam, praesentium, sequi reprehenderit tenetur.
-                    Voluptatibus vitae asperiores repellendus!</p>
+                    class="leading-normal text-2xl mb-8 text-white text-justify">
+                    Desa Uabanga, terletak di Kecamatan Bonepantai, Kabupaten Bone Bolango, Provinsi Gorontalo, adalah
+                    desa yang kaya akan keindahan alam dan budaya. Meskipun berstatus sebagai desa yang masih
+                    berkembang, Uabanga berpotensi besar dalam meningkatkan kesejahteraan masyarakat melalui
+                    program-program unggulan desa yang berfokus pada pembangunan ekonomi, pendidikan, dan lingkungan.
+                    Dengan lokasi strategis di wilayah pesisir, desa ini menjadi bagian penting dari Kecamatan
+                    Bonepantai dan terus berupaya menjaga serta melestarikan kearifan lokal untuk masa depan yang lebih
+                    baik.</p>
                 <div class="w-full items-center justify-center md:flex md:space-x-5 lg:justify-start" data-aos="fade-up"
                     data-aos-once="true" data-aos-delay="700">
                     <a href="#visi-misi"
@@ -23,7 +27,7 @@
             </div>
             <!--Right Col-->
             <div class="relative w-full lg:-mt-10 lg:w-6/12" id="girl">
-                <img class="mx-auto w-10/12 2xl:-mb-20" data-aos="fade-up" data-aos-once="true"
+                <img class="mx-auto w-10/12 2xl:-mb-20 lg:mt-44" data-aos="fade-up" data-aos-once="true"
                     src="{{ asset('landing/images/kepala-desa.png') }}" />
             </div>
         </div>
@@ -43,8 +47,6 @@
             <h1 class="mb-3 text-center font-medium text-gray-400">Bekerja Sama Dengan</h1>
             <div class="flex justify-center gap-20 overflow-auto pt-10">
                 <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
-                <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
-                <img class="h-32" src="{{ asset('landing/images/logo-bonebol.png') }}">
             </div>
         </div>
     </div>
@@ -54,9 +56,10 @@
         <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Visi Misi Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
-        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus hic
-            assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
-            impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
+        <p class="leading-relaxed text-gray-500">Melalui platform ini, kami juga menyampaikan visi dan misi Desa
+            Uabanga, yang menjadi landasan utama dalam setiap langkah pembangunan dan pemberdayaan masyarakat. Mari
+            bersama-sama mewujudkan desa yang mandiri, maju, dan sejahtera.
+        </p>
     </div>
     <!-- card -->
     <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20 lg:px-52 bg-gray-100 lg:py-10">
@@ -84,10 +87,10 @@
         <h1 class="font-bold text-darken my-3 text-2xl text-yellow-500">Program Unggulan Desa <span
                 class="text-secondary">Uabanga</span>
         </h1>
-        <p class="leading-relaxed text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus
-            hic
-            assumenda accusamus dicta at dolorum repellendus, soluta necessitatibus, asperiores sint magnam. Quam
-            impedit porro asperiores adipisci excepturi, molestiae dolorum non!.</p>
+        <p class="leading-relaxed text-gray-500">Melalui platform ini, kami juga menyampaikan program unggulan Desa
+            Uabanga, yang menjadi fokus utama dalam meningkatkan kesejahteraan dan kualitas hidup masyarakat.
+            Program-program ini dirancang untuk mengoptimalkan potensi desa dan mendorong pembangunan yang
+            berkelanjutan. Bersama-sama, mari kita wujudkan desa yang tangguh, inovatif, dan berdaya saing.</p>
     </div>
 
     @foreach ($priorityPrograms as $index => $data)
@@ -126,11 +129,12 @@
     {{-- data --}}
     <div data-aos="zoom-in" class="mt-16 text-center">
         <h1 class="text-darken text-2xl font-semibold ">Data Desa <span class="text-primary">Uabanga</span></h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="text-gray-500 my-5 lg:px-96">kami juga menyajikan data lengkap tentang Desa Uabanga, mencakup berbagai
+            aspek penting seperti jumlah penduduk, luas wilayah, serta informasi administratif lainnya. Data ini kami
+            tampilkan untuk memberikan gambaran yang jelas tentang kondisi dan potensi desa kami. Kami berharap
+            informasi ini dapat menjadi acuan dalam perencanaan pembangunan dan pengambilan keputusan yang lebih baik
+            untuk masa depan Desa Uabanga.
+        </p>
     </div>
 
     <div class="flex flex-wrap gap-4 text-center justify-center">
@@ -138,9 +142,10 @@
             <div id="data-penduduk">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
-                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Jumlah penduduk Desa Uabanga memberikan
+                    gambaran tentang potensi sumber daya manusia yang dapat dioptimalkan untuk pembangunan desa. Kami
+                    menyediakan informasi terbaru dan akurat mengenai demografi penduduk.
+                </p>
             </div>
         </div>
 
@@ -148,8 +153,10 @@
             <div id="data-transportasi">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Infrastruktur transportasi di Desa Uabanga
+                    memainkan peran penting dalam mendukung mobilitas masyarakat dan perekonomian desa. Informasi ini
+                    mencakup ketersediaan sarana transportasi serta aksesibilitas desa.
+                </p>
             </div>
         </div>
 
@@ -157,8 +164,10 @@
             <div id="data-peternakan">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa Uabanga mencerminkan
+                    potensi ekonomi yang kuat, dengan data mengenai jenis hewan ternak yang dikelola oleh warga desa.
+                    Informasi ini penting untuk mendukung pengembangan sektor pertanian dan peternakan.
+                </p>
             </div>
         </div>
 
@@ -170,9 +179,9 @@
             <div id="data-sarana">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Molestiae rem saepe nisi, necessitatibus sequi eveniet ipsam unde rerum hic nobis
-                    fugiat et nesciunt ea aliquam atque dolor eaque illum! Aliquam.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Sarana dan prasarana desa menjadi pondasi
+                    penting dalam meningkatkan kualitas hidup masyarakat. Data ini mencakup fasilitas umum seperti
+                    kesehatan, pendidikan, dan fasilitas sosial lainnya.</p>
             </div>
         </div>
 
@@ -180,8 +189,9 @@
             <div id="kondisi-rumah">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Data mengenai kondisi rumah tangga di Desa
+                    Uabanga memberikan gambaran mengenai taraf hidup masyarakat dan kualitas infrastruktur perumahan
+                    yang tersedia</p>
             </div>
         </div>
 
@@ -189,8 +199,10 @@
             <div id="alat-komunikasi">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ketersediaan alat komunikasi menjadi
+                    penunjang penting dalam perkembangan desa, dengan data mengenai tingkat aksesibilitas terhadap
+                    jaringan komunikasi.
+                </p>
             </div>
         </div>
 
@@ -203,6 +215,7 @@
 
     <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
         id="data-pendidikan">
+
     </div>
 
     <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
@@ -213,11 +226,11 @@
     @if ($articles->count() > 0)
         <div data-aos="zoom-in" class="mt-16 text-center">
             <h1 class="text-darken text-2xl font-semibold">Artikel</h1>
-            <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                deserunt
-                sunt
-                maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-                sapiente quis reprehenderit voluptates?</p>
+            <p class="text-gray-500 my-5 lg:px-96">kami juga menyajikan artikel-artikel informatif tentang Desa
+                Uabanga, yang menggambarkan berbagai aspek kehidupan, sejarah, dan perkembangan desa. Artikel ini
+                diharapkan dapat memberikan wawasan lebih dalam tentang potensi dan keunikan desa kami. Mari
+                bersama-sama mengenal lebih dekat Desa Uabanga dan terus mendukung upaya pembangunan yang berkelanjutan.
+            </p>
         </div>
     @endif
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20  px-10 lg:px-56">
@@ -239,11 +252,12 @@
     {{-- lokasi --}}
     <div class="mt-16 text-center" data-aos="zoom-in">
         <h1 class="text-darken text-2xl font-semibold">Lokasi Desa <span class="text-primary">Uabanga</span></h1>
-        <p class="my-5 text-gray-500 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="my-5 text-gray-500 lg:px-96">lokasi strategis Desa Uabanga yang terletak di Kecamatan Bonepantai,
+            Kabupaten Bone Bolango. Lokasi ini memberikan potensi besar dalam pengembangan ekonomi dan pariwisata desa.
+            Kami berharap informasi ini memudahkan masyarakat maupun pengunjung untuk lebih mengenal dan menjelajahi
+            keindahan alam serta keunikan budaya Desa Uabanga. Mari bersama-sama menjadikan desa ini sebagai destinasi
+            yang menarik dan berdaya saing.
+        </p>
     </div>
 
     <div class="flex justify-center">

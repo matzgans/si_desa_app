@@ -3,9 +3,9 @@
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
                 <a class="focus:shadow-outline relative z-50 rounded-lg text-lg font-extrabold tracking-widest text-yellow-500 focus:outline-none"
-                    href="{{ route('landing.index') }}">Desa
-                    Uabanga</a>
-
+                    href="{{ route('landing.index') }}">
+                    Desa Uabanga
+                </a>
             </div>
             <button class="focus:shadow-outline rounded-lg focus:outline-none md:hidden" @click="open = !open">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
@@ -18,8 +18,10 @@
                 </svg>
             </button>
         </div>
-        <nav class="flex h-0 flex-grow origin-top scale-y-0 flex-col pb-4 duration-300 md:flex md:h-auto md:flex-row md:items-center md:justify-end md:pb-0"
-            :class="{ 'transform md:transform-none': !open, 'h-full': open }">
+
+        <!-- Perubahan pada bagian nav -->
+        <nav class="flex-col md:flex-row md:items-center md:justify-end"
+            :class="{ 'hidden': !open, 'flex': open, 'md:flex': true }">
             <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"
                 href="{{ route('landing.index') }}#visi-misi">Visi Misi</a>
             <a class="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 text-sm text-white hover:text-black focus:outline-none md:ml-4 md:mt-8"

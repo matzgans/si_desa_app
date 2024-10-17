@@ -2,11 +2,13 @@
     <div data-aos="zoom-in" class="mt-16 text-center">
         <h1 class="text-darken text-2xl font-semibold">Artikel Desa <span class="text-primary">Uabanga</span>
         </h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="text-gray-500 my-5 lg:px-96">Kami percaya bahwa informasi adalah kunci untuk memahami dan memberdayakan
+            masyarakat. Oleh karena itu, kami mengajak Anda untuk membaca dan mengeksplorasi setiap artikel, yang
+            mencakup topik-topik penting, kegiatan sosial, serta inisiatif pembangunan yang sedang berjalan. Dengan
+            pengetahuan yang diperoleh, kami berharap Anda dapat turut serta dalam mewujudkan desa yang lebih baik.
+
+            Mari bergabung dalam perjalanan ini dan temukan lebih banyak tentang Desa Uabanga melalui artikel-artikel
+            yang kami sajikan</p>
         <div class="flex flex-wrap justify-center lg:mx-52 gap-4" id="article-list">
             @foreach ($articles as $article)
                 <div

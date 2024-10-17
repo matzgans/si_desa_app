@@ -20,11 +20,13 @@
     <div data-aos="zoom-in" class="mt-16 text-center">
         <h1 class="text-darken text-2xl font-semibold">Aparat Pemerintah Desa <span class="text-primary">Uabanga</span>
         </h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="text-gray-500 my-5 lg:px-96">Aparat Pemerintah Desa Uabanga terdiri dari individu-individu yang
+            berdedikasi dan berkomitmen untuk meningkatkan kesejahteraan masyarakat. Dengan berlandaskan pada prinsip
+            transparansi dan akuntabilitas, mereka bekerja sama dalam merencanakan, melaksanakan, dan mengevaluasi
+            berbagai program pembangunan yang berfokus pada pemberdayaan masyarakat. Tim ini berkomitmen untuk menjalin
+            komunikasi yang baik dengan warga, mendengarkan aspirasi, serta memberikan solusi yang tepat guna. Mari kita
+            dukung setiap langkah dan upaya mereka untuk menjadikan Desa Uabanga lebih maju dan sejahtera.
+        </p>
 
         <div class="flex flex-wrap justify-center gap-4">
             @foreach ($currentVillageHead as $currentVillageHead)
@@ -73,11 +75,9 @@
 
     <div data-aos="zoom-in" class="mt-16 text-center">
         <h1 class="text-darken text-2xl font-semibold">Daftar Kepala Desa <span class="text-primary">Uabanga</span></h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="text-gray-500 my-5 lg:px-96">Di bawah kepemimpinan yang visioner, Desa Uabanga dipimpin oleh kepala
+            desa yang berkomitmen untuk membawa perubahan dan kemajuan. Berikut adalah daftar kepala desa yang telah
+            memimpin desa kami:</p>
 
         <div class="flex flex-wrap justify-center gap-4">
 

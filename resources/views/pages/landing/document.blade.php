@@ -1,15 +1,18 @@
 <x-landing-layout>
     <div data-aos="zoom-in" class="mt-16 text-center">
-        <h1 class="text-darken text-2xl font-semibold">Penyuratan Desa<span class="text-primary">Uabanga</span>
+        <h1 class="text-darken text-2xl font-semibold">Penyuratan Desa <span class="text-primary">Uabanga</span>
         </h1>
-        <p class="text-gray-500 my-5 lg:px-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            deserunt
-            sunt
-            maxime modi dicta atque id aspernatur cumque error voluptas, enim debitis aliquid. Incidunt omnis facere
-            sapiente quis reprehenderit voluptates?</p>
+        <p class="text-gray-500 my-5 lg:px-96">Kami berkomitmen untuk memberikan pelayanan yang transparan dan efisien,
+            agar setiap permohonan dapat diproses dengan baik. Untuk mengajukan permohonan, silakan lengkapi formulir
+            yang tersedia dan sertakan informasi yang diperlukan. Tim kami akan segera menindaklanjuti permohonan Anda.
+
+            Dengan fitur ini, kami berharap dapat meningkatkan aksesibilitas dan kenyamanan bagi warga dalam mendapatkan
+            dokumen yang dibutuhkan. Mari bersama-sama mewujudkan pemerintahan desa yang responsif dan bertanggung
+            jawab.
+        </p>
     </div>
 
-    <div class="mb-4 mx-10 border-b border-gray-200 dark:border-gray-700">
+    <div class="mb-4 mx-20 border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab"
             data-tabs-toggle="#default-tab-content" role="tablist">
             <li class="me-2" role="presentation">
@@ -23,12 +26,12 @@
                     id="dashboard-tab" data-tabs-target="#ket-kelakukan-baik" type="button" role="tab"
                     aria-controls="dashboard" aria-selected="false">Surat Keterangan Kelakuan Baik</button>
             </li>
-            <li class="me-2" role="presentation">
+            {{-- <li class="me-2" role="presentation">
                 <button
                     class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
                     id="settings-tab" data-tabs-target="#ket-nikah" type="button" role="tab"
                     aria-controls="settings" aria-selected="false">Surat Keterangan Nikah</button>
-            </li>
+            </li> --}}
             <li role="presentation">
                 <button
                     class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
@@ -61,7 +64,7 @@
             </li>
         </ul>
     </div>
-    <div id="default-tab-content">
+    <div id="default-tab-content" class="mx-20">
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-hewan" role="tabpanel"
             aria-labelledby="profile-tab">
             <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
@@ -234,7 +237,7 @@
                 </form>
             </div>
         </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-nikah" role="tabpanel"
+        {{-- <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-nikah" role="tabpanel"
             aria-labelledby="settings-tab">
             <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
                     class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>.
@@ -330,7 +333,7 @@
                 <button type="submit"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
-        </div>
+        </div> --}}
         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-tidak-mampu" role="tabpanel"
             aria-labelledby="contacts-tab">
             <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
