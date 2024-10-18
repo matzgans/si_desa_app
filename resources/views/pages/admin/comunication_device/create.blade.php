@@ -3,8 +3,8 @@
         <div class="max-w-7xl px-0 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
-                <h2>Ubah Data Tingkat Pendidikan</h2>
-                <a class="flex items-center hover:underline" href="{{ route('admin.education.level.index') }}">
+                <h2>Tambah Data Perangkat Komunikasi</h2>
+                <a class="flex items-center hover:underline" href="{{ route('admin.comunication_device.index') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,10 +64,8 @@
                     </div>
                 @endif
 
-                <form class="mx-auto max-w-full"
-                    action="{{ route('admin.education.level.update', ['level' => $education_levels->id]) }}"
-                    method="POST" enctype="multipart/form-data">
-                    @method('PUT')
+                <form class="mx-auto max-w-full" action="{{ route('admin.comunication_device.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 grid w-full grid-cols-2 gap-4">
                         <div class="col-span-2">
@@ -77,10 +75,8 @@
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="village_name" name="village_id" required>
                                 <option value="">Pilih Dusun</option>
-
                                 @foreach ($villages as $village)
-                                    <option value="{{ $village->id }}"
-                                        {{ old('village_id', $education_levels->village_id) == $village->id ? 'selected' : '' }}>
+                                    <option value="{{ $village->id }}" {{ old('village_id') }}>
                                         {{ $village->village_name }}
                                     </option>
                                 @endforeach
@@ -92,134 +88,107 @@
                         </div>
 
                     </div>
-                    <div class="grid w-full grid-cols-3 gap-4">
+                    <div class="grid w-full grid-cols-2 gap-4">
                         <div class="grid w-full grid-cols-2 gap-2">
-                            <label class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Belum /
-                                Tidak Sekolah</label>
+                            <label
+                                class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Televisi</label>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="belum_l">Laki - Laki</label>
+                                    for="tv_count">Jumlah Televisi</label>
                                 <input
                                     class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="belum_l" name="belum_l" type="number"
-                                    value="{{ old('belum_l', $education_levels->belum_l) }}" placeholder="0" required />
-                                @error('belum_l')
+                                    id="tv_count" name="tv_count" type="number" value="{{ old('tv_count') }}"
+                                    placeholder="0" required />
+                                @error('tv_count')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="belum_p">Perempuan</label>
+                                    for="tv_owner">Pemilik Televisi</label>
                                 <input
                                     class="col-span-2 block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="belum_p" name="belum_p" type="number"
-                                    value="{{ old('belum_p', $education_levels->belum_p) }}" placeholder="0"
-                                    required />
-                                @error('belum_p')
-                                    <span class="text-sm text-red-500">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="grid w-full grid-cols-2 gap-2">
-                            <label class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">SD /
-                                Sederajat</label>
-                            <div>
-                                <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="sd_l">Laki - Laki</label>
-                                <input
-                                    class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="sd_l" name="sd_l" type="number"
-                                    value="{{ old('sd_l', $education_levels->sd_l) }}" placeholder="0" required />
-                                @error('sd_l')
-                                    <span class="text-sm text-red-500">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div>
-                                <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="sd_p">Perempuan</label>
-                                <input
-                                    class="col-span-2 block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="sd_p" name="sd_p" type="number"
-                                    value="{{ old('sd_p', $education_levels->sd_p) }}" placeholder="0" required />
-                                @error('sd_p')
+                                    id="tv_owner" name="tv_owner" type="number" value="{{ old('tv_owner') }}"
+                                    placeholder="0" required />
+                                @error('tv_owner')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="grid w-full grid-cols-2 gap-2">
-                            <label class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">SMP /
-                                Sederajat</label>
+                            <label
+                                class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Parabola</label>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="smp_l">Laki - Laki</label>
+                                    for="parabola_count">Jumlah Parabola</label>
                                 <input
                                     class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="smp_l" name="smp_l" type="number"
-                                    value="{{ old('smp_l', $education_levels->smp_l) }}" placeholder="0" required />
-                                @error('smp_l')
+                                    id="parabola_count" name="parabola_count" type="number"
+                                    value="{{ old('parabola_count') }}" placeholder="0" required />
+                                @error('parabola_count')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="smp_p">Perempuan</label>
+                                    for="parabola_owner">Pemilik Parabola</label>
                                 <input
                                     class="col-span-2 block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="smp_p" name="smp_p" type="number"
-                                    value="{{ old('smp_p', $education_levels->smp_p) }}" placeholder="0" required />
-                                @error('smp_p')
+                                    id="parabola_owner" name="parabola_owner" type="number"
+                                    value="{{ old('parabola_owner') }}" placeholder="0" required />
+                                @error('parabola_owner')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-span-3 grid w-full grid-cols-2 gap-2">
-                            <label class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">SMA /
-                                Sederajat</label>
+                        <div class="grid w-full grid-cols-2 gap-2">
+                            <label
+                                class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Handphone</label>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="sma_l">Laki - Laki</label>
+                                    for="hp_count">Jumlah Handphone</label>
                                 <input
                                     class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="sma_l" name="sma_l" type="number"
-                                    value="{{ old('sma_l', $education_levels->sma_l) }}" placeholder="0" required />
-                                @error('sma_l')
+                                    id="hp_count" name="hp_count" type="number" value="{{ old('hp_count') }}"
+                                    placeholder="0" required />
+                                @error('hp_count')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="sma_p">Perempuan</label>
+                                    for="hp_owner">Pemilik Handphone</label>
                                 <input
                                     class="col-span-2 block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="sma_p" name="sma_p" type="number"
-                                    value="{{ old('sma_p', $education_levels->sma_p) }}" placeholder="0" required />
-                                @error('sma_p')
+                                    id="hp_owner" name="hp_owner" type="number" value="{{ old('hp_owner') }}"
+                                    placeholder="0" required />
+                                @error('hp_owner')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-span-3 grid w-full grid-cols-2 gap-2">
-                            <label class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Lulus
-                                PT</label>
+                        <div class="grid w-full grid-cols-2 gap-2">
+                            <label
+                                class="col-span-2 block text-sm font-medium text-gray-900 dark:text-white">Radio</label>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="pt_l">Laki - Laki</label>
+                                    for="radio_count">Jumlah Radio</label>
                                 <input
                                     class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="pt_l" name="pt_l" type="number"
-                                    value="{{ old('pt_l', $education_levels->pt_l) }}" placeholder="0" required />
-                                @error('pt_l')
+                                    id="radio_count" name="radio_count" type="number"
+                                    value="{{ old('radio_count') }}" placeholder="0" required />
+                                @error('radio_count')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-primary dark:text-white"
-                                    for="pt_p">Perempuan</label>
+                                    for="radio_owner">Pemilik Radio</label>
                                 <input
                                     class="col-span-2 block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
-                                    id="pt_p" name="pt_p" type="number"
-                                    value="{{ old('pt_p', $education_levels->pt_p) }}" placeholder="0" required />
-                                @error('pt_p')
+                                    id="radio_owner" name="radio_owner" type="number"
+                                    value="{{ old('radio_owner') }}" placeholder="0" required />
+                                @error('radio_owner')
                                     <span class="text-sm text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -229,7 +198,7 @@
 
                     <button class="mt-4 w-full rounded-lg bg-primary px-3 py-2 text-white hover:bg-secondary"
                         type="submit">
-                        Ubah
+                        Simpan
                     </button>
                 </form>
 
@@ -240,5 +209,23 @@
 
     </div>
     @push('after-scripts')
+        <script>
+            function previewImage(event) {
+                const preview = document.getElementById('preview');
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.style.display = 'none';
+                }
+            }
+        </script>
     @endpush
 </x-app-layout>

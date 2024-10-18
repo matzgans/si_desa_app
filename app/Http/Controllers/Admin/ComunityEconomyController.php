@@ -139,6 +139,6 @@ class ComunityEconomyController extends Controller
     {
         $comunity_economy = ComunityEconomy::findOrFail($id);
         $comunity_economy->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        return redirect()->back()->with('success', 'Data Usaha Ekonomi Masyarakat berhasil dihapus!');
     }
 }

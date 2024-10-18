@@ -81,9 +81,10 @@
                     <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                         viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
                     </svg>
+
 
                     <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Data Master Penduduk</span>
                     <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -132,7 +133,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') || request()->routeIs('admin.comunication_device.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -159,6 +160,43 @@
                             <span class="ms-3">Peternakan</span>
                         </x-drop-nav-link>
                     </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.comunication_device.index')" :active="request()->routeIs('admin.comunication_device.*')">
+                            <span class="ms-3">Alat Komunikasi</span>
+                        </x-drop-nav-link>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
+                <button
+                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                    data-collapse-toggle="penyuratan" type="button" aria-controls="penyuratan">
+
+                    <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M7.111 20A3.111 3.111 0 0 1 4 16.889v-12C4 4.398 4.398 4 4.889 4h4.444a.89.89 0 0 1 .89.889v12A3.111 3.111 0 0 1 7.11 20Zm0 0h12a.889.889 0 0 0 .889-.889v-4.444a.889.889 0 0 0-.889-.89h-4.389a.889.889 0 0 0-.62.253l-3.767 3.665a.933.933 0 0 0-.146.185c-.868 1.433-1.581 1.858-3.078 2.12Zm0-3.556h.009m7.933-10.927 3.143 3.143a.889.889 0 0 1 0 1.257l-7.974 7.974v-8.8l3.574-3.574a.889.889 0 0 1 1.257 0Z" />
+                    </svg>
+
+
+
+                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Penyuratan</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul class="{{ request()->routeIs('admin.document.animal.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                    id="penyuratan">
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
+                            <span class="ms-3">Ket Hewan Keluar</span>
+                        </x-drop-nav-link>
+                    </li>
 
                 </ul>
             </li>
@@ -174,35 +212,6 @@
                     <span class="ms-3">Article</span>
                 </x-nav-link>
             </li>
-            <button
-                class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
-                data-collapse-toggle="penyuratan" type="button" aria-controls="penyuratan">
-
-                <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    viewBox="0 0 24 24">
-                    <path fill-rule="evenodd"
-                        d="M17 10v1.126c.367.095.714.24 1.032.428l.796-.797 1.415 1.415-.797.796c.188.318.333.665.428 1.032H21v2h-1.126c-.095.367-.24.714-.428 1.032l.797.796-1.415 1.415-.796-.797a3.979 3.979 0 0 1-1.032.428V20h-2v-1.126a3.977 3.977 0 0 1-1.032-.428l-.796.797-1.415-1.415.797-.796A3.975 3.975 0 0 1 12.126 16H11v-2h1.126c.095-.367.24-.714.428-1.032l-.797-.796 1.415-1.415.796.797A3.977 3.977 0 0 1 15 11.126V10h2Zm.406 3.578.016.016c.354.358.574.85.578 1.392v.028a2 2 0 0 1-3.409 1.406l-.01-.012a2 2 0 0 1 2.826-2.83ZM5 8a4 4 0 1 1 7.938.703 7.029 7.029 0 0 0-3.235 3.235A4 4 0 0 1 5 8Zm4.29 5H7a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h6.101A6.979 6.979 0 0 1 9 15c0-.695.101-1.366.29-2Z"
-                        clip-rule="evenodd" />
-                </svg>
-
-
-                <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Penyuratan</span>
-                <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 1 4 4 4-4" />
-                </svg>
-            </button>
-            <ul class="{{ request()->routeIs('admin.document.animal.*') ? 'block' : 'hidden' }} space-y-2 py-2"
-                id="penyuratan">
-                <li>
-                    <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
-                        <span class="ms-3">Ket Hewan Keluar</span>
-                    </x-drop-nav-link>
-                </li>
-
-            </ul>
 
             <li class="md:hidden">
                 <form method="POST" action="{{ route('logout') }}">

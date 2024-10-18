@@ -3,7 +3,7 @@
         <div class="max-w-full px-3 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
-                <h2>Data Aparat Desa</h2>
+                <h2>Data Perangkat Komunikasi</h2>
                 <a class="flex items-center hover:underline" href="{{ route('dashboard') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
                     </div>
                 @endif
                 <div class="mb-2 flex flex-col items-center sm:flex-row">
-                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.structure.index') }}"
+                    <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.comunication_device.index') }}"
                         method="GET">
                         <label class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             for="default-search">Search</label>
@@ -79,7 +79,7 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="default-search" name="search" type="search" value="{{ request('search') }}"
-                                placeholder="Nama Aparat" />
+                                placeholder="Nama Dusun" />
                             <button
                                 class="absolute bottom-2.5 end-2.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="submit">Search</button>
@@ -87,7 +87,7 @@
                     </form>
 
                     <a class="mb-2 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 sm:mb-0 sm:me-2 sm:w-auto"
-                        href="{{ route('admin.structure.create') }}">
+                        href="{{ route('admin.comunication_device.create') }}">
                         <svg class="mx-auto h-6 w-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                             viewBox="0 0 24 24">
@@ -95,65 +95,71 @@
                                 stroke-width="2" d="M5 12h14m-7 7V5" />
                         </svg>
                     </a>
-
-                    {{-- <a class="mb-2 w-full rounded-lg bg-red-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-300 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-300 dark:hover:bg-red-500 dark:focus:ring-red-300 sm:mb-0 sm:me-2 sm:w-auto"
-                        href="{{ route('admin.export.resident') }}">
-                        <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                            viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m2.665 9H6.647A1.647 1.647 0 0 1 5 15.353v-1.706A1.647 1.647 0 0 1 6.647 12h1.018M16 12l1.443 4.773L19 12m-6.057-.152-.943-.02a1.34 1.34 0 0 0-1.359 1.22 1.32 1.32 0 0 0 1.172 1.421l.536.059a1.273 1.273 0 0 1 1.226 1.718c-.2.571-.636.754-1.337.754h-1.13" />
-                        </svg>
-
-                    </a> --}}
                 </div>
-
-
                 <div class="relative overflow-x-auto">
                     <table
                         class="w-full border-collapse border border-gray-300 text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
                         <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">No</th>
-                                {{-- <th class="border border-gray-300 px-6 py-3" scope="col">Foto</th> --}}
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Nama</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Jabatan</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Deskripsi</th>
-                                <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">NO</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">NAMA DUSUN
+                                </th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="2">Televisi</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="2">Parabola</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="2">Handphone</th>
+                                <th class="border border-gray-300 px-6 py-3 text-center" colspan="2">Radio</th>
+                                <th class="border border-gray-300 px-6 py-3" scope="row" rowspan="2">Aksi</th>
+                            </tr>
+                            <tr>
+                                <th class="border border-gray-300 px-6 py-3">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
+                                <th class="border border-gray-300 px-6 py-3">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
+                                <th class="border border-gray-300 px-6 py-3">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
+                                <th class="border border-gray-300 px-6 py-3">Jumlah</th>
+                                <th class="border border-gray-300 px-6 py-3">Pemilik</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($structures as $structure)
+                            @foreach ($comunication_devices as $comunication_device)
                                 <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <th class="whitespace-nowrap border border-gray-300 px-6 py-4 font-medium text-gray-900 dark:text-white"
                                         scope="row">
-                                        {{ ($structures->currentPage() - 1) * $structures->perPage() + $loop->iteration }}
+                                        {{ ($comunication_devices->currentPage() - 1) * $comunication_devices->perPage() + $loop->iteration }}
                                     </th>
-                                    {{-- <td class="border border-gray-300 px-6 py-4">
-                                        <img class="h-20 w-20 object-cover"
-                                            src="{{ asset('structure/staff_profile/' . $structure->staff_photo) }}"
-                                            alt="">
-                                    </td> --}}
                                     <td class="border border-gray-300 px-6 py-4">
-                                        <div class="flex flex-row items-center">
-                                            <img class="mr-5 h-10 w-10 rounded-full object-cover"
-                                                src="{{ asset('structure/staff_profile/' . $structure->staff_photo) }}"
-                                                alt="">
-                                            <span>
-
-                                                {{ $structure->staff_name }}
-                                            </span>
-                                        </div>
+                                        {{ $comunication_device->village_name }}
                                     </td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $structure->position }}</td>
-                                    <td class="border border-gray-300 px-6 py-4">{{ $structure->staff_description }}
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->tv_count }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->tv_owner }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->parabola_count }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->parabola_owner }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->hp_count }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->hp_owner }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->radio_count }}
+                                    </td>
+                                    <td class="border border-gray-300 px-6 py-4">
+                                        {{ $comunication_device->radio_owner }}
                                     </td>
 
                                     <td class="border border-gray-300 px-6 py-4">
                                         <div class="flex items-center">
-
                                             <a
-                                                href="{{ route('admin.structure.edit', ['structure' => $structure->uuid]) }}">
+                                                href="{{ route('admin.comunication_device.edit', ['comunication_device' => $comunication_device->id]) }}">
                                                 <svg class="size-6 text-yellow-500 dark:text-white" aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     fill="none" viewBox="0 0 24 24">
@@ -161,20 +167,18 @@
                                                         stroke-linejoin="round" stroke-width="2"
                                                         d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
                                                 </svg>
-
-
                                             </a>
                                             <a href="javascript:void(0);"
-                                                onclick="confirmDelete('{{ $structure->uuid }}', '{{ addslashes($structure->staff_name) }}')">
+                                                onclick="confirmDelete('{{ $comunication_device->id }}', '{{ addslashes($comunication_device->village_name) }}')">
                                                 <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="red">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                                                 </svg>
                                             </a>
-
-                                            <form id="delete-form-{{ $structure->uuid }}" style="display: none;"
-                                                action="{{ route('admin.structure.destroy', ['structure' => $structure->uuid]) }}"
+                                            <form id="delete-form-{{ $comunication_device->id }}"
+                                                style="display: none;"
+                                                action="{{ route('admin.comunication_device.destroy', ['comunication_device' => $comunication_device->id]) }}"
                                                 method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -186,7 +190,8 @@
                         </tbody>
                     </table>
 
-                    {{ $structures->links('vendor.pagination.tailwind') }}
+
+                    {{ $comunication_devices->links('vendor.pagination.tailwind') }}
                 </div>
             </div>
         </div>
