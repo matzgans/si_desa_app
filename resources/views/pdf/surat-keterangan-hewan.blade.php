@@ -122,7 +122,7 @@
         <hr>
         <div class="content">
             <h3>SURAT KETERANGAN HEWAN KELUAR</h3>
-            <p>NOMOR : 145 / DU-BP / _____ / _____/2024</p>
+            <p>NOMOR : {{ $no_surat }}</p>
 
             <div>Yang bertanda tangan dibawah ini :</div>
             <div style="margin: 20px 0">

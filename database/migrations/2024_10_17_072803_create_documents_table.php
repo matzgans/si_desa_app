@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->string("type");
+            $table->string("no_surat")->nullable();
             $table->json("data");
             $table->timestamps();
         });

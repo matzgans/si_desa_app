@@ -80,6 +80,21 @@
                                 placeholder="" required name="type" value="ket_hewan" />
                         </div>
                     </div>
+                    <div class="mb-6">
+                        <label for="no_surat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NO
+                            Surat:</label>
+                        <input type="text" id="no_surat"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Contoh : 145 / DU-BP / 2023 / 2023 /2024" name="no_surat"
+                            value="{{ $no_surat }}" />
+                        <div class="hidden">
+                            <label for="type"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipe Surat:</label>
+                            <input type="text" id="type"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required name="type" value="ket_hewan" />
+                        </div>
+                    </div>
 
                     <div id="dynamic-inputs"></div>
 

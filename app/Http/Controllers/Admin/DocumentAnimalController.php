@@ -100,6 +100,7 @@ class DocumentAnimalController extends Controller
         $document = Document::where('id', $id)->firstOrFail();
         $data = json_decode($document->data, true);
 
+        $data['no_surat'] = $document->no_surat;
         $data['animals'] = $this->prepareAnimalData($data);
 
         $pdf = Pdf::loadView('pdf.surat-keterangan-hewan', $data);
@@ -110,10 +111,11 @@ class DocumentAnimalController extends Controller
     public function edit($id)
     {
         $document = Document::where('id', $id)->firstOrFail();
+        $no_surat = $document->no_surat;
 
         $data = json_decode($document->data, true);
 
-        return view("pages.admin.document_animal.edit", compact("data", "id"));
+        return view("pages.admin.document_animal.edit", compact("data", "id", "no_surat"));
     }
 
     public function update(Request $request, $id)
@@ -130,6 +132,7 @@ class DocumentAnimalController extends Controller
             // Update document
             Document::where('id', $id)->update([
                 'type' => $request->type,
+                'no_surat' => $request->no_surat,
                 'data' => json_encode($data),
                 'updated_at' => now()
             ]);
