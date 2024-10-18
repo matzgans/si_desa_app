@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ComunicationDeviceController;
 use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DocumentAnimalController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\FarmController;
 use App\Http\Controllers\Admin\LivingConditionalController;
@@ -39,7 +40,22 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
 
     // Route Penyuratan
-    Route::get('penyuratan', [SuratController::class, 'index'])->name('surat.index');
+    // Route::get('penyuratan', [SuratController::class, 'index'])->name('surat.index');
+
+    Route::resource('documents/animals', DocumentAnimalController::class)->names([
+        'index'   => 'document.animal.index',
+        'create'  => 'document.animal.create',
+        'store'   => 'document.animal.store',
+        'show'    => 'document.animal.show',
+        'edit'    => 'document.animal.edit',
+        'update'  => 'document.animal.update',
+        'destroy' => 'document.animal.destroy',
+        'print' => 'document.animal.print',
+    ]);
+    Route::get('documents/animals/{id}/print', [DocumentAnimalController::class, 'print'])->name('document.animal.print');
+
+
+
 
     // route data master
     Route::resource('resident', ResidentController::class);
