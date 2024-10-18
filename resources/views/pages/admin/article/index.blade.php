@@ -140,8 +140,16 @@
                                     <td class="border border-gray-300 px-6 py-4"><a
                                             class="text-nowrap mb-2 me-2 rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                                             type="button" href="javascript:void(0);"
-                                            onclick="copyClipboard('{{ $article->slug }}', '{{ config('app.url') . '/articles/' }}')">Salin
-                                            Link</a></td>
+                                            onclick="copyClipboard('{{ $article->slug }}', '{{ config('app.url') . '/articles/' }}')">
+                                            <span class="text-white">Salin Text</span>
+                                            <svg class="mx-auto h-6 w-6 text-white dark:text-white" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 5h6m-6 4h6M10 3v4h4V3h-4Z" />
+                                            </svg>
+                                        </a></td>
                                     <td class="border border-gray-300 px-6 py-4">
                                         {{ \Carbon\Carbon::parse($article->created_at)->translatedFormat('d F Y') }}
 
