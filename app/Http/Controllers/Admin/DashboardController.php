@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\EducationLevel;
 use App\Models\Resident;
+use App\Models\Village;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,6 +15,8 @@ class DashboardController extends Controller
     {
         $resident = Resident::count();
         $education_levels = EducationLevel::all();
+        $article = Article::count();
+        $dusun = Village::count();
 
         $totals = [
             'Belum Sekolah' => 0,
@@ -33,6 +37,6 @@ class DashboardController extends Controller
 
         // Tampilkan hasil
 
-        return view('pages.admin.dashboard', compact('resident', 'totals'));
+        return view('pages.admin.dashboard', compact('resident', 'totals', 'dusun', 'article'));
     }
 }

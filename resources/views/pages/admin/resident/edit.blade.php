@@ -134,19 +134,37 @@
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="occupation" name="occupation" required>
                                 <option value="">Pilih Pekerjaan</option>
-                                <option value="pegawai"
-                                    {{ old('occupation', $resident->occupation) == 'pegawai' ? 'selected' : '' }}>
-                                    Pegawai
+                                <option value="Nelayan"
+                                    {{ old('occupation', $resident->occupation) == 'Nelayan' ? 'selected' : '' }}>
+                                    Nelayan
                                 </option>
-                                <option value="wiraswasta"
-                                    {{ old('occupation', $resident->occupation) == 'wiraswasta' ? 'selected' : '' }}>
-                                    Wiraswasta</option>
-                                <option value="pelajar"
-                                    {{ old('occupation', $resident->occupation) == 'pelajar' ? 'selected' : '' }}>
-                                    Pelajar
+                                <option value="Petani"
+                                    {{ old('occupation', $resident->occupation) == 'Petani' ? 'selected' : '' }}>
+                                    Petani</option>
+                                <option value="Swasta"
+                                    {{ old('occupation', $resident->occupation) == 'Swasta' ? 'selected' : '' }}>Swasta
                                 </option>
-                                <option value="lainnya"
-                                    {{ old('occupation', $resident->occupation) == 'lainnya' ? 'selected' : '' }}>
+                                <option value="Honorer"
+                                    {{ old('occupation', $resident->occupation) == 'Honorer' ? 'selected' : '' }}>
+                                    Honorer
+                                </option>
+                                <option value="PNS"
+                                    {{ old('occupation', $resident->occupation) == 'PNS' ? 'selected' : '' }}>PNS
+                                </option>
+                                <option value="Tukang Bangunan"
+                                    {{ old('occupation', $resident->occupation) == 'Tukang Bangunan' ? 'selected' : '' }}>
+                                    Tukang Bangunan
+                                </option>
+                                <option value="Buruh Harian"
+                                    {{ old('occupation', $resident->occupation) == 'Buruh Harian' ? 'selected' : '' }}>
+                                    Buruh Harian
+                                </option>
+                                <option value="Asisten RT"
+                                    {{ old('occupation', $resident->occupation) == 'Asisten RT' ? 'selected' : '' }}>
+                                    Asisten RT
+                                </option>
+                                <option value="Lainnya"
+                                    {{ old('occupation', $resident->occupation) == 'Lainnya' ? 'selected' : '' }}>
                                     Lainnya
                                 </option>
                             </select>
@@ -162,28 +180,24 @@
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="education_level" name="education_level" required>
                                 <option value="">Pilih Tingkat Pendidikan</option>
-                                <option value="sd"
-                                    {{ old('education_level', $resident->education_level) == 'sd' ? 'selected' : '' }}>
-                                    Sekolah
-                                    Dasar</option>
-                                <option value="smp"
-                                    {{ old('education_level', $resident->education_level) == 'smp' ? 'selected' : '' }}>
-                                    Sekolah
-                                    Menengah Pertama</option>
-                                <option value="sma"
-                                    {{ old('education_level', $resident->education_level) == 'sma' ? 'selected' : '' }}>
-                                    Sekolah
-                                    Menengah Atas</option>
-                                <option value="diploma"
-                                    {{ old('education_level', $resident->education_level) == 'diploma' ? 'selected' : '' }}>
-                                    Diploma</option>
-                                <option value="sarjana"
-                                    {{ old('education_level', $resident->education_level) == 'sarjana' ? 'selected' : '' }}>
-                                    Sarjana</option>
-                                <option value="pasca-sarjana"
-                                    {{ old('education_level') == 'pasca-sarjana', $resident->education_level ? 'selected' : '' }}>
-                                    Pasca Sarjana
-                                </option>
+                                <option value="Tidak / Belum Sekolah"
+                                    {{ old('education_level', $resident->education_level) == 'Tidak / Belum Sekolah' ? 'selected' : '' }}>
+                                    Tidak /
+                                    Belum Sekolah</option>
+                                <option value="Tamat SD / Sederajat"
+                                    {{ old('education_level', $resident->education_level) == 'Tamat SD / Sederajat' ? 'selected' : '' }}>
+                                    Tamat SD /
+                                    Sederajat</option>
+                                <option value="Tamat SMP / Sederajat"
+                                    {{ old('education_level', $resident->education_level) == 'Tamat SMP / Sederajat' ? 'selected' : '' }}>
+                                    Tamat SMP
+                                    / Sederajat</option>
+                                <option value="Tamat SMA / Sederajat"
+                                    {{ old('education_level', $resident->education_level) == 'Tamat SMA / Sederajat' ? 'selected' : '' }}>
+                                    Tamat SMA / Sederajat</option>
+                                <option value="Tamat PT"
+                                    {{ old('education_level', $resident->education_level) == 'Tamat PT' ? 'selected' : '' }}>
+                                    Tamat PT</option>
                             </select>
                             @error('education_level')
                                 <span class="text-sm text-red-500">{{ $message }}</span>

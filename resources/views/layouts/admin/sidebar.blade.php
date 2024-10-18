@@ -132,7 +132,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') || request()->routeIs('admin.comunication_device.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -157,6 +157,11 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.farm.index')" :active="request()->routeIs('admin.farm.*')">
                             <span class="ms-3">Peternakan</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.comunication_device.index')" :active="request()->routeIs('admin.comunication_device.*')">
+                            <span class="ms-3">Alat Komunikasi</span>
                         </x-drop-nav-link>
                     </li>
 

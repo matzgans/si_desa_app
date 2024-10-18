@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController as LandingArticleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\ComunicationDeviceController;
 use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EducationLevelController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\VillageController;
 use App\Http\Controllers\Admin\VillageProgramController;
 use App\Http\Controllers\Admin\VisionMisionController;
 use App\Http\Controllers\ProfileController;
+use App\Models\ComunicationDevice;
 use App\Models\ComunityEconomy;
 use App\Models\LivingCondition;
 use App\Models\VillageProgram;
@@ -76,6 +78,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'destroy' => 'living.conditional.destroy',
     ]);
 
+    Route::resource('comunication_device', ComunicationDeviceController::class);
 
 
     // Desa

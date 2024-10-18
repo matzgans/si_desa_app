@@ -119,6 +119,6 @@ class LivingConditionalController extends Controller
     {
         $living_condition = LivingCondition::findOrFail($id);
         $living_condition->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        return redirect()->back()->with('success', 'Data Kondisi Tempat Tinggal berhasil dihapus!');
     }
 }
