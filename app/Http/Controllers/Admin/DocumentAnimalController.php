@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Document;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class DocumentAnimalController extends Controller
@@ -75,9 +76,35 @@ class DocumentAnimalController extends Controller
     }
 
 
+    private function prepareAnimalData($data)
+    {
+        $animals = [];
+        $total = (int)$data['total_animals'];
+
+        for ($i = 1; $i <= $total; $i++) {
+            if (isset($data["gender_{$i}"])) {
+                $animals[] = [
+                    'gender' => $data["gender_{$i}"],
+                    'skin_color' => $data["skin_color_{$i}"],
+                    'brand' => $data["brand_{$i}"],
+                    'total' => $data["total_{$i}"]
+                ];
+            }
+        }
+
+        return $animals;
+    }
+
     public function print($id)
     {
-        dd($id);
+        $document = Document::where('id', $id)->firstOrFail();
+        $data = json_decode($document->data, true);
+
+        $data['animals'] = $this->prepareAnimalData($data);
+
+        $pdf = Pdf::loadView('pdf.surat-keterangan-hewan', $data);
+        $fileName = 'surat_keterangan_hewan_keluar_' . htmlspecialchars($data['name']) . '.pdf';
+        return $pdf->stream($fileName);
     }
 
     public function edit($id)
