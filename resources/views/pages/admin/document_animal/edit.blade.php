@@ -12,94 +12,102 @@
                     <span class="ml-3">Kembali</span>
                 </a>
             </div>
-            <div class="my-10">
+            <div class="rounded-lg bg-white p-4 text-white shadow-lg">
                 <form method="POST" action="{{ route('admin.document.animal.update', ['animal' => $id]) }}">
                     @csrf
                     @method('PUT')
-                    <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div class="mb-6 grid gap-6 md:grid-cols-2">
                         <div>
-                            <label for="first_name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="first_name">Nama Lengkap
                                 :</label>
-                            <input type="text" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="John" required name="name" value="{{ $data['name'] }}" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="name" name="name" type="text" value="{{ $data['name'] }}"
+                                placeholder="John" required />
                         </div>
                         <div>
-                            <label for="age"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Umur : </label>
-                            <input type="number" id="age"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="21" required name="age" value="{{ $data['age'] }}" />
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="age">Umur : </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="age" name="age" type="number" value="{{ $data['age'] }}"
+                                placeholder="21" required />
                         </div>
                         <div>
-                            <label for="pekerjaan"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pekerjaan :
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="pekerjaan">Pekerjaan :
                             </label>
-                            <input type="text" id="pekerjaan"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Pengusaha" required name="job" value="{{ $data['job'] }}" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="pekerjaan" name="job" type="text" value="{{ $data['job'] }}"
+                                placeholder="Pengusaha" required />
                         </div>
                         <div>
-                            <label for="address"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="address">Alamat
                                 :</label>
-                            <input type="tel" id="address"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Jl. Manado" required name="address" value="{{ $data['address'] }}" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="address" name="address" type="tel" value="{{ $data['address'] }}"
+                                placeholder="Jl. Manado" required />
                         </div>
                         <div>
-                            <label for="nama-hewan"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Hewan :
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="nama-hewan">Nama Hewan :
                             </label>
-                            <input type="text" id="nama-hewan"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Sapi" required name="animal" value="{{ $data['animal'] }}" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="nama-hewan" name="animal" type="text" value="{{ $data['animal'] }}"
+                                placeholder="Sapi" required />
                         </div>
                         <div>
-                            <label for="jumlah-hewan"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Hewan :
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="jumlah-hewan">Jumlah Hewan :
                             </label>
-                            <input type="number" id="jumlah-hewan"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="3" required name="total_animals" value="{{ $data['total_animals'] }}" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="jumlah-hewan" name="total_animals" type="number"
+                                value="{{ $data['total_animals'] }}" placeholder="3" required />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label for="place"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dibawah Ke : </label>
-                        <input type="place" id="place"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="" name="place" value="{{ $data['name'] }}" />
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                            for="place">Dibawah Ke : </label>
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="place" name="place" type="place" value="{{ $data['name'] }}" placeholder="" />
                         <div class="hidden">
-                            <label for="type"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipe Surat
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="type">Tipe Surat
                                 :</label>
-                            <input type="text" id="type"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
-                                placeholder="" required name="type" value="ket_hewan" />
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="type" name="type" type="text" value="ket_hewan" placeholder=""
+                                required />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label for="no_surat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NO
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="no_surat">NO
                             Surat:</label>
-                        <input type="text" id="no_surat"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Contoh : 145 / DU-BP / 2023 / 2023 /2024" name="no_surat"
-                            value="{{ $no_surat }}" />
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="no_surat" name="no_surat" type="text" value="{{ $no_surat }}"
+                            placeholder="Contoh : 145 / DU-BP / 2023 / 2023 /2024" />
                         <div class="hidden">
-                            <label for="type"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipe Surat:</label>
-                            <input type="text" id="type"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required name="type" value="ket_hewan" />
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="type">Tipe Surat:</label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="type" name="type" type="text" value="ket_hewan" required />
                         </div>
                     </div>
 
                     <div id="dynamic-inputs"></div>
 
-                    <button type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    <button
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        type="submit">Submit</button>
                 </form>
             </div>
         </div>

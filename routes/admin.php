@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\ComunicationDeviceController;
 use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentAnimalController;
+use App\Http\Controllers\Admin\DocumentKelBaikController;
+use App\Http\Controllers\Admin\DocumentTidakMampuController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\FarmController;
 use App\Http\Controllers\Admin\LivingConditionalController;
@@ -46,13 +48,31 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'index'   => 'document.animal.index',
         'create'  => 'document.animal.create',
         'store'   => 'document.animal.store',
-        'show'    => 'document.animal.show',
         'edit'    => 'document.animal.edit',
         'update'  => 'document.animal.update',
         'destroy' => 'document.animal.destroy',
-        'print' => 'document.animal.print',
     ]);
     Route::get('documents/animals/{id}/print', [DocumentAnimalController::class, 'print'])->name('document.animal.print');
+    // Surat Kel Baik
+    Route::resource('documents/kelbaik', DocumentKelBaikController::class)->names([
+        'index'   => 'document.kelbaik.index',
+        'create'  => 'document.kelbaik.create',
+        'store'   => 'document.kelbaik.store',
+        'edit'    => 'document.kelbaik.edit',
+        'update'  => 'document.kelbaik.update',
+        'destroy' => 'document.kelbaik.destroy',
+    ]);
+    Route::get('documents/kelbaik/{id}/print', [DocumentKelBaikController::class, 'print'])->name('document.kelbaik.print');
+    //    Document Tidak Mampu
+    Route::resource('documents/tidakmampu', DocumentTidakMampuController::class)->names([
+        'index'   => 'document.tidakmampu.index',
+        'create'  => 'document.tidakmampu.create',
+        'store'   => 'document.tidakmampu.store',
+        'edit'    => 'document.tidakmampu.edit',
+        'update'  => 'document.tidakmampu.update',
+        'destroy' => 'document.tidakmampu.destroy',
+    ]);
+    Route::get('documents/tidakmampu/{id}/print', [DocumentTidakMampuController::class, 'print'])->name('document.tidakmampu.print');
 
 
 

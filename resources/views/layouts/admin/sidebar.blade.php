@@ -190,11 +190,21 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.document.animal.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.document.animal.*') || request()->routeIs('admin.document.kelbaik.*') || request()->routeIs('admin.document.tidakmampu.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="penyuratan">
                     <li>
                         <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
                             <span class="ms-3">Ket Hewan Keluar</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kelbaik.index')" :active="request()->routeIs('admin.document.kelbaik.*')">
+                            <span class="ms-3">Ket Kelakuan Baik</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.tidakmampu.index')" :active="request()->routeIs('admin.document.tidakmampu.*')">
+                            <span class="ms-3">Ket Tidak Mampu</span>
                         </x-drop-nav-link>
                     </li>
 

@@ -15,7 +15,7 @@ class DocumentController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->except('_token', 'type'); // Mengambil semua data kecuali _token dan type
+        $data = $request->except('_token', 'type');
 
         Document::create([
             'type' => $request->type,

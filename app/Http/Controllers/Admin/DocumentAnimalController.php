@@ -14,6 +14,7 @@ class DocumentAnimalController extends Controller
         $search = $request->input('search');
         $query = Document::where('type', 'ket_hewan');
 
+
         if ($search) {
             $query->where(function ($q) use ($search) {
                 $q->whereRaw("LOWER(JSON_EXTRACT(data, '$.name')) LIKE ?", ['%' . strtolower($search) . '%'])
@@ -28,6 +29,7 @@ class DocumentAnimalController extends Controller
             $data = json_decode($document->data, true);
             return [
                 'no' => $index + 1,
+                'is_status' => $document['is_status'] ?? '-',
                 'age' => $data['age'] ?? '-',
                 'name' => $data['name'] ?? '-',
                 'job' => $data['job'] ?? '-',
@@ -105,6 +107,7 @@ class DocumentAnimalController extends Controller
 
         $pdf = Pdf::loadView('pdf.surat-keterangan-hewan', $data);
         $fileName = 'surat_keterangan_hewan_keluar_' . htmlspecialchars($data['name']) . '.pdf';
+        $document->update(['is_status' => 1]);
         return $pdf->stream($fileName);
     }
 
@@ -120,6 +123,7 @@ class DocumentAnimalController extends Controller
 
     public function update(Request $request, $id)
     {
+        dd($request);
         try {
 
             // Mengambil semua data kecuali yang tidak diperlukan
