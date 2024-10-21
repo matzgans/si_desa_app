@@ -3,7 +3,7 @@
         <div class="max-w-7xl px-0 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
 
-                <h2>Tambah Penduduk</h2>
+                <h2>Ubah Data Tingkat Pendidikan</h2>
                 <a class="flex items-center hover:underline" href="{{ route('admin.education.level.index') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">

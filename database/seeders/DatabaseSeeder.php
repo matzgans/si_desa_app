@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             LivingConditionSeeder::class,
             FarmSeeder::class,
             VillageProgramSeeder::class,
+            ComunicationDeviceSeeder::class,
         ]);
     }
 }

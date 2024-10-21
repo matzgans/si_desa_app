@@ -125,6 +125,6 @@ class EducationLevelController extends Controller
     {
         $education_levels = EducationLevel::findOrFail($id);
         $education_levels->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        return redirect()->back()->with('success', 'Data Level Pendidikan berhasil dihapus!');
     }
 }

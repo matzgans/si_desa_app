@@ -40,8 +40,8 @@ class VisionMisionController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'visi' => 'required|string|max:255|min:3|unique:vision_misions',
-            'misi' => 'required|string|max:255|min:10',
+            'visi' => 'required|string|max:500|min:3|unique:vision_misions',
+            'misi' => 'required|string|max:500|min:10',
         ]);
 
         // Jika validasi gagal, kembali dengan pesan kesalahan
@@ -84,8 +84,8 @@ class VisionMisionController extends Controller
     {
         $vision_mision = VisionMision::where('slug', $slug)->first();
         $validator = Validator::make($request->all(), [
-            'visi' => 'required|string|max:255|min:3|unique:vision_misions,slug,' . $vision_mision->slug,
-            'misi' => 'required|string|max:255|min:10',
+            'visi' => 'required|string|max:500|min:3|unique:vision_misions,slug,' . $vision_mision->slug,
+            'misi' => 'required|string|max:500|min:10',
         ]);
 
         // Jika validasi gagal, kembali dengan pesan kesalahan

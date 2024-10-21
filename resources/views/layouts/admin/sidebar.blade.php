@@ -81,9 +81,10 @@
                     <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                         viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
                     </svg>
+
 
                     <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Data Master Penduduk</span>
                     <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -132,7 +133,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.education.level.*') || request()->routeIs('admin.transportation.*') || request()->routeIs('admin.comunity.economy.*') || request()->routeIs('admin.living.conditional.*') || request()->routeIs('admin.farm.*') || request()->routeIs('admin.comunication_device.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="kependudukan">
                     <li>
                         <x-drop-nav-link :href="route('admin.education.level.index')" :active="request()->routeIs('admin.education.level.*')">
@@ -159,22 +160,76 @@
                             <span class="ms-3">Peternakan</span>
                         </x-drop-nav-link>
                     </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.comunication_device.index')" :active="request()->routeIs('admin.comunication_device.*')">
+                            <span class="ms-3">Alat Komunikasi</span>
+                        </x-drop-nav-link>
+                    </li>
 
                 </ul>
             </li>
-            {{-- <li>
-                <x-nav-link :href="route('admin.resident.index')" :active="request()->routeIs('admin.resident.*')">
-                    <svg class="{{ request()->routeIs('admin.resident.*') ? 'h-5 w-5 text-secondary' : 'h-5 w-5 text-white' }} transition duration-75 group-hover:text-secondary dark:text-white dark:group-hover:text-secondary"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        fill="currentColor" viewBox="0 0 22 21">
-                        <path fill-rule="evenodd"
-                            d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z"
-                            clip-rule="evenodd" />
+
+            <li>
+                <button
+                    class="group flex w-full items-center rounded-lg p-2 text-base text-white transition duration-75 hover:bg-gray-100 hover:text-secondary dark:text-white dark:hover:bg-gray-700"
+                    data-collapse-toggle="penyuratan" type="button" aria-controls="penyuratan">
+
+                    <svg class="h-6 w-6 hover:text-secondary dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M7.111 20A3.111 3.111 0 0 1 4 16.889v-12C4 4.398 4.398 4 4.889 4h4.444a.89.89 0 0 1 .89.889v12A3.111 3.111 0 0 1 7.11 20Zm0 0h12a.889.889 0 0 0 .889-.889v-4.444a.889.889 0 0 0-.889-.89h-4.389a.889.889 0 0 0-.62.253l-3.767 3.665a.933.933 0 0 0-.146.185c-.868 1.433-1.581 1.858-3.078 2.12Zm0-3.556h.009m7.933-10.927 3.143 3.143a.889.889 0 0 1 0 1.257l-7.974 7.974v-8.8l3.574-3.574a.889.889 0 0 1 1.257 0Z" />
                     </svg>
 
-                    <span class="ms-3">Penduduk</span>
-                </x-nav-link>
-            </li> --}}
+
+
+                    <span class="ms-3 flex-1 whitespace-nowrap text-left rtl:text-right">Penyuratan</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul class="{{ request()->routeIs('admin.document.animal.*') || request()->routeIs('admin.document.kelbaik.*') || request()->routeIs('admin.document.tidakmampu.*') || request()->routeIs('admin.document.bpjs.*') || request()->routeIs('admin.document.kehilangan.*') || request()->routeIs('admin.document.usaha.*') || request()->routeIs('admin.document.kematian.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                    id="penyuratan">
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
+                            <span class="ms-3">Ket Hewan Keluar</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kelbaik.index')" :active="request()->routeIs('admin.document.kelbaik.*')">
+                            <span class="ms-3">Ket Kelakuan Baik</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.tidakmampu.index')" :active="request()->routeIs('admin.document.tidakmampu.*')">
+                            <span class="ms-3">Ket Tidak Mampu</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.bpjs.index')" :active="request()->routeIs('admin.document.bpjs.*')">
+                            <span class="ms-3">Ket BPJS</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kehilangan.index')" :active="request()->routeIs('admin.document.kehilangan.*')">
+                            <span class="ms-3">Ket Kehilangan</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.usaha.index')" :active="request()->routeIs('admin.document.usaha.*')">
+                            <span class="ms-3">Ket Usaha</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kematian.index')" :active="request()->routeIs('admin.document.kematian.*')">
+                            <span class="ms-3">Ket Kematian</span>
+                        </x-drop-nav-link>
+                    </li>
+
+                </ul>
+            </li>
             <li>
                 <x-nav-link :href="route('admin.article.index')" :active="request()->routeIs('admin.article.*')">
 

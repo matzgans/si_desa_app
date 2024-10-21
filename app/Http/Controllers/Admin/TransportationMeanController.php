@@ -115,6 +115,6 @@ class TransportationMeanController extends Controller
     {
         $transportation = TransportationMean::findOrFail($id);
         $transportation->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        return redirect()->back()->with('success', 'Data Transportasi berhasil dihapus!');
     }
 }

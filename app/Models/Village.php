@@ -34,6 +34,11 @@ class Village extends Model
     {
         return $this->hasOne(Farm::class);
     }
+    public function comunication_devices()
+    {
+        return $this->hasOne(ComunicationDevice::class);
+    }
+    // Relasi One toMany dengan EducationLevel
     public function residents()
     {
         return $this->hasMany(Resident::class);

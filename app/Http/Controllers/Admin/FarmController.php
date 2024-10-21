@@ -66,7 +66,7 @@ class FarmController extends Controller
         }
 
         Farm::create($request->all());
-        return redirect()->back()->with('success', 'Data Level Pendidikan berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Data Peternakan berhasil ditambahkan!');
     }
 
     /**
@@ -92,7 +92,7 @@ class FarmController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $farm = Farm::findOrFail($id)->first();
+        $farm = Farm::findOrFail($id);
         // Validasi input
         $validator = Validator::make($request->all(), [
             'village_id' => 'required|unique:farms,village_id,' .  $farm->id,
@@ -125,6 +125,6 @@ class FarmController extends Controller
     {
         $farm = Farm::findOrFail($id);
         $farm->delete();
-        return redirect()->back()->with('success', 'Data berhasil dihapus!');
+        return redirect()->back()->with('success', 'Data Peternakan berhasil dihapus!');
     }
 }

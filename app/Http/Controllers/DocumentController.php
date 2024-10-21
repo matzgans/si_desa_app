@@ -13,15 +13,20 @@ class DocumentController extends Controller
         return view("pages.landing.document");
     }
 
+
     public function store(Request $request)
     {
-        $data = $request->except('_token', 'type'); // Mengambil semua data kecuali _token dan type
+        try {
+            $data = $request->except('_token', 'type');
 
-        Document::create([
-            'type' => $request->type,
-            'data' => json_encode($data),
-        ]);
+            Document::create([
+                'type' => $request->type,
+                'data' => json_encode($data),
+            ]);
 
-        return redirect()->back()->with('success', 'Sukses Mengirim Data');
+            return redirect()->back()->with('success', 'Permintaan Surat Berhasil Terkirim');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi Kesalahan: ' . $e->getMessage());
+        }
     }
 }
