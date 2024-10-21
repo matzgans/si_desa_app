@@ -680,6 +680,116 @@
                 </form>
             </div>
         </div>
+        <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-usaha" role="tabpanel"
+            aria-labelledby="contacts-tab">
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
+            <div class="my-10">
+                <form method="POST" action="{{ route('document.store') }}">
+                    @csrf
+                    <div class="hidden">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                            for="type">Tipe
+                            Surat
+                            :</label>
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="type" name="type" type="text" value="ket_usaha" placeholder=""
+                            required />
+                    </div>
+                    <div class="mb-6 grid gap-6 md:grid-cols-2">
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="first_name">Nama Lengkap
+                                :</label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="name" name="name" type="text" placeholder="John" required />
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="age">Tempat/Tanggal
+                                Lahir : </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="age" name="birth" type="text"
+                                placeholder="Gorontalo, 17 Agustus 1945" required />
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="pekerjaan">Pekerjaan :
+                            </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="pekerjaan" name="job" type="text" placeholder="Pengusaha" required />
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="alamat">Alamat :
+                            </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="pekerjaan" name="address" type="text" placeholder="Jl. Manado" required />
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="nama-hewan">Agama :
+                            </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="nama-hewan" name="religion" type="text" placeholder="Islam" required />
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="countries">Jenis Kelamin
+                                :</label>
+                            <select
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="countries" name="gender">
+
+                                <option value="Laki Laki">Laki Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="countries">Status
+                                Perkawinan :</label>
+                            <select
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="countries" name="married_status">
+
+                                <option value="Kawin">Kawin</option>
+                                <option value="Belum Kawin">Belum Kawin</option>
+                                <option value="Sudah Pernah Kawin">Sudah Pernah Kawin</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="kewarnanegaraaan">Nama Usaha :
+                            </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="kewarnanegaraaan" name="business_name" type="text" placeholder="Butik"
+                                required />
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="place">NIK
+                            : </label>
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="place" name="NIK" type="place" placeholder="" />
+                    </div>
+                    <button
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-hilang" role="tabpanel"
             aria-labelledby="contacts-tab">
             <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
@@ -807,116 +917,6 @@
                         <button
                             class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
                             type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-        <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-usaha" role="tabpanel"
-            aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
-                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
-                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
-                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa uabanga</p>
-
-            <div class="my-10">
-                <form method="POST" action="{{ route('document.store') }}">
-                    @csrf
-                    <div class="hidden">
-                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                            for="type">Tipe Surat
-                            :</label>
-                        <input
-                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                            id="type" name="type" type="text" value="ket_usaha" placeholder=""
-                            required />
-                    </div>
-                    <div class="mb-6 grid gap-6 md:grid-cols-2">
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="first_name">Nama Lengkap
-                                :</label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="name" name="name" type="text" placeholder="John" required />
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="age">Tempat/Tanggal
-                                Lahir : </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="age" name="birth" type="text"
-                                placeholder="Gorontalo, 17 Agustus 1945" required />
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="pekerjaan">Pekerjaan :
-                            </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="pekerjaan" name="job" type="text" placeholder="Pengusaha" required />
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="alamat">Alamat :
-                            </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="pekerjaan" name="address" type="text" placeholder="Jl. Manado" required />
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="nama-hewan">Agama :
-                            </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="nama-hewan" name="religion" type="text" placeholder="Islam" required />
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="countries">Jenis Kelamin
-                                :</label>
-                            <select
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="countries" name="gender">
-
-                                <option value="Laki Laki">Laki Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="countries">Status
-                                PerMenikahan :</label>
-                            <select
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="countries" name="married_status">
-
-                                <option value="Menikah">Menikah</option>
-                                <option value="Belum Menikah">Belum Menikah</option>
-                                <option value="Sudah Pernah Menikah">Sudah Pernah Menikah</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="kewarnanegaraaan">Nama Usaha :
-                            </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="kewarnanegaraaan" name="business_name" type="text" placeholder="Butik"
-                                required />
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="place">NIK
-                            : </label>
-                        <input
-                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                            id="place" name="NIK" type="place" placeholder="" />
-                    </div>
-                    <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
-                        type="submit">Submit</button>
                 </form>
             </div>
         </div>
