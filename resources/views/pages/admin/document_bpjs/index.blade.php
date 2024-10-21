@@ -24,7 +24,7 @@
                     <span class="sr-only">Warning icon</span>
                 </div>
                 <div class="ms-3 text-sm font-normal">Penting : Edit Terlebih dahulu untuk menambahkan No
-                    surat Sebelum mencetaknya, lalu perhatikan beberapa data sebelum mencetaknya</div>
+                    surat dan Kepala Dusun Sebelum mencetaknya, lalu perhatikan beberapa data sebelum mencetaknya</div>
                 <button
                     class="-mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-gray-300 dark:bg-gray-800 dark:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white"
                     data-dismiss-target="#toast-warning" type="button" aria-label="Close">
@@ -86,7 +86,7 @@
                 </div>
             @endif
             <div class="mb-2 flex flex-col items-center sm:flex-row">
-                <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.document.kelbaik.index') }}"
+                <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.document.bpjs.index') }}"
                     method="GET">
                     <label class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         for="default-search">Search</label>
@@ -101,7 +101,7 @@
                         <input
                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                             id="default-search" name="search" type="search" value="{{ request('search') }}"
-                            placeholder="Cari Nama, NIK..." />
+                            placeholder="Cari Nama" />
                         <button
                             class="absolute bottom-2.5 end-2.5 rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="submit">Search</button>
@@ -125,13 +125,14 @@
                         <tr>
                             <th class="border border-gray-300 px-6 py-3" scope="col">No</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">No. Surat</th>
-                            <th class="border border-gray-300 px-6 py-3" scope="col">NIK</th>
+                            <th class="border border-gray-300 px-6 py-3" scope="col">No. Surat Tambahan 1</th>
+                            <th class="border border-gray-300 px-6 py-3" scope="col">No. Surat Tambahan 2</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Nama</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Tempat Tanggal Lahir</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Jenis Kelamin</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Agama</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Pekerjaan</th>
-                            <th class="border border-gray-300 px-6 py-3" scope="col">Status Perkawinan</th>
+                            <th class="border border-gray-300 px-6 py-3" scope="col">Alamat</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Status Cetak</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                         </tr>
@@ -144,13 +145,14 @@
                                     {{ $document['no'] }}
                                 </th>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['no_surat'] }}</td>
-                                <td class="border border-gray-300 px-6 py-4">{{ $document['nik'] }}</td>
+                                <td class="border border-gray-300 px-6 py-4">{{ $document['no_surat_1'] }}</td>
+                                <td class="border border-gray-300 px-6 py-4">{{ $document['no_surat_2'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['name'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['birth'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['gender'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['religion'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['job'] }}</td>
-                                <td class="border border-gray-300 px-6 py-4">{{ $document['married_status'] }}</td>
+                                <td class="border border-gray-300 px-6 py-4">{{ $document['address'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">
                                     @if ($document['is_status'] == 1)
                                         <p class="text-nowrap text-green-600">Telah Di cetak</p>
@@ -160,7 +162,7 @@
                                 </td>
                                 <td class="border border-gray-300 px-6 py-4">
                                     <div class="flex items-center">
-                                        <a href="{{ route('admin.document.kelbaik.edit', $document['id']) }}">
+                                        <a href="{{ route('admin.document.bpjs.edit', $document['id']) }}">
                                             <svg class="size-6 text-yellow-500 dark:text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="none" viewBox="0 0 24 24">
@@ -189,14 +191,14 @@
                                         </a>
 
                                         <form id="delete-form-{{ $document['id'] }}" style="display: none;"
-                                            action="{{ route('admin.document.kelbaik.destroy', ['kelbaik' => $document['id']]) }}"
+                                            action="{{ route('admin.document.bpjs.destroy', ['bpj' => $document['id']]) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
 
                                         <form id="print-form-{{ $document['id'] }}" style="display: none;"
-                                            action="{{ route('admin.document.kelbaik.print', ['id' => $document['id']]) }}"
+                                            action="{{ route('admin.document.bpjs.print', ['id' => $document['id']]) }}"
                                             method="GET">
                                             @csrf
                                             @method('GET')

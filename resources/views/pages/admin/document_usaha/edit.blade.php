@@ -2,7 +2,7 @@
     <div class="pt-4">
         <div class="max-w-full px-3 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
-                <h2>Edit Data Surat Keterangan Kelakuan Baik</h2>
+                <h2>Edit Data Surat Keterangan Usaha</h2>
                 <a class="flex items-center hover:underline" href="{{ route('admin.document.kelbaik.index') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="rounded-lg bg-white p-4 text-white shadow-lg">
-                <form method="POST" action="{{ route('admin.document.kelbaik.update', ['kelbaik' => $id]) }}">
+                <form method="POST" action="{{ route('admin.document.usaha.update', ['usaha' => $id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="mb-6 grid gap-6 md:grid-cols-2">
@@ -60,6 +60,7 @@
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="married_status" name="married_status" required>
                                 <option value="">Pilih Status</option>
+
                                 <option value="Belum Menikah"
                                     {{ old('married_status', $data['married_status']) == 'Belum Menikah' ? 'selected' : '' }}>
                                     Belum Menikah</option>
@@ -109,7 +110,7 @@
                                     for="type">Tipe Surat:</label>
                                 <input
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                    id="type" name="type" type="text" value="ket_kelakuan_baik" required />
+                                    id="type" name="type" type="text" value="ket_usaha" required />
                             </div>
                         </div>
                     </div>

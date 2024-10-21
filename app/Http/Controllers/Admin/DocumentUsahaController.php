@@ -7,16 +7,17 @@ use App\Models\Document;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
-class DocumentTidakMampuController extends Controller
+class DocumentUsahaController extends Controller
 {
     public function index(Request $request)
     {
         $search = $request->input('search');
-        $query = Document::where('type', 'ket_tidak_mampu');
+        $query = Document::where('type', 'ket_usaha');
 
         if ($search) {
             $query->where(function ($q) use ($search) {
-                $q->whereRaw("LOWER(JSON_EXTRACT(data, '$.name')) LIKE ?", ['%' . strtolower($search) . '%']);
+                $q->whereRaw("LOWER(JSON_EXTRACT(data, '$.name')) LIKE ?", ['%' . strtolower($search) . '%'])
+                    ->orWhereRaw("LOWER(JSON_EXTRACT(data, '$.NIK')) LIKE ?", ['%' . strtolower($search) . '%']);
             });
         }
 
@@ -26,14 +27,16 @@ class DocumentTidakMampuController extends Controller
             $data = json_decode($document->data, true);
             return [
                 'no' => $index + 1,
+                'nik' => $data['NIK'] ?? '-',
                 'name' => $data['name'] ?? '-',
                 'job' => $data['job'] ?? '-',
                 'birth' => $data['birth'] ?? '-',
-                'address' => $data['address'] ?? '-',
+                'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
-                'is_status' => $document['is_status'],
+                'married_status' => $data['married_status'] ?? '-',
                 'id' => $document->id,
                 'no_surat' => $document->no_surat ?? '-',
+                'is_status' => $document['is_status'],
             ];
         });
 
@@ -41,7 +44,7 @@ class DocumentTidakMampuController extends Controller
             $documents->appends(['search' => $search]);
         }
 
-        return view("pages.admin.document_tidakmampu.index", compact('documents'));
+        return view("pages.admin.document_usaha.index", compact('documents'));
     }
 
     public function edit($id)
@@ -51,12 +54,11 @@ class DocumentTidakMampuController extends Controller
 
         $data = json_decode($document->data, true);
 
-        return view("pages.admin.document_tidakmampu.edit", compact("data", "id", "no_surat"));
+        return view("pages.admin.document_usaha.edit", compact("data", "id", "no_surat"));
     }
 
     public function update(Request $request, $id)
     {
-
         try {
 
             // Mengambil semua data kecuali yang tidak diperlukan
@@ -75,7 +77,7 @@ class DocumentTidakMampuController extends Controller
             ]);
 
             return redirect()
-                ->route("admin.document.tidakmampu.index")
+                ->route("admin.document.usaha.index")
                 ->with('success', 'Data berhasil diperbarui');
         } catch (\Exception $e) {
             return redirect()
@@ -107,11 +109,12 @@ class DocumentTidakMampuController extends Controller
     {
         $document = Document::where('id', $id)->firstOrFail();
 
+
         if ($document->no_surat) {
             # code...
             $data = json_decode($document->data, true);
-            $pdf = Pdf::loadView('pdf.surat-keterangan-tidak-mampu', $data);
-            $fileName = 'surat-keterangan-tidak-mampu_' . htmlspecialchars($data['name']) . '.pdf';
+            $pdf = Pdf::loadView('pdf.surat-keterangan-usaha', $data);
+            $fileName = 'surat_keterangan_usaha_' . htmlspecialchars($data['name']) . '.pdf';
             $document->update(['is_status' => 1]);
             return $pdf->stream($fileName);
         } else {

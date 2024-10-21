@@ -7,8 +7,12 @@ use App\Http\Controllers\Admin\ComunicationDeviceController;
 use App\Http\Controllers\Admin\ComunityEconomyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentAnimalController;
+use App\Http\Controllers\Admin\DocumentBpjsController;
+use App\Http\Controllers\Admin\DocumentKehilanganController;
+use App\Http\Controllers\Admin\DocumentKematianController;
 use App\Http\Controllers\Admin\DocumentKelBaikController;
 use App\Http\Controllers\Admin\DocumentTidakMampuController;
+use App\Http\Controllers\Admin\DocumentUsahaController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\FarmController;
 use App\Http\Controllers\Admin\LivingConditionalController;
@@ -22,6 +26,7 @@ use App\Http\Controllers\Admin\VillageController;
 use App\Http\Controllers\Admin\VillageProgramController;
 use App\Http\Controllers\Admin\VisionMisionController;
 use App\Http\Controllers\ProfileController;
+
 use App\Models\ComunicationDevice;
 use App\Models\ComunityEconomy;
 use App\Models\LivingCondition;
@@ -54,7 +59,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ]);
     Route::get('documents/animals/{id}/print', [DocumentAnimalController::class, 'print'])->name('document.animal.print');
     // Surat Kel Baik
-    Route::resource('documents/kelbaik', DocumentKelBaikController::class)->names([
+    Route::resource('documents/kelbaik', DocumentKelBaikController::class)->except('show', 'store')->names([
         'index'   => 'document.kelbaik.index',
         'create'  => 'document.kelbaik.create',
         'store'   => 'document.kelbaik.store',
@@ -64,7 +69,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ]);
     Route::get('documents/kelbaik/{id}/print', [DocumentKelBaikController::class, 'print'])->name('document.kelbaik.print');
     //    Document Tidak Mampu
-    Route::resource('documents/tidakmampu', DocumentTidakMampuController::class)->names([
+    Route::resource('documents/tidakmampu', DocumentTidakMampuController::class)->except('show', 'store')->names([
         'index'   => 'document.tidakmampu.index',
         'create'  => 'document.tidakmampu.create',
         'store'   => 'document.tidakmampu.store',
@@ -73,6 +78,48 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'destroy' => 'document.tidakmampu.destroy',
     ]);
     Route::get('documents/tidakmampu/{id}/print', [DocumentTidakMampuController::class, 'print'])->name('document.tidakmampu.print');
+    //    Document BPJS
+    Route::resource('documents/bpjs', DocumentBpjsController::class)->names([
+        'index'   => 'document.bpjs.index',
+        'create'  => 'document.bpjs.create',
+        'store'   => 'document.bpjs.store',
+        'edit'    => 'document.bpjs.edit',
+        'update'  => 'document.bpjs.update',
+        'destroy' => 'document.bpjs.destroy',
+    ]);
+    Route::get('documents/bpjs/{id}/print', [DocumentBpjsController::class, 'print'])->name('document.bpjs.print');
+    //    Document Keterangan Kehilanagan
+    Route::resource('documents/kehilangan', DocumentKehilanganController::class)->except('show', 'store')->names([
+        'index'   => 'document.kehilangan.index',
+        'create'  => 'document.kehilangan.create',
+        'store'   => 'document.kehilangan.store',
+        'edit'    => 'document.kehilangan.edit',
+        'update'  => 'document.kehilangan.update',
+        'destroy' => 'document.kehilangan.destroy',
+    ]);
+    Route::get('documents/kehilangan/{id}/print', [DocumentKehilanganController::class, 'print'])->name('document.kehilangan.print');
+    //    Document Keterangan Usaha
+    Route::resource('documents/usaha', DocumentUsahaController::class)->except('show', 'store')->names([
+
+        'index'   => 'document.usaha.index',
+        'create'  => 'document.usaha.create',
+        'store'   => 'document.usaha.store',
+        'edit'    => 'document.usaha.edit',
+        'update'  => 'document.usaha.update',
+        'destroy' => 'document.usaha.destroy',
+    ]);
+    Route::get('documents/usaha/{id}/print', [DocumentUsahaController::class, 'print'])->name('document.usaha.print');
+    //    Document Keterangan Kematian
+    Route::resource('documents/kematian', DocumentKematianController::class)->except('show', 'store')->names([
+
+        'index'   => 'document.kematian.index',
+        'create'  => 'document.kematian.create',
+        'store'   => 'document.kematian.store',
+        'edit'    => 'document.kematian.edit',
+        'update'  => 'document.kematian.update',
+        'destroy' => 'document.kematian.destroy',
+    ]);
+    Route::get('documents/kematian/{id}/print', [DocumentKematianController::class, 'print'])->name('document.kematian.print');
 
 
 
@@ -113,6 +160,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         'update'  => 'living.conditional.update',
         'destroy' => 'living.conditional.destroy',
     ]);
+
+    // comunication_devices
 
     Route::resource('comunication_device', ComunicationDeviceController::class);
 

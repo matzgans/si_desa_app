@@ -7,12 +7,12 @@ use App\Models\Document;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
-class DocumentTidakMampuController extends Controller
+class DocumentKematianController extends Controller
 {
     public function index(Request $request)
     {
         $search = $request->input('search');
-        $query = Document::where('type', 'ket_tidak_mampu');
+        $query = Document::where('type', 'ket_kematian');
 
         if ($search) {
             $query->where(function ($q) use ($search) {
@@ -26,14 +26,20 @@ class DocumentTidakMampuController extends Controller
             $data = json_decode($document->data, true);
             return [
                 'no' => $index + 1,
+                'nik' => $data['NIK'] ?? '-',
                 'name' => $data['name'] ?? '-',
                 'job' => $data['job'] ?? '-',
                 'birth' => $data['birth'] ?? '-',
-                'address' => $data['address'] ?? '-',
+                'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
-                'is_status' => $document['is_status'],
+                'married_status' => $data['married_status'] ?? '-',
+                'day_death' => $data['day_death'] ?? '-',
+                'date_death' => $data['date_death'] ?? '-',
+                'year_death' => $data['year_death'] ?? '-',
+                'kewarganegaraan' => $data['kewarganegaraan'] ?? '-',
                 'id' => $document->id,
                 'no_surat' => $document->no_surat ?? '-',
+                'is_status' => $document['is_status'],
             ];
         });
 
@@ -41,7 +47,7 @@ class DocumentTidakMampuController extends Controller
             $documents->appends(['search' => $search]);
         }
 
-        return view("pages.admin.document_tidakmampu.index", compact('documents'));
+        return view("pages.admin.document_kematian.index", compact('documents'));
     }
 
     public function edit($id)
@@ -51,14 +57,12 @@ class DocumentTidakMampuController extends Controller
 
         $data = json_decode($document->data, true);
 
-        return view("pages.admin.document_tidakmampu.edit", compact("data", "id", "no_surat"));
+        return view("pages.admin.document_kematian.edit", compact("data", "id", "no_surat"));
     }
 
     public function update(Request $request, $id)
     {
-
         try {
-
             // Mengambil semua data kecuali yang tidak diperlukan
             $data = $request->except([
                 '_token',
@@ -75,7 +79,7 @@ class DocumentTidakMampuController extends Controller
             ]);
 
             return redirect()
-                ->route("admin.document.tidakmampu.index")
+                ->route("admin.document.kematian.index")
                 ->with('success', 'Data berhasil diperbarui');
         } catch (\Exception $e) {
             return redirect()
@@ -85,33 +89,16 @@ class DocumentTidakMampuController extends Controller
         }
     }
 
-    public function destroy($id)
-    {
-        try {
-            // Mencari item berdasarkan ID
-            $item = Document::findOrFail($id); // Menggunakan findOrFail untuk langsung memunculkan exception jika tidak ditemukan
-            // Menghapus item
-            $item->delete();
-
-            return redirect()
-                ->back()
-                ->with('success', 'Data berhasil dihapus');
-        } catch (\Exception $e) {
-            return redirect()
-                ->back()
-                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
-    }
-
     public function print($id)
     {
         $document = Document::where('id', $id)->firstOrFail();
 
+
         if ($document->no_surat) {
             # code...
             $data = json_decode($document->data, true);
-            $pdf = Pdf::loadView('pdf.surat-keterangan-tidak-mampu', $data);
-            $fileName = 'surat-keterangan-tidak-mampu_' . htmlspecialchars($data['name']) . '.pdf';
+            $pdf = Pdf::loadView('pdf.surat-keterangan-kematian', $data);
+            $fileName = 'surat_keterangan_kematian_' . htmlspecialchars($data['name']) . '.pdf';
             $document->update(['is_status' => 1]);
             return $pdf->stream($fileName);
         } else {

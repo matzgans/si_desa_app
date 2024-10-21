@@ -190,7 +190,7 @@
                             d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-                <ul class="{{ request()->routeIs('admin.document.animal.*') || request()->routeIs('admin.document.kelbaik.*') || request()->routeIs('admin.document.tidakmampu.*') ? 'block' : 'hidden' }} space-y-2 py-2"
+                <ul class="{{ request()->routeIs('admin.document.animal.*') || request()->routeIs('admin.document.kelbaik.*') || request()->routeIs('admin.document.tidakmampu.*') || request()->routeIs('admin.document.bpjs.*') || request()->routeIs('admin.document.kehilangan.*') || request()->routeIs('admin.document.usaha.*') || request()->routeIs('admin.document.kematian.*') ? 'block' : 'hidden' }} space-y-2 py-2"
                     id="penyuratan">
                     <li>
                         <x-drop-nav-link :href="route('admin.document.animal.index')" :active="request()->routeIs('admin.document.animal.*')">
@@ -205,6 +205,26 @@
                     <li>
                         <x-drop-nav-link :href="route('admin.document.tidakmampu.index')" :active="request()->routeIs('admin.document.tidakmampu.*')">
                             <span class="ms-3">Ket Tidak Mampu</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.bpjs.index')" :active="request()->routeIs('admin.document.bpjs.*')">
+                            <span class="ms-3">Ket BPJS</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kehilangan.index')" :active="request()->routeIs('admin.document.kehilangan.*')">
+                            <span class="ms-3">Ket Kehilangan</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.usaha.index')" :active="request()->routeIs('admin.document.usaha.*')">
+                            <span class="ms-3">Ket Usaha</span>
+                        </x-drop-nav-link>
+                    </li>
+                    <li>
+                        <x-drop-nav-link :href="route('admin.document.kematian.index')" :active="request()->routeIs('admin.document.kematian.*')">
+                            <span class="ms-3">Ket Kematian</span>
                         </x-drop-nav-link>
                     </li>
 

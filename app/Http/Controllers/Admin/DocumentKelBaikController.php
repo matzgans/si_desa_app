@@ -34,7 +34,9 @@ class DocumentKelBaikController extends Controller
                 'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
                 'married_status' => $data['married_status'] ?? '-',
-                'id' => $document->id
+                'id' => $document->id,
+                'no_surat' => $document->no_surat ?? '-',
+                'is_status' => $document['is_status'],
             ];
         });
 
@@ -107,9 +109,19 @@ class DocumentKelBaikController extends Controller
     public function print($id)
     {
         $document = Document::where('id', $id)->firstOrFail();
-        $data = json_decode($document->data, true);
-        $pdf = Pdf::loadView('pdf.surat-keterangan-kelbaik', $data);
-        $fileName = 'surat_keterangan_hewan_keluar_' . htmlspecialchars($data['name']) . '.pdf';
-        return $pdf->stream($fileName);
+
+
+        if ($document->no_surat) {
+            # code...
+            $data = json_decode($document->data, true);
+            $pdf = Pdf::loadView('pdf.surat-keterangan-kelbaik', $data);
+            $fileName = 'surat_keterangan_kelbaik_' . htmlspecialchars($data['name']) . '.pdf';
+            $document->update(['is_status' => 1]);
+            return $pdf->stream($fileName);
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Terjadi kesalahan: Perhatikan Nomor Surat');
+        }
     }
 }

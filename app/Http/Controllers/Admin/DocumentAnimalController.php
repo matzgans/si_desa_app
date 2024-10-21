@@ -38,7 +38,8 @@ class DocumentAnimalController extends Controller
                 'total_animals' => $data['total_animals'] ?? '-',
                 'place' => $data['place'] ?? '-',
                 'characteristics' => $this->getAnimalCharacteristics($data),
-                'id' => $document->id
+                'id' => $document->id,
+                'no_surat' => $document->no_surat ?? '-',
             ];
         });
 
@@ -100,15 +101,23 @@ class DocumentAnimalController extends Controller
     public function print($id)
     {
         $document = Document::where('id', $id)->firstOrFail();
-        $data = json_decode($document->data, true);
 
-        $data['no_surat'] = $document->no_surat;
-        $data['animals'] = $this->prepareAnimalData($data);
 
-        $pdf = Pdf::loadView('pdf.surat-keterangan-hewan', $data);
-        $fileName = 'surat_keterangan_hewan_keluar_' . htmlspecialchars($data['name']) . '.pdf';
-        $document->update(['is_status' => 1]);
-        return $pdf->stream($fileName);
+        if ($document->no_surat) {
+            $data = json_decode($document->data, true);
+
+            $data['no_surat'] = $document->no_surat;
+            $data['animals'] = $this->prepareAnimalData($data);
+
+            $pdf = Pdf::loadView('pdf.surat-keterangan-hewan', $data);
+            $fileName = 'surat_keterangan_hewan_keluar_' . htmlspecialchars($data['name']) . '.pdf';
+            $document->update(['is_status' => 1]);
+            return $pdf->stream($fileName);
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Terjadi kesalahan: Perhatikan Nomor Surat');
+        }
     }
 
     public function edit($id)
@@ -123,7 +132,6 @@ class DocumentAnimalController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request);
         try {
 
             // Mengambil semua data kecuali yang tidak diperlukan

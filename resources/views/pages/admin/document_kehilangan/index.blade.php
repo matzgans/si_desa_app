@@ -2,7 +2,7 @@
     <div class="pt-4">
         <div class="max-w-full px-3 sm:px-6 lg:px-8">
             <div class="mb-3 flex justify-between rounded-lg bg-secondary p-4 text-white shadow-lg">
-                <h2>Data Surat Keterangan Kelakukan Baik</h2>
+                <h2>Data Surat Keterangan Hilang</h2>
                 <a class="flex items-center hover:underline" href="{{ route('dashboard') }}">
                     <svg class="h-6 w-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@
                 </div>
             @endif
             <div class="mb-2 flex flex-col items-center sm:flex-row">
-                <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.document.kelbaik.index') }}"
+                <form class="mb-2 w-full sm:mb-0 sm:me-2" action="{{ route('admin.document.kehilangan.index') }}"
                     method="GET">
                     <label class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         for="default-search">Search</label>
@@ -160,7 +160,7 @@
                                 </td>
                                 <td class="border border-gray-300 px-6 py-4">
                                     <div class="flex items-center">
-                                        <a href="{{ route('admin.document.kelbaik.edit', $document['id']) }}">
+                                        <a href="{{ route('admin.document.kehilangan.edit', $document['id']) }}">
                                             <svg class="size-6 text-yellow-500 dark:text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 fill="none" viewBox="0 0 24 24">
@@ -189,14 +189,14 @@
                                         </a>
 
                                         <form id="delete-form-{{ $document['id'] }}" style="display: none;"
-                                            action="{{ route('admin.document.kelbaik.destroy', ['kelbaik' => $document['id']]) }}"
+                                            action="{{ route('admin.document.kehilangan.destroy', ['kehilangan' => $document['id']]) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
 
                                         <form id="print-form-{{ $document['id'] }}" style="display: none;"
-                                            action="{{ route('admin.document.kelbaik.print', ['id' => $document['id']]) }}"
+                                            action="{{ route('admin.document.kehilangan.print', ['id' => $document['id']]) }}"
                                             method="GET">
                                             @csrf
                                             @method('GET')

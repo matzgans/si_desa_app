@@ -572,14 +572,14 @@
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="countries">Status
-                                Perkawinan :</label>
+                                Pernikahan :</label>
                             <select
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="countries" name="married_status">
 
-                                <option value="Kawin">Kawin</option>
-                                <option value="Belum Kawin">Belum Kawin</option>
-                                <option value="Sudah Pernah Kawin">Sudah Pernah Kawin</option>
+                                <option value="Menikah">Menikah</option>
+                                <option value="Belum Menikah">Belum Menikah</option>
+                                <option value="Sudah Pernah Menikah">Sudah Pernah Menikah</option>
                             </select>
                         </div>
                         <div>
@@ -719,16 +719,24 @@
                                 id="kewarnanegaraaan" name="kewarganegaraan" type="text" placeholder="WNI"
                                 required />
                         </div>
+                        <div class="">
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="ktp">Dokumen
+                                Hilang:</label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="ktp" name="document_name" type="text" placeholder="KTP" />
+                        </div>
+                        <div class="">
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="place">NIK
+                                : </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="place" name="NIK" type="place" value="" placeholder="NIK" />
+                        </div>
                     </div>
 
-                    <div class="mb-6">
-                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                            for="ktp">Dokumen
-                            Hilang:</label>
-                        <input
-                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                            id="ktp" name="document_name" type="text" placeholder="KTP" />
-                    </div>
                     <button
                         class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
                         type="submit">Submit</button>
