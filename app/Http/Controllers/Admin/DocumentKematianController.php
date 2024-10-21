@@ -33,6 +33,7 @@ class DocumentKematianController extends Controller
                 'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
                 'married_status' => $data['married_status'] ?? '-',
+                'address' => $data['address'] ?? '-',
                 'day_death' => $data['day_death'] ?? '-',
                 'date_death' => $data['date_death'] ?? '-',
                 'year_death' => $data['year_death'] ?? '-',
@@ -86,6 +87,24 @@ class DocumentKematianController extends Controller
                 ->back()
                 ->with('error', 'Terjadi kesalahan: ' . $e->getMessage())
                 ->withInput();
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            // Mencari item berdasarkan ID
+            $item = Document::findOrFail($id); // Menggunakan findOrFail untuk langsung memunculkan exception jika tidak ditemukan
+            // Menghapus item
+            $item->delete();
+
+            return redirect()
+                ->back()
+                ->with('success', 'Data berhasil dihapus');
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
 

@@ -12,10 +12,9 @@
         </p>
     </div>
     @if (session('success'))
-        <div id="alert-3"
-            class="flex items-center text-center mx-20 p-4 mb-4 text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400"
-            role="alert">
-            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        <div class="mx-20 mb-4 flex items-center rounded-lg bg-green-200 p-4 text-center text-green-800 dark:bg-gray-800 dark:text-green-400"
+            id="alert-3" role="alert">
+            <svg class="h-4 w-4 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 20 20">
                 <path
                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
@@ -24,11 +23,11 @@
             <div class="ms-3 text-sm font-medium">
                 Berhasil! {{ session('success') }}
             </div>
-            <button type="button"
-                class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
-                data-dismiss-target="#alert-3" aria-label="Close">
+            <button
+                class="-mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 p-1.5 text-green-500 hover:bg-green-200 focus:ring-2 focus:ring-green-400 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                data-dismiss-target="#alert-3" type="button" aria-label="Close">
                 <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -38,10 +37,9 @@
     @endif
 
     @if (session('error'))
-        <div id="alert-2"
-            class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400"
-            role="alert">
-            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        <div class="mb-4 flex items-center rounded-lg bg-red-200 p-4 text-red-800 dark:bg-gray-800 dark:text-red-400"
+            id="alert-2" role="alert">
+            <svg class="h-4 w-4 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 20 20">
                 <path
                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
@@ -50,11 +48,11 @@
             <div class="ms-3 text-sm font-medium">
                 Gagal! {{ session('error') }}
             </div>
-            <button type="button"
-                class="ms-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
-                data-dismiss-target="#alert-2" aria-label="Close">
+            <button
+                class="-mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 p-1.5 text-red-500 hover:bg-red-200 focus:ring-2 focus:ring-red-400 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+                data-dismiss-target="#alert-2" type="button" aria-label="Close">
                 <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -250,7 +248,7 @@
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="countries">Status
-                                Perkawinan :</label>
+                                PerMenikahan :</label>
                             <select
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="countries" name="married_status">
@@ -327,15 +325,15 @@
                             placeholder="Pengusaha" required />
                     </div>
                     <div>
-                        <label for="status_perkawinan"
+                        <label for="status_perMenikahan"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status
-                            Perkawinan:</label>
-                        <select id="status_perkawinan"
+                            PerMenikahan:</label>
+                        <select id="status_perMenikahan"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             name="married_status">
                             <option value="">Pilih status</option>
-                            <option value="Kawin">Kawin</option>
-                            <option value="Belum Pernah Kawin">Belum Pernah Kawin</option>
+                            <option value="Menikah">Menikah</option>
+                            <option value="Belum Pernah Menikah">Belum Pernah Menikah</option>
                             <option value="Duda">Duda</option>
                             <option value="Janda">Janda</option>
                         </select>
@@ -668,6 +666,14 @@
                                 id="pekerjaan" name="year_death" type="text" placeholder="2024" required />
                         </div>
                     </div>
+                    <div class="mb-5">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                            for="address">Alamat
+                            :</label>
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="address" name="address" type="tel" placeholder="Jl. Manado" required />
+                    </div>
                     <button
                         class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
                         type="submit">Submit</button>
@@ -702,6 +708,14 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="name" name="name" type="text" placeholder="John" required />
+                        </div>
+                        <div class="">
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="place">NIK
+                                : </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="place" name="NIK" type="place" placeholder="" />
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
@@ -751,14 +765,14 @@
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="countries">Status
-                                Perkawinan :</label>
+                                Pernikahan :</label>
                             <select
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="countries" name="married_status">
 
-                                <option value="Kawin">Kawin</option>
-                                <option value="Belum Kawin">Belum Kawin</option>
-                                <option value="Sudah Pernah Kawin">Sudah Pernah Kawin</option>
+                                <option value="Menikah">Menikah</option>
+                                <option value="Belum Menikah">Belum Menikah</option>
+                                <option value="Sudah Pernah Menikah">Sudah Pernah Menikah</option>
                             </select>
                         </div>
                         <div>
@@ -770,7 +784,6 @@
                                 id="kewarnanegaraaan" name="kewarganegaraan" type="text" placeholder="WNI"
                                 required />
                         </div>
-<<<<<<< HEAD
                         <div class="">
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="ktp">Dokumen
@@ -779,37 +792,18 @@
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="ktp" name="document_name" type="text" placeholder="KTP" />
                         </div>
-                        <div class="">
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="place">NIK
-                                : </label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="place" name="NIK" type="place" value="" placeholder="NIK" />
-                        </div>
                     </div>
-
-=======
-                        <div>
-                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="chronology">Kronologi :</label>
-                            <input
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="chronology" name="chronology" type="text"
-                                placeholder="Hilang dalam perjalanan menuju Kota Gorontalo" required
-                                oninput="limitWords(this, 7)" />
-                            <p id="word-count" class="mt-2 text-sm text-gray-600 dark:text-gray-400"></p>
-                        </div>
-                    </div>
-                    <div class="mb-6">
+                    <div>
                         <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                            for="ktp">Dokumen
-                            Hilang:</label>
+                            for="chronology">Kronologi :</label>
                         <input
                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                            id="ktp" name="document_name" type="text" placeholder="KTP" />
+                            id="chronology" name="chronology" type="text"
+                            placeholder="Hilang dalam perjalanan menuju Kota Gorontalo" required
+                            oninput="limitWords(this, 7)" />
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" id="word-count"></p>
                     </div>
->>>>>>> 4fe86612fbef1d1ea75bf70b58f4bc7f8c10db36
+
                     <button
                         class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
                         type="submit">Submit</button>
@@ -893,14 +887,14 @@
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="countries">Status
-                                Perkawinan :</label>
+                                PerMenikahan :</label>
                             <select
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="countries" name="married_status">
 
-                                <option value="Kawin">Kawin</option>
-                                <option value="Belum Kawin">Belum Kawin</option>
-                                <option value="Sudah Pernah Kawin">Sudah Pernah Kawin</option>
+                                <option value="Menikah">Menikah</option>
+                                <option value="Belum Menikah">Belum Menikah</option>
+                                <option value="Sudah Pernah Menikah">Sudah Pernah Menikah</option>
                             </select>
                         </div>
                         <div>

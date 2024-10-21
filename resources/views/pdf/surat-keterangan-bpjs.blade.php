@@ -150,17 +150,17 @@
                     <tr>
                         <td>Tempat/Tgl.Lahir</td>
                         <td>:</td>
-                        <td>{{ $birth }}</td>
+                        <td>{{ ucfirst($birth) }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
                         <td>:</td>
-                        <td>{{ $gender }}</td>
+                        <td>{{ ucfirst($gender) }}</td>
                     </tr>
                     <tr>
                         <td>Agama</td>
                         <td>:</td>
-                        <td>{{ $religion }}</td>
+                        <td>{{ ucfirst($religion) }}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
@@ -242,17 +242,17 @@
                     <tr>
                         <td>Tempat/Tgl.Lahir</td>
                         <td>:</td>
-                        <td>{{ $birth }}</td>
+                        <td>{{ ucfirst($birth) }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
                         <td>:</td>
-                        <td>{{ $gender }}</td>
+                        <td>{{ ucfirst($gender) }}</td>
                     </tr>
                     <tr>
                         <td>Agama</td>
                         <td>:</td>
-                        <td>{{ $religion }}</td>
+                        <td>{{ ucfirst($religion) }}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
@@ -350,12 +350,12 @@
                     <tr>
                         <td>Tempat/Tgl.Lahir</td>
                         <td>:</td>
-                        <td>{{ $birth }}</td>
+                        <td>{{ ucfirst($birth) }}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
                         <td>:</td>
-                        <td>{{ $job }}</td>
+                        <td>{{ ucfirst($job) }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>

@@ -132,6 +132,7 @@
                             <th class="border border-gray-300 px-6 py-3" scope="col">Agama</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Pekerjaan</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Status Perkawinan</th>
+                            <th class="border border-gray-300 px-6 py-3" scope="col">Kewarnanegaraan</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Status Cetak</th>
                             <th class="border border-gray-300 px-6 py-3" scope="col">Aksi</th>
                         </tr>
@@ -151,6 +152,7 @@
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['religion'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['job'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['married_status'] }}</td>
+                                <td class="border border-gray-300 px-6 py-4">{{ $document['kewarganegaraan'] }}</td>
                                 <td class="border border-gray-300 px-6 py-4">
                                     @if ($document['is_status'] == 1)
                                         <p class="text-nowrap text-green-600">Telah Di cetak</p>

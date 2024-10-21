@@ -34,6 +34,7 @@ class DocumentKehilanganController extends Controller
                 'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
                 'married_status' => $data['married_status'] ?? '-',
+                'kewarganegaraan' => $data['kewarganegaraan'] ?? '-',
                 'id' => $document->id,
                 'no_surat' => $document->no_surat ?? '-',
                 'is_status' => $document['is_status'],
@@ -59,7 +60,6 @@ class DocumentKehilanganController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request);
         try {
             // Mengambil semua data kecuali yang tidak diperlukan
             $data = $request->except([

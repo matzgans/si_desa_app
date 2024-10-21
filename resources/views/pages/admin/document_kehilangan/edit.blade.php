@@ -55,7 +55,7 @@
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="status_resident">Status Pernikahan</label>
+                                for="married_status">Status Pernikahan</label>
                             <select
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="married_status" name="married_status" required>
@@ -96,6 +96,7 @@
                                 id="religion" name="religion" type="text" value="{{ $data['religion'] }}"
                                 placeholder="Agama, Islam" required />
                         </div>
+
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                                 for="no_surat">NO
@@ -112,6 +113,36 @@
                                     id="type" name="type" type="text" value="ket_hilang" required />
                             </div>
                         </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="kewarnanegaraaan">Kewarnanegaraan :
+                            </label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="kewarnanegaraaan" name="kewarganegaraan" type="text"
+                                value="{{ $data['kewarganegaraan'] }}" placeholder="WNI" required />
+                        </div>
+                        <div class="">
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="ktp">Dokumen
+                                Hilang:</label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="ktp" name="document_name" type="text"
+                                value="{{ $data['document_name'] }}" placeholder="KTP" />
+                        </div>
+
+
+                    </div>
+                    <div>
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                            for="chronology">Kronologi :</label>
+                        <input
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="chronology" name="chronology" type="text" value="{{ $data['chronology'] }}"
+                            placeholder="Hilang dalam perjalanan menuju Kota Gorontalo" required
+                            oninput="limitWords(this, 7)" />
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" id="word-count"></p>
                     </div>
 
                     <button

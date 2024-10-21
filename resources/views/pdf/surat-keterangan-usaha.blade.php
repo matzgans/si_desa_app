@@ -191,7 +191,8 @@
                     </tr>
                 </table>
             </div>
-            <div class="text-akhir">Bahwa yang bersangkutan benar-benar memiliki Usaha ………………………………. di Desa Uabanga
+            <div class="text-akhir">Bahwa yang bersangkutan benar-benar memiliki Usaha {{ $business_name }}. di Desa
+                Uabanga
                 Kecamatan Bonepantai Kabupaten Bone Bolango.</div>
             <div class="text-akhir">Demikian surat keterangan ini diberikan kepada yang bersangkutan untuk dipergunakan
                 seperlunya</div>

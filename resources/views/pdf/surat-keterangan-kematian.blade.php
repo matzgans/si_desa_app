@@ -162,37 +162,37 @@
                     <tr>
                         <td>Tempat/Tgl.Lahir</td>
                         <td>:</td>
-                        <td>{{ $birth }}</td>
+                        <td>{{ ucfirst($birth) }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
                         <td>:</td>
-                        <td>{{ $gender }}</td>
+                        <td>{{ ucfirst($gender) }}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
                         <td>:</td>
-                        <td>{{ $job }}</td>
+                        <td>{{ ucfirst($job) }}</td>
                     </tr>
                     <tr>
                         <td>Status Perkawinan</td>
                         <td>:</td>
-                        <td>{{ $married_status }}</td>
+                        <td>{{ ucfirst($married_status) }}</td>
                     </tr>
                     <tr>
                         <td>Agama</td>
                         <td>:</td>
-                        <td>{{ $religion }}</td>
+                        <td>{{ ucfirst($religion) }}</td>
                     </tr>
                     <tr>
                         <td>Kewarga Negaraan</td>
                         <td>:</td>
-                        <td>{{ $kewarganegaraan }}</td>
+                        <td>{{ ucfirst($kewarganegaraan) }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
                         <td>:</td>
-                        <td>Desa Uabanga Kecamatan Bonepantai</td>
+                        <td>{{ ucfirst($address) }}</td>
                     </tr>
                 </table>
             </div>

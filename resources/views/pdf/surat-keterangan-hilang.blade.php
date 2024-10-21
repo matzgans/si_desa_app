@@ -127,7 +127,7 @@
         </div>
         <hr>
         <div class="content">
-            <h3>SURAT KETERANGAN Hilang</h3>
+            <h3>SURAT KETERANGAN HILANG</h3>
             <p>NOMOR : {{ $no_surat }}</p>
             <div class="text-pendahuluan-lanjutan">Dengan ini menerangkan kepada :</div>
             <div class="table">
@@ -135,12 +135,12 @@
                     <tr>
                         <td style="padding-right: 50px">Nama Lengkap</td>
                         <td>:</td>
-                        <td>{{ $name }}</td>
+                        <td>{{ ucfirst($name) }}</td>
                     </tr>
                     <tr>
                         <td>Tempat/Tgl.Lahir</td>
                         <td>:</td>
-                        <td>{{ $birth }}</td>
+                        <td>{{ ucfirst($birth) }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
@@ -150,7 +150,7 @@
                     <tr>
                         <td>Pekerjaan</td>
                         <td>:</td>
-                        <td>{{ $job }}</td>
+                        <td>{{ ucfirst($job) }}</td>
                     </tr>
                     <tr>
                         <td>Status Perkawinan</td>
@@ -160,12 +160,12 @@
                     <tr>
                         <td>Agama</td>
                         <td>:</td>
-                        <td>{{ $religion }}</td>
+                        <td>{{ ucfirst($religion) }}</td>
                     </tr>
                     <tr>
                         <td>Kewarga Negaraan</td>
                         <td>:</td>
-                        <td>WNI</td>
+                        <td>{{ ucfirst($kewarganegaraan) }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
@@ -179,8 +179,8 @@
                     </tr>
                 </table>
             </div>
-            <div class="text-akhir">Bahwa Dokumen Kependudukan bersangkutan berupa Kartu Tanda Penduduk (KTP)
-                diperkirakan hilang dalam perjalanan menuju Kota Gorontalo.
+            <div class="text-akhir">Bahwa Dokumen Kependudukan bersangkutan berupa {{ ucfirst($document_name) }}
+                diperkirakan hilang dalam {{ ucfirst($chronology) }}.
                 Demikian surat keterangan ini dibuat untuk dipergunakan dalam pengurusan surat keterangan hilang dari
                 pihak Polsek Bonepantai.
             </div>

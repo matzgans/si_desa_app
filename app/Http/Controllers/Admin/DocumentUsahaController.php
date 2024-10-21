@@ -34,6 +34,7 @@ class DocumentUsahaController extends Controller
                 'gender' => $data['gender'] ?? '-',
                 'religion' => $data['religion'] ?? '-',
                 'married_status' => $data['married_status'] ?? '-',
+                'business_name' => $data['business_name'] ?? '-',
                 'id' => $document->id,
                 'no_surat' => $document->no_surat ?? '-',
                 'is_status' => $document['is_status'],
