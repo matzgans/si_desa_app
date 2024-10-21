@@ -192,7 +192,8 @@
                     <tr>
                         <td>Alamat</td>
                         <td>:</td>
-                        <td>Desa Uabanga Kecamatan Bonepantai</td>
+                        <td>{{ $address }}</td>
+
                     </tr>
                 </table>
             </div>
