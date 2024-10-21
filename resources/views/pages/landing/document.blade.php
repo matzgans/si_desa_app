@@ -11,6 +11,57 @@
             jawab.
         </p>
     </div>
+    @if (session('success'))
+        <div id="alert-3"
+            class="flex items-center text-center mx-20 p-4 mb-4 text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400"
+            role="alert">
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Info</span>
+            <div class="ms-3 text-sm font-medium">
+                Berhasil! {{ session('success') }}
+            </div>
+            <button type="button"
+                class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                data-dismiss-target="#alert-3" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+            </button>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div id="alert-2"
+            class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400"
+            role="alert">
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Info</span>
+            <div class="ms-3 text-sm font-medium">
+                Gagal! {{ session('error') }}
+            </div>
+            <button type="button"
+                class="ms-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+                data-dismiss-target="#alert-2" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+            </button>
+        </div>
+    @endif
 
     <div class="mx-20 mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul class="-mb-px flex flex-wrap text-center text-sm font-medium" id="default-tab"
@@ -671,7 +722,7 @@
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="alamat">Alamat Terakhir:
+                                for="alamat">Alamat :
                             </label>
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -719,8 +770,17 @@
                                 id="kewarnanegaraaan" name="kewarganegaraan" type="text" placeholder="WNI"
                                 required />
                         </div>
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                                for="chronology">Kronologi :</label>
+                            <input
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                id="chronology" name="chronology" type="text"
+                                placeholder="Hilang dalam perjalanan menuju Kota Gorontalo" required
+                                oninput="limitWords(this, 7)" />
+                            <p id="word-count" class="mt-2 text-sm text-gray-600 dark:text-gray-400"></p>
+                        </div>
                     </div>
-
                     <div class="mb-6">
                         <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                             for="ktp">Dokumen
@@ -783,7 +843,7 @@
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="alamat">Alamat Terakhir:
+                                for="alamat">Alamat :
                             </label>
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -824,11 +884,11 @@
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                                for="kewarnanegaraaan">Kewarnanegaraan :
+                                for="kewarnanegaraaan">Nama Usaha :
                             </label>
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                id="kewarnanegaraaan" name="kewarganegaraan" type="text" placeholder="WNI"
+                                id="kewarnanegaraaan" name="business_name" type="text" placeholder="Butik"
                                 required />
                         </div>
                     </div>
@@ -848,6 +908,14 @@
     </div>
 
     <script>
+        function limitWords(input, maxWords) {
+            const words = input.value.split(/\s+/).filter(word => word.length > 0);
+            if (words.length > maxWords) {
+                input.value = words.slice(0, maxWords).join(" ");
+            }
+            document.getElementById('word-count').textContent = `Jumlah kata: ${words.length}/${maxWords}`;
+        }
+
         const jumlahHewanInput = document.getElementById('jumlah-hewan');
         const dynamicInputsContainer = document.getElementById('dynamic-inputs');
 
