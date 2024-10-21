@@ -192,7 +192,7 @@
                     <tr>
                         <td>Alamat</td>
                         <td>:</td>
-                        <td>{{ ucfirst($address) }}</td>
+                        <td>{{ ucfirst($address) }}</td>efda216eba1e49d146716
                     </tr>
                 </table>
             </div>

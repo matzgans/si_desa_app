@@ -165,6 +165,7 @@
                                     @endif
                                 </td>
                                 <td class="border border-gray-300 px-6 py-4">{{ $document['address'] }}</td>
+
                                 <td class="border border-gray-300 px-6 py-4">
                                     <div class="flex items-center">
                                         <a href="{{ route('admin.document.kematian.edit', $document['id']) }}">

@@ -38,6 +38,7 @@ class DocumentKematianController extends Controller
                 'date_death' => $data['date_death'] ?? '-',
                 'year_death' => $data['year_death'] ?? '-',
                 'kewarganegaraan' => $data['kewarganegaraan'] ?? '-',
+                'alamat' => $data['address'] ?? '-',
                 'id' => $document->id,
                 'no_surat' => $document->no_surat ?? '-',
                 'is_status' => $document['is_status'],
