@@ -61,58 +61,130 @@
         </div>
     @endif
 
-    <div class="mx-20 mb-4 border-b border-gray-200 dark:border-gray-700">
-        <ul class="-mb-px flex flex-wrap text-center text-sm font-medium" id="default-tab"
-            data-tabs-toggle="#default-tab-content" role="tablist">
-            <li class="me-2" role="presentation">
-                <button class="inline-block rounded-t-lg border-b-2 p-4" id="profile-tab" data-tabs-target="#ket-hewan"
-                    type="button" role="tab" aria-controls="profile" aria-selected="false">Surat Keterangan
-                    Hewan Keluar</button>
-            </li>
-            <li class="me-2" role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="dashboard-tab" data-tabs-target="#ket-kelakukan-baik" type="button" role="tab"
-                    aria-controls="dashboard" aria-selected="false">Surat Keterangan Kelakuan Baik</button>
-            </li>
-            {{-- <li class="me-2" role="presentation">
-                <button
-                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                    id="settings-tab" data-tabs-target="#ket-nikah" type="button" role="tab"
-                    aria-controls="settings" aria-selected="false">Surat Keterangan Nikah</button>
-            </li> --}}
-            <li role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="contacts-tab" data-tabs-target="#ket-tidak-mampu" type="button" role="tab"
-                    aria-controls="contacts" aria-selected="false">Surat Keterangan Tidak Mampu</button>
-            </li>
-            <li role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="contacts-tab" data-tabs-target="#ket-bpjs" type="button" role="tab"
-                    aria-controls="contacts" aria-selected="false">Surat Keterangan Kepengurusan BPJS</button>
-            </li>
-            <li role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="contacts-tab" data-tabs-target="#ket-kematian" type="button" role="tab"
-                    aria-controls="contacts" aria-selected="false">Surat Keterangan Kematian</button>
-            </li>
-            <li role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="contacts-tab" data-tabs-target="#ket-hilang" type="button" role="tab"
-                    aria-controls="contacts" aria-selected="false">Surat Keterangan Hilang</button>
-            </li>
-            <li role="presentation">
-                <button
-                    class="inline-block rounded-t-lg border-b-2 p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
-                    id="contacts-tab" data-tabs-target="#ket-usaha" type="button" role="tab"
-                    aria-controls="contacts" aria-selected="false">Surat Keterangan Usaha</button>
-            </li>
-        </ul>
+    {{-- <div class="mx-20 mb-4 border-b border-gray-200 dark:border-gray-700">
+        <button
+            class="w-full rounded-lg border border-gray-300 bg-white p-4 text-left text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+            id="dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
+            Pilih Surat Keterangan
+            <span class="float-right">&#x25BC;</span> <!-- Arrow down icon -->
+        </button>
+        <div id="dropdown-menu" class="absolute hidden w-full rounded-lg bg-white shadow-lg dark:bg-gray-800">
+            <ul class="text-sm font-medium text-gray-700 dark:text-gray-200" id="default-tab"
+                data-tabs-toggle="#default-tab-content" role="tablist">
+                <li class="me-2" role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="profile-tab" data-tabs-target="#ket-hewan" type="button" role="tab"
+                        aria-controls="profile" aria-selected="false">Surat Keterangan
+                        Hewan Keluar</button>
+                </li>
+                <li class="me-2" role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="dashboard-tab" data-tabs-target="#ket-kelakukan-baik" type="button" role="tab"
+                        aria-controls="dashboard" aria-selected="false">Surat Keterangan Kelakuan Baik</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="contacts-tab" data-tabs-target="#ket-tidak-mampu" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false">Surat Keterangan Tidak Mampu</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="contacts-tab" data-tabs-target="#ket-bpjs" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false">Surat Keterangan Kepengurusan BPJS</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="contacts-tab" data-tabs-target="#ket-kematian" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false">Surat Keterangan Kematian</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="contacts-tab" data-tabs-target="#ket-hilang" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false">Surat Keterangan Hilang</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                        id="contacts-tab" data-tabs-target="#ket-usaha" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false">Surat Keterangan Usaha</button>
+                </li>
+            </ul>
+        </div>
+    </div> --}}
+    <div class="relative mx-20 mb-4">
+        <button
+            class="w-full rounded-lg border border-gray-300 bg-white p-4 text-left text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+            id="dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
+            <span id="selected-item">Pilih Surat Keterangan</span>
+            <span class="float-right">&#x25BC;</span> <!-- Arrow down icon -->
+        </button>
+        <div id="dropdown-menu" class="absolute hidden w-full rounded-lg bg-white shadow-lg dark:bg-gray-800">
+            <ul class="text-sm font-medium text-gray-700 dark:text-gray-200" id="default-tab"
+                data-tabs-toggle="#default-tab-content" role="tablist">
+                <li class="me-2" role="presentation">
+                    <button class="inline-block rounded-t-lg border-b-2 p-4" id="profile-tab"
+                        data-tabs-target="#ket-default" type="button" role="tab" aria-controls="profile"
+                        aria-selected="true" data-name="Pilih Jenis Surat">-</button>
+                </li>
+                <li class="me-2" role="presentation">
+                    <button class="inline-block rounded-t-lg border-b-2 p-4" id="profile-tab"
+                        data-tabs-target="#ket-hewan" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false" data-name="Surat Keterangan
+                        Hewan Keluar">Surat
+                        Keterangan
+                        Hewan Keluar</button>
+                </li>
+                <li class="me-2" role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="dashboard-tab" data-tabs-target="#ket-kelakukan-baik" type="button" role="tab"
+                        aria-controls="dashboard" aria-selected="false" data-name="Surat Keterangan Kelakuan Baik">Surat
+                        Keterangan Kelakuan Baik</button>
+                </li>
+                {{-- <li class="me-2" role="presentation">
+                    <button
+                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                        id="settings-tab" data-tabs-target="#ket-nikah" type="button" role="tab"
+                        aria-controls="settings" aria-selected="false">Surat Keterangan Nikah</button>
+                </li> --}}
+                <li role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="contacts-tab" data-tabs-target="#ket-tidak-mampu" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false" data-name="Surat Keterangan Tidak Mampu">Surat
+                        Keterangan Tidak Mampu</button>
+                </li>
+                <li role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="contacts-tab" data-tabs-target="#ket-bpjs" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false"
+                        data-name="Surat Keterangan Kepengurusan BPJS">Surat Keterangan Kepengurusan BPJS</button>
+                </li>
+                <li role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="contacts-tab" data-tabs-target="#ket-kematian" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false" data-name="Surat Keterangan Kematian">Surat
+                        Keterangan Kematian</button>
+                </li>
+                <li role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="contacts-tab" data-tabs-target="#ket-hilang" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false" data-name="Surat Keterangan Hilang">Surat
+                        Keterangan Hilang</button>
+                </li>
+                <li role="presentation">
+                    <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                        id="contacts-tab" data-tabs-target="#ket-usaha" type="button" role="tab"
+                        aria-controls="contacts" aria-selected="false" data-name="Surat Keterangan Usaha">Surat
+                        Keterangan Usaha</button>
+                </li>
+            </ul>
+        </div>
     </div>
+
     <div class="mx-20" id="default-tab-content">
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-hewan" role="tabpanel"
             aria-labelledby="profile-tab">
@@ -197,6 +269,15 @@
                         type="submit">Ajukan Surat</button>
                 </form>
             </div>
+
+        </div>
+        <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-default" role="tabpanel"
+            aria-labelledby="profile-tab">
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
+                memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
+                data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
+                administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
+                telah diverifikasi oleh admin desa uabanga</p>
 
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-kelakukan-baik" role="tabpanel"
@@ -293,103 +374,6 @@
                 </form>
             </div>
         </div>
-        {{-- <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="ket-nikah" role="tabpanel"
-            aria-labelledby="settings-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p>
-
-            <form>
-                <div class="grid gap-6 mb-6 md:grid-cols-2">
-                    <div>
-                        <label for="name"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap:</label>
-                        <input type="text" id="name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="John" required />
-                    </div>
-                    <div>
-                        <label for="age"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tempat/Tanggal
-                            Lahir:</label>
-                        <input type="text" id="age"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Gorontalo, 17 Agustus 1945" required name="birth" />
-                    </div>
-                    <div>
-                        <label for="pekerjaan"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pekerjaan:</label>
-                        <input type="text" id="pekerjaan"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Pengusaha" required />
-                    </div>
-                    <div>
-                        <label for="status_perMenikahan"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status
-                            PerMenikahan:</label>
-                        <select id="status_perMenikahan"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            name="married_status">
-                            <option value="">Pilih status</option>
-                            <option value="Menikah">Menikah</option>
-                            <option value="Belum Pernah Menikah">Belum Pernah Menikah</option>
-                            <option value="Duda">Duda</option>
-                            <option value="Janda">Janda</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="agama"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Agama:</label>
-                        <input type="text" id="agama"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Islam" required />
-                    </div>
-                    <div>
-                        <label for="gender"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin:</label>
-                        <select id="gender"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            name="gender">
-                            <option value="">Pilih jenis kelamin</option>
-                            <option value="Laki Laki">Laki Laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="jumlah-istri"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Istri
-                            (kosongkan jika tidak perlu):</label>
-                        <input type="text" id="jumlah-istri"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="" />
-                    </div>
-                    <div>
-                        <label for="age"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Suami/Istri
-                            Terdahulu (kosongkan jika tidak perlu):</label>
-                        <input type="text" id="age"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="" required />
-                    </div>
-                </div>
-
-
-
-                <div class="mb-6">
-                    <label for="ktp"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIK:</label>
-                    <input type="text" id="ktp"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Nomor KTP" name="NIK" />
-                </div>
-
-
-
-                <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-            </form>
-        </div> --}}
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-tidak-mampu" role="tabpanel"
             aria-labelledby="contacts-tab">
             <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Uabanga dimulai dengan pengguna
@@ -962,6 +946,31 @@
                 `;
                 dynamicInputsContainer.insertAdjacentHTML('beforeend', animalForm);
             }
+        });
+
+        // Toggle the dropdown menu
+        document.getElementById("dropdown-button").addEventListener("click", function() {
+            var menu = document.getElementById("dropdown-menu");
+            menu.classList.toggle("hidden");
+        });
+
+        // Hide dropdown menu on clicking outside
+        document.addEventListener("click", function(e) {
+            var button = document.getElementById("dropdown-button");
+            var menu = document.getElementById("dropdown-menu");
+            if (!button.contains(e.target)) {
+                menu.classList.add("hidden");
+            }
+        });
+
+        // Change button text to selected item
+        document.querySelectorAll('#dropdown-menu button').forEach(function(item) {
+            item.addEventListener("click", function() {
+                // Update the button text
+                document.getElementById("selected-item").innerText = this.getAttribute("data-name");
+                // Close the dropdown
+                document.getElementById("dropdown-menu").classList.add("hidden");
+            });
         });
     </script>
 </x-landing-layout>
