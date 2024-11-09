@@ -1,6 +1,17 @@
 <x-app-layout>
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="flex justify-end">
+                <a class="mb-3 flex items-center justify-between rounded-lg bg-purple-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+                    type="button" href="refresh-view?token=fzrsahi"><svg class="h-6 w-6 text-gray-800 dark:text-white"
+                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4" />
+                    </svg>
+                    Refresh Data Statistik
+                </a>
+            </div>
             <!-- Grid Section -->
             <div class="grid w-full grid-cols-3 gap-6">
                 <!-- Card Penduduk -->
