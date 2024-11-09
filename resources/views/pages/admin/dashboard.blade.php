@@ -29,12 +29,14 @@
                 </div>
                 <div class="bg-primary-100 overflow-hidden rounded-lg shadow-lg shadow-pink-500">
                     <div class="text-primary-900 flex items-center justify-around p-6">
-                        <svg class="h-12 w-12 text-pink-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="curren    tColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
+                        <svg class="h-12 w-12 text-pink-600 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007 2.759-.038 4.5.16 6.956.791V4.717Zm2 15.081c2.456-.631 4.198-.829 6.956-.791A2.013 2.013 0 0 0 22 16.999V6a1.99 1.99 0 0 0-1.955-1.993c-2.885-.046-4.76.13-7.045.71v15.081Z"
+                                clip-rule="evenodd" />
                         </svg>
+
 
 
                         <div class="text-3xl font-bold">{{ $article }}</div>
@@ -52,11 +54,10 @@
                     </h2>
                     <canvas id="barChart"></canvas>
                 </div>
-
-                <!-- Line Chart -->
                 <div class="rounded-lg bg-white p-6 shadow-lg">
-                    <h2 class="mb-4 text-xl font-semibold">Grafik Pertumbuhan</h2>
-                    <canvas id="lineChart"></canvas>
+                    <h2 class="mb-4 text-xl font-semibold">Statistik Penduduk Menurut Dusun
+                    </h2>
+                    <canvas id="barChartResident"></canvas>
                 </div>
             </div>
         </div>
@@ -90,18 +91,20 @@
             }
         });
 
-        // Line Chart
-        const lineCtx = document.getElementById('lineChart').getContext('2d');
-        const lineChart = new Chart(lineCtx, {
-            type: 'line',
+        // statistik count resident based On village
+        var labelsResident = {!! json_encode(array_keys($residentToArray)) !!}; // Mengambil key dari array sebagai label
+        var dataValuesResident = {!! json_encode(array_values($residentToArray)) !!}; // Mengambil value dari array sebagai data
+        const barNameResident = document.getElementById('barChartResident').getContext('2d');
+        const barChartResident = new Chart(barNameResident, {
+            type: 'bar',
             data: {
-                labels: ['Laki - Laki', 'Februari', 'Maret', 'April', 'Mei'],
+                labels: labelsResident,
                 datasets: [{
-                    label: 'Pertumbuhan Penduduk',
-                    data: [10, 20, 30, 40, 50],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2
+                    label: 'Penduduk',
+                    data: dataValuesResident,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
                 }]
             },
             options: {
