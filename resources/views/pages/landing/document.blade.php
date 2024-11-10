@@ -145,12 +145,6 @@
                         aria-controls="dashboard" aria-selected="false" data-name="Surat Keterangan Kelakuan Baik">Surat
                         Keterangan Kelakuan Baik</button>
                 </li>
-                {{-- <li class="me-2" role="presentation">
-                    <button
-                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                        id="settings-tab" data-tabs-target="#ket-nikah" type="button" role="tab"
-                        aria-controls="settings" aria-selected="false">Surat Keterangan Nikah</button>
-                </li> --}}
                 <li role="presentation">
                     <button class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700"
                         id="contacts-tab" data-tabs-target="#ket-tidak-mampu" type="button" role="tab"
