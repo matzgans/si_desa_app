@@ -13,6 +13,8 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
+        $residents = Resident::with('village')->get();
+        $villages = Village::all();
         $resident = Resident::count();
         $education_levels = EducationLevel::all();
         $article = Article::count();
@@ -35,8 +37,16 @@ class DashboardController extends Controller
             $totals['PT'] += ($education_level->pt_l + $education_level->pt_p);
         }
 
-        // Tampilkan hasil
 
-        return view('pages.admin.dashboard', compact('resident', 'totals', 'dusun', 'article'));
+        // for data statistik count penduduk based on village name
+        $residentCountsByVillage = $residents->groupBy('village.village_name')->map(function ($group) {
+            return $group->count();
+        });
+
+        $residentToArray = $residentCountsByVillage->toArray();
+
+
+
+        return view('pages.admin.dashboard', compact('resident', 'totals', 'dusun', 'article', 'residentToArray'));
     }
 }

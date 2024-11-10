@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             FarmSeeder::class,
             VillageProgramSeeder::class,
             ComunicationDeviceSeeder::class,
+            SaranaPerikananSeeder::class,
         ]);
     }
 }

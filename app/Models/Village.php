@@ -34,6 +34,10 @@ class Village extends Model
     {
         return $this->hasOne(Farm::class);
     }
+    public function sarana_perikanans()
+    {
+        return $this->hasOne(SaranaPerikanan::class);
+    }
     public function comunication_devices()
     {
         return $this->hasOne(ComunicationDevice::class);

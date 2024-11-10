@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\FarmController;
 use App\Http\Controllers\Admin\LivingConditionalController;
 use App\Http\Controllers\Admin\ResidentController;
+use App\Http\Controllers\Admin\SaranaPerikananController;
 use App\Http\Controllers\Admin\StaffCategory;
 use App\Http\Controllers\Admin\StaffCategoryController;
 use App\Http\Controllers\Admin\StructureController;
@@ -165,6 +166,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     Route::resource('comunication_device', ComunicationDeviceController::class);
 
+    // sarana+perikanan
+    Route::resource('sarana_perikanan', SaranaPerikananController::class);
+
+
 
     // Desa
     Route::resource('visionmision', VisionMisionController::class);
@@ -177,10 +182,6 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('structure', StructureController::class);
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 
 require __DIR__ . '/auth.php';

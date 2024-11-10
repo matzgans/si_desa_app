@@ -271,6 +271,6 @@ class LandingController extends Controller
                 )
         );
 
-        return response()->json(['message' => 'Success Refresh MView!']);
+        return redirect()->back()->with('success', 'Berhasil Refresh Data!');
     }
 }
